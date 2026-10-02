@@ -2853,3 +2853,17 @@ body:not(#bp-x) .nn-navitem.nn-selected::after {
   border-radius: 0;
   box-shadow: inset 3px 0 0 var(--bp-select-bar);
 }
+
+/* Calendar header: month, year and quarter read as one tight group; arrows get compact hit areas */
+body:not(#bp-x) .nn-navigation-calendar-header {
+  padding: 0 8px;
+}
+body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-period-month,
+body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-period-year {
+  padding-inline: 4px !important;
+}
+body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-nav-button {
+  justify-content: center;
+  padding-inline: 0 !important;
+  width: 22px;
+}
