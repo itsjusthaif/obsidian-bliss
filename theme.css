@@ -171,9 +171,13 @@ body.theme-light {
   --bp-grad-orange: linear-gradient(to bottom, #ffe8b8 0%, #f4c870 100%);
   --bp-grad-section: linear-gradient(to bottom, var(--bp-accent-top) 0%, var(--bp-accent-bottom) 100%);
 
-  --font-interface-theme: Tahoma, Verdana, "MS Sans Serif", Geneva, sans-serif;
-  --font-text-theme: Verdana, Tahoma, sans-serif;
-  --font-monospace-theme: "Courier New", monospace;
+  --bp-font-ui: Tahoma, Verdana, "MS Sans Serif", Geneva, "DejaVu Sans", "Liberation Sans", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --bp-font-text: Verdana, Tahoma, Geneva, "DejaVu Sans", "Liberation Sans", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --bp-font-head: "Trebuchet MS", Tahoma, "Lucida Grande", "DejaVu Sans", "Liberation Sans", system-ui, -apple-system, Arial, sans-serif;
+  --bp-font-mono: "Courier New", Courier, Menlo, Monaco, "DejaVu Sans Mono", "Liberation Mono", monospace;
+  --font-interface-theme: var(--bp-font-ui);
+  --font-text-theme: var(--bp-font-text);
+  --font-monospace-theme: var(--bp-font-mono);
   --font-text-size: 13px;
   --font-ui-small: var(--bp-ui-font);
   --font-ui-medium: var(--bp-ui-font);
@@ -219,12 +223,12 @@ body.theme-light {
   --link-unresolved-color: #c00;
   --link-unresolved-opacity: 1;
 
-  --h1-font: "Trebuchet MS", Tahoma, sans-serif;
-  --h2-font: "Trebuchet MS", Tahoma, sans-serif;
-  --h3-font: "Trebuchet MS", Tahoma, sans-serif;
-  --h4-font: "Trebuchet MS", Tahoma, sans-serif;
-  --h5-font: "Trebuchet MS", Tahoma, sans-serif;
-  --h6-font: "Trebuchet MS", Tahoma, sans-serif;
+  --h1-font: var(--bp-font-head);
+  --h2-font: var(--bp-font-head);
+  --h3-font: var(--bp-font-head);
+  --h4-font: var(--bp-font-head);
+  --h5-font: var(--bp-font-head);
+  --h6-font: var(--bp-font-head);
   --h1-size: 1.6em;
   --h2-size: 1.3em;
   --h3-size: 1.1em;
@@ -2653,4 +2657,29 @@ box-shadow: inset 3px 0 0 var(--bp-select-bar);
 }
 body.theme-dark {
 --bp-select-bar: var(--bp-accent-top);
+}
+
+
+/* ================= Dialogs: one padding rule for every direct child, so any content (text, links, checkboxes, buttons) is inset the same ================= */
+body:not(#bp-x) .modal:not(.mod-settings) {
+  --bp-modal-pad: 16px;
+  box-sizing: border-box;
+  max-width: min(90vw, 560px);
+  overflow-wrap: anywhere;
+}
+body:not(#bp-x) .modal:not(.mod-settings) > :not(.modal-header):not(.modal-title):not(.modal-close-button):not(.modal-header-button):not(.modal-bg) {
+  box-sizing: border-box;
+  padding-inline: var(--bp-modal-pad) !important;
+}
+body:not(#bp-x) .modal:not(.mod-settings) > .modal-content {
+  padding-block: 14px 8px !important;
+}
+body:not(#bp-x) .modal:not(.mod-settings) > :is(.modal-button-container, .modal-footer) {
+  align-items: center;
+  gap: 8px;
+  margin: 0 !important;
+  padding-block: 8px 14px !important;
+}
+body:not(#bp-x) .modal:not(.mod-settings) > :last-child:not(.modal-header):not(.modal-button-container) {
+  padding-bottom: 14px;
 }
