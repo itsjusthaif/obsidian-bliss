@@ -35,13 +35,9 @@ Glossy settings: toggles, dropdowns and inputs in light and dark
 
 ## Installation
 
-To install the theme:
+To install manually, download and copy `theme.css` and `manifest.json` into `<vault>/.obsidian/themes/Bliss/`, then select Bliss under **Appearance**.
 
-1. Open Obsidian Settings.
-2. Go to **Appearance** and click **Manage** under Themes.
-3. Search for "Bliss" and click **Use**.
-
-To install manually, copy `theme.css` and `manifest.json` into `<vault>/.obsidian/themes/Bliss/`, then select Bliss under **Appearance**.
+Obsidian marketplace support is coming soon. 
 
 ## Companion plugins
 
