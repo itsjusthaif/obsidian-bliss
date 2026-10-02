@@ -14,7 +14,7 @@
 
 - [ ] Canvas and Graph view: Luna-style nodes, group frames, edges and graph controls.
 
-- [ ] Code blocks and syntax highlighting: a Luna palette, a header bar with a copy button, and light and dark variants.
+- [x] Code blocks and syntax highlighting: classic sunken frame and VS-style syntax colours in light and dark, in both reading and editing view. The language badge keeps Obsidian's default placement.
 
 - [ ] Mobile and narrow layouts: check the tabs, dialogs and NN panes, and use a larger touch target for the toggles and sliders.
 
@@ -22,7 +22,7 @@
 
 ## New features (via Style Settings)
 
-- [ ] More presets: Royale and Zune, and optionally a Win98 classic mode. (Luna Blue, Olive Green, Silver and Orange already exist.)
+- [ ] More presets: Zune, and optionally a Win98 classic mode. (Luna Blue, Olive Green, Silver and Orange already exist.)
 
 - [ ] Per-element toggles: glossiness, bevel depth, corner radius slider, and desk texture on or off.
 
