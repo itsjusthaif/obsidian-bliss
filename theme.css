@@ -2915,10 +2915,14 @@ body.theme-dark {
 body.bp-xp-nostalgia:not(#bp-x) .nn-list-group-header,
 body.bp-xp-nostalgia:not(#bp-x) .git-view .nav-folder-title {
   background: var(--bp-grad-orange) !important;
-  border-top: 1px solid var(--bp-sunset-border);
-  border-bottom: 1px solid var(--bp-sunset-border);
+  border: 1px solid var(--bp-sunset-border);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
   color: var(--bp-sunset-text);
+}
+
+/* Expanded groups: the first note row is painted after the header and covered its bottom border */
+body:not(#bp-x) .nn-virtual-list-group-header {
+  z-index: 2;
 }
 body.bp-xp-nostalgia:not(#bp-x) .nn-list-group-header .nn-list-group-header-text,
 body.bp-xp-nostalgia:not(#bp-x) .git-view .nav-folder-title .nav-folder-title-content {
