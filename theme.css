@@ -2840,3 +2840,13 @@ body:not(#bp-x):not(.bp-no-texture) .workspace-split:is(.mod-left-split, .mod-ri
 body.theme-dark:not(#bp-x):not(.bp-no-texture) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tabs .workspace-tab-header-container {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='white' fill-opacity='0.04'/></svg>");
 }
+
+/* NN draws the selected nav row on ::after with rounded corners; the square outer box and its bar showed as sharp corner marks behind it */
+body:not(#bp-x) .nn-navitem.nn-selected {
+  background: transparent;
+  box-shadow: none;
+}
+body:not(#bp-x) .nn-navitem.nn-selected::after {
+  border-radius: var(--nn-theme-navitem-border-radius, 4px);
+  box-shadow: inset 3px 0 0 var(--bp-select-bar);
+}
