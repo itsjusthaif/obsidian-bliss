@@ -142,7 +142,7 @@ body.theme-light {
   --bp-text: #222;
   --bp-text-muted: #555;
   --bp-text-faint: #777;
-  --bp-text-dim: #b4b0a4;
+  --bp-text-dim: #85816f;
   --bp-text-strong: #000;
   --bp-hilite-2: #ffffe0;
   --bp-pressed: linear-gradient(to bottom, #d8d4c4 0%, #f0eee4 100%);
@@ -451,6 +451,7 @@ textarea:focus {
   color: #fff;
 }
 .view-header-title,
+.is-focused .workspace-leaf.mod-active .view-header-title,
 .view-header-title-parent,
 .view-header-breadcrumb {
   color: #fff;
@@ -1885,11 +1886,11 @@ body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-heade
 
 /* ================= Accent presets (XP-era) ================= */
 body.bp-accent-olive {
-  --bp-accent-top: #9db865;
-  --bp-accent-mid: #81a04a;
-  --bp-accent-bottom: #5f7f2f;
+  --bp-accent-top: #7f9a46;
+  --bp-accent-mid: #6f8c3a;
+  --bp-accent-bottom: #566f27;
   --bp-accent-dark: #3f5120;
-  --bp-accent-hover-top: #b6cc80;
+  --bp-accent-hover-top: #a3bd6b;
   --bp-accent-link: #4a6a1e;
   --bp-accent-text: #3f5120;
   --bp-accent-soft-0: #f5f8ea;
@@ -1917,11 +1918,11 @@ body.bp-accent-silver {
   --bp-select: #dde1ec;
 }
 body.bp-accent-orange {
-  --bp-accent-top: #f6a04a;
-  --bp-accent-mid: #ee8626;
-  --bp-accent-bottom: #d96d10;
+  --bp-accent-top: #e07a1f;
+  --bp-accent-mid: #d26c12;
+  --bp-accent-bottom: #b85a0a;
   --bp-accent-dark: #8a4306;
-  --bp-accent-hover-top: #fab670;
+  --bp-accent-hover-top: #f19a4b;
   --bp-accent-link: #b25208;
   --bp-accent-text: #8a4306;
   --bp-accent-soft-0: #fff8ef;
@@ -1991,8 +1992,8 @@ body.theme-dark {
   --bp-line-dotted: #4a525e;
   --bp-text: #e4e7ec;
   --bp-text-muted: #a9b0bb;
-  --bp-text-faint: #8a92a0;
-  --bp-text-dim: #6b7380;
+  --bp-text-faint: #9aa2b0;
+  --bp-text-dim: #7d8696;
   --bp-text-strong: #fff;
   --bp-hilite: #3f4a5e;
   --bp-hilite-2: #465270;
