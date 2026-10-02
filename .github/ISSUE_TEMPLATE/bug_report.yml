@@ -1,0 +1,46 @@
+name: Bug report
+description: Something looks wrong in Bliss
+labels: [bug]
+body:
+  - type: input
+    id: bliss-version
+    attributes:
+      label: Bliss version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: obsidian-version
+    attributes:
+      label: Obsidian version and OS
+      placeholder: "1.13.7, Windows 11"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Include what you expected to see.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag an image here.
+  - type: input
+    id: plugins
+    attributes:
+      label: Plugins involved
+      placeholder: Notebook Navigator, Obsidian Git, Style Settings
+  - type: checkboxes
+    id: isolated
+    attributes:
+      label: Checked
+      options:
+        - label: Still happens with other themes and CSS snippets disabled
+          required: true

@@ -1,0 +1,19 @@
+name: Feature request
+description: Suggest an option, plugin style or improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference images or links
+      description: Screenshots or links to what you have in mind.
