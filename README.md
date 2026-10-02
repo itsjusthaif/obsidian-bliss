@@ -4,6 +4,8 @@ Obsidian, but it's 2001. Bevelled buttons, Luna blues and the gloriously boring 
 
 Bliss is a desktop theme for [Obsidian](https://obsidian.md/) that draws inspiration from the early web and classic Windows aesthetics. Glossy blues, soft greens, and a warm beige desktop create a familiar sense of nostalgia, while layouts echo the tidy structure of intranet portals and personal websites from the Y2K era. A slate dark mode is included for after-hours work. Bliss brings together retro charm and modern usability in a contemporary take on early 2000s design.
 
+Inspired by: [Fernando Borretti on X](https://x.com/zetalyrae/status/2046805336137294294), [boringpunk-notes-app](https://github.com/eudoxia0/etudes/tree/cc2088d92ab9cb09890dd1d3488c0d5915304eab/html/boringpunk-notes-app)
+
 ## Contents
 
 - [Screenshots](#screenshots)
