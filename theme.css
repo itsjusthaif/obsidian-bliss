@@ -113,11 +113,6 @@ settings:
         title: Windows XP Nostalgia Mode
         description: Full Luna flashback. Curved, pressed-in taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles, plus glossy sunset-orange strips on list date groups and Git sections. Off keeps the original look.
         type: class-toggle
-    -
-        id: bp-xp-cursors
-        title: Windows XP cursors
-        description: Replaces the arrow and the link hand with XP-style white pointers. Off keeps your system cursors.
-        type: class-toggle
 */
 
 /* Colour tokens: defaults are Luna Blue on light. Presets and dark mode override these below. */
@@ -2951,16 +2946,4 @@ body:not(#bp-x) .community-item.is-selected {
   background: var(--bp-accent-soft);
   border: 1px solid var(--bp-accent-line);
   border-radius: 6px;
-}
-
-/* ================= XP cursors (opt-in): 32px SVG pointers; Obsidian reads --cursor and --cursor-link ================= */
-body.bp-xp-cursors {
-  --bp-cursor-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23fff' stroke='%23000' stroke-width='1.1' stroke-linejoin='round' d='M1.5 1.5 V23 L6.6 18.2 L10.2 26.4 L13.8 24.8 L10.3 16.9 H17.4 Z'/%3E%3C/svg%3E") 1 1, default;
-  --bp-cursor-hand: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23fff' stroke='%23000' stroke-width='1.1' stroke-linejoin='round' d='M9.5 4.5 C9.5 2.5 13 2.5 13 4.5 V12 C13 10.8 16.2 10.8 16.2 12.3 C16.2 11.2 19.2 11.2 19.2 12.8 C19.2 11.8 22.2 11.8 22.2 13.6 V18.5 C22.2 23 20.5 26.5 17 26.5 H14 C12 26.5 10.8 25.3 9.5 23.2 L5.2 16.3 C4.5 15 6 13.8 7.3 14.6 L9.5 16.6 Z'/%3E%3C/svg%3E") 11 2, pointer;
-  --cursor: var(--bp-cursor-arrow);
-  --cursor-link: var(--bp-cursor-hand);
-  cursor: var(--bp-cursor-arrow);
-}
-body.bp-xp-cursors :is(a, .external-link, .internal-link, .cm-link, .cm-hmd-internal-link) {
-  cursor: var(--bp-cursor-hand);
 }

@@ -1,9 +1,5 @@
 # Changelog
 
-## [Unreleased]
-
-- Added Windows XP cursors (opt-in, Style Settings): white arrow and link hand.
-
 ## [1.0.1]
 
 - Fixed the bottom border of expanded date groups in the notes list.

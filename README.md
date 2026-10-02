@@ -60,7 +60,6 @@ All options live in Style Settings under **Bliss**.
 | Classic square corners | Square boxes, pills and buttons for the original intranet look |
 | Disable desk texture | Removes the fine dot pattern from the window chrome and ribbon |
 | Toggle switches follow the accent | Off keeps the classic XP green for switched-on toggles |
-| Windows XP cursors | White XP-style arrow and link hand instead of your system cursors |
 
 ## Plugin support
 

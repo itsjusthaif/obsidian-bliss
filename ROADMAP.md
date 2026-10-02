@@ -28,4 +28,4 @@
 
 - [ ] XP touches: a title bar with minimise/maximise/close glyphs, a "Start"-style status bar, balloon-tip notices, and a progress-bar style for task completion.
 
-- [ ] Optional sounds or cursors: cursors are done (Windows XP cursors in Style Settings: arrow and link hand). Still to do: working/busy pointer, focus ring, and sounds (needs a plugin or script, kept off by default).
+- [ ] Optional sounds or cursors: only as a snippet, kept off by default.
