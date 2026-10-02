@@ -2947,3 +2947,130 @@ body:not(#bp-x) .community-item.is-selected {
   border: 1px solid var(--bp-accent-line);
   border-radius: 6px;
 }
+
+/* ================= Code blocks: classic sunken frame, title bar and VS-style syntax colours ================= */
+body.theme-light {
+  --code-background: #fff;
+  --code-normal: #000;
+  --code-comment: #008000;
+  --code-keyword: #0000ff;
+  --code-string: #a31515;
+  --code-function: #000;
+  --code-value: #098658;
+  --code-property: #001080;
+  --code-operator: #000;
+  --code-punctuation: #000;
+  --code-tag: #800000;
+  --code-important: #f00;
+}
+body.theme-dark {
+  --code-background: #1e1e1e;
+  --code-normal: #d4d4d4;
+  --code-comment: #6a9955;
+  --code-keyword: #569cd6;
+  --code-string: #ce9178;
+  --code-function: #dcdcaa;
+  --code-value: #b5cea8;
+  --code-property: #9cdcfe;
+  --code-operator: #d4d4d4;
+  --code-punctuation: #d4d4d4;
+  --code-tag: #569cd6;
+  --code-important: #f44747;
+}
+body:not(#bp-x) .markdown-rendered pre {
+  background: var(--code-background);
+  color: var(--code-normal);
+  border: 1px solid #808080;
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0 #404040, inset -1px -1px 0 #fff;
+}
+body.theme-dark:not(#bp-x) .markdown-rendered pre {
+  border-color: var(--bp-border);
+  box-shadow: inset 1px 1px 0 #000, inset -1px -1px 0 var(--bp-border-soft);
+}
+body:not(#bp-x) .markdown-rendered pre:has(> .code-block-flair) {
+  padding-top: 28px;
+}
+body:not(#bp-x) .markdown-rendered pre > .code-block-flair {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  margin: 0;
+  padding: 0 8px;
+  font: 700 11px/20px var(--bp-font-ui);
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+  color: #0a246a;
+  background: linear-gradient(to bottom, #d4d0c8, #b8b4a8);
+  border: 0;
+  border-radius: 0;
+  opacity: 1;
+}
+body.theme-dark:not(#bp-x) .markdown-rendered pre > .code-block-flair {
+  color: var(--bp-text);
+  background: linear-gradient(to bottom, #4a525e, #383e47);
+}
+body:not(#bp-x) .markdown-rendered pre:has(> .code-block-flair) > .copy-code-button {
+  top: 2px;
+  right: 4px;
+  height: 16px;
+  padding: 0 6px;
+  font-size: 10px;
+  color: #0a246a;
+  background: var(--bp-grad-btn);
+  border: 1px solid #808080;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+body:not(#bp-x) .markdown-rendered pre code {
+  background: transparent;
+  border: 0;
+  padding: 0 12px;
+}
+
+/* Live preview: code lines form one framed block; the opening line is the title bar */
+body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  border-left: 1px solid #808080;
+  border-right: 1px solid #808080;
+  box-shadow: inset 1px 0 0 #404040, inset -1px 0 0 #fff;
+}
+body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+  position: relative;
+  min-height: 20px;
+  padding-block: 0;
+  line-height: 20px;
+  font: 700 11px/20px var(--bp-font-ui);
+  color: #0a246a;
+  background: linear-gradient(to bottom, #d4d0c8, #b8b4a8);
+  border-top: 1px solid #808080;
+}
+body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  border-bottom: 1px solid #808080;
+  box-shadow: inset 1px 0 0 #404040, inset -1px 0 0 #fff, inset 0 -1px 0 #fff;
+}
+body:not(#bp-x) .markdown-source-view.mod-cm6 .HyperMD-codeblock-begin .code-block-flair {
+  top: 0;
+  left: 8px;
+  right: auto;
+  padding: 0;
+  font: inherit;
+  letter-spacing: 0;
+  text-transform: none;
+  color: inherit;
+  background: none;
+  border: 0;
+}
+body.theme-dark:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  border-color: var(--bp-border);
+  box-shadow: inset 1px 0 0 #000, inset -1px 0 0 var(--bp-border-soft);
+}
+body.theme-dark:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+  color: var(--bp-text);
+  background: linear-gradient(to bottom, #4a525e, #383e47);
+}
+body.theme-dark:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  box-shadow: inset 1px 0 0 #000, inset -1px 0 0 var(--bp-border-soft), inset 0 -1px 0 var(--bp-border-soft);
+}
