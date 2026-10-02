@@ -17,9 +17,9 @@ published: false
 
 # Bliss
 
-> A Windows XP-inspired theme for Obsidian. Glossy Luna blues, bevelled buttons, a warm beige desk and the tidy "enterprise portal" layout of early-2000s intranets.
+> Obsidian, but it's 2001. Bevelled buttons, Luna blues and the gloriously boring look of the early web.
 
-**Bliss** brings back the golden age of the web: soft greens, orange hover glow, rounded chrome and dithered scrollbars, with a slate dark mode for late nights. Pick an XP accent, then fine-tune everything in Style Settings.
+**Bliss** pairs the glossy blues and soft greens of Windows XP with a warm beige desk and the tidy intranet-portal layout of the early web, with orange hover glow, rounded chrome, dithered scrollbars and a slate dark mode for late nights. Pick an XP accent, then fine-tune everything in Style Settings.
 
 ## At a glance
 
