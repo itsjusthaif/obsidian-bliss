@@ -4,7 +4,7 @@ A Windows XP-inspired theme for [Obsidian](https://obsidian.md/) on desktop.
 
 Remember when the web felt new? Bliss brings back the glossy blues and soft greens of Luna, bevelled buttons that look pressable, a warm beige desk and the tidy "enterprise portal" layout of early-2000s intranets. A slate dark mode is included for late nights.
 
-![Bliss cover](docs/Images/cover.png)
+![Bliss banner](docs/Images/banner.png)
 
 ## Contents
 
