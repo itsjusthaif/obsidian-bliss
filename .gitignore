@@ -1,0 +1,5 @@
+*.bak*
+code-testing/
+*-dump.json
+inspiration/
+.DS_Store
