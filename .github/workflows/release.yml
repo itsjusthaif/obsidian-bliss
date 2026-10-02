@@ -1,0 +1,28 @@
+name: Release
+on:
+  push:
+    tags: ["v*.*.*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Tag must match manifest.json
+        run: |
+          v=$(node -p "require('./manifest.json').version")
+          [ "refs/tags/v$v" = "$GITHUB_REF" ] || { echo "tag $GITHUB_REF does not match manifest version $v"; exit 1; }
+      - run: npm test
+      - name: Release notes from CHANGELOG.md
+        run: |
+          v=$(node -p "require('./manifest.json').version")
+          awk -v v="$v" '$0 ~ "^## \\[" v "\\]" {f=1; next} /^## \[/ {f=0} f' CHANGELOG.md > notes.md
+          [ -s notes.md ] || { echo "no CHANGELOG entry for $v"; exit 1; }
+      - name: Create release with theme assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" theme.css manifest.json --title "Bliss ${GITHUB_REF_NAME#v}" --notes-file notes.md
