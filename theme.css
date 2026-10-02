@@ -2995,6 +2995,15 @@ body:not(#bp-x) .markdown-rendered pre code {
 }
 
 /* Live preview: code lines form one framed block, matching reading view; the language badge keeps its original place */
+/* Space under headings equals the reading-view block margin (--p-spacing), so a block right after a heading looks the same in both modes */
+body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
+  padding-bottom: var(--p-spacing);
+}
+/* The h1/h2 rule is drawn 3px under the text so the gap below it stays empty, as in reading view */
+body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-header:is(.HyperMD-header-1, .HyperMD-header-2) {
+  background: linear-gradient(var(--bp-accent-soft-2), var(--bp-accent-soft-2)) no-repeat 0 calc(100% - var(--p-spacing) + 3px) / 100% 2px;
+  border-bottom: 0;
+}
 body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
   border-left: 1px solid #808080;
   border-right: 1px solid #808080;
