@@ -2,7 +2,7 @@
 
 Obsidian, but it's 2001. Bevelled buttons, Luna blues and the gloriously boring look of the early web.
 
-Bliss is a theme for [Obsidian](https://obsidian.md/) on desktop. It pairs the glossy blues and soft greens of Windows XP with a warm beige desk and the tidy intranet-portal layout of the early web. A slate dark mode is included for late nights.
+Bliss is a theme for [Obsidian](https://obsidian.md/) on desktop. It pairs the glossy blues and soft greens of taking inspiration from the early Websites and Windows design with a warm beige desk and the tidy intranet-portal layout of the early web. A slate dark mode is included for late nights. Bliss captures the ethos of early y2k and blends modern design cues for a retro-mod.
 
 ![Bliss banner](docs/Images/banner.png)
 
@@ -33,9 +33,9 @@ Callouts, code blocks and tables
 
 ![Notes](docs/Images/bliss-notes.png)
 
-Notebook Navigator, calendar and Obsidian Git
+Code blocks with language labels
 
-![Sidebars](docs/Images/bliss-sidebars.png)
+![Code blocks](docs/Images/bliss-code.png)
 
 Glossy settings: toggles, dropdowns and inputs in light and dark
 
