@@ -108,6 +108,11 @@ settings:
         title: Toggle switches follow the accent
         description: Off keeps the classic XP green for switched-on toggles.
         type: class-toggle
+    -
+        id: bp-taskbar-gradient
+        title: XP taskbar gradient
+        description: Curved, pressed-in Luna taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles. Off keeps the original flat-glossy gradient.
+        type: class-toggle
 */
 
 /* Colour tokens: defaults are Luna Blue on light. Presets and dark mode override these below. */
@@ -2869,13 +2874,32 @@ body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-nav-button
   width: 22px;
 }
 
-/* ---- Pane header: Luna taskbar gradient, sampled from the XP reference ---- */
+/* ---- Taskbar gradient (opt-in): Luna stops sampled from the XP reference ---- */
 body {
-  --bp-taskbar-blue: linear-gradient(to bottom, #3168d5 0%, #3888e9 3%, #4993e6 8%, #307be5 11%, #286add 14%, #245dd7 18%, #2257d5 26%, #245edc 50%, #2663e0 75%, #2561de 87%, #235bd9 91%, #1e50c4 95%, #1941a5 100%);
+  --bp-taskbar-luna: linear-gradient(to bottom, #3168d5 0%, #3888e9 3%, #4993e6 8%, #307be5 11%, #286add 14%, #245dd7 18%, #2257d5 26%, #245edc 50%, #2663e0 75%, #2561de 87%, #235bd9 91%, #1e50c4 95%, #1941a5 100%);
 }
-body:not(#bp-x) .view-header {
-  background: var(--bp-taskbar-blue);
-  border-bottom: 1px solid #0e2f7a;
+body:is(.bp-accent-olive, .bp-accent-silver, .bp-accent-orange, .bp-accent-native) {
+  --bp-taskbar-base: color-mix(in srgb, var(--bp-accent-mid) 80%, #000);
+  --bp-taskbar-luna: linear-gradient(to bottom,
+    color-mix(in srgb, var(--bp-taskbar-base) 88%, #fff) 0%,
+    color-mix(in srgb, var(--bp-taskbar-base) 70%, #fff) 3%,
+    color-mix(in srgb, var(--bp-taskbar-base) 65%, #fff) 8%,
+    color-mix(in srgb, var(--bp-taskbar-base) 82%, #fff) 11%,
+    color-mix(in srgb, var(--bp-taskbar-base) 92%, #fff) 14%,
+    color-mix(in srgb, var(--bp-taskbar-base) 97%, #fff) 18%,
+    var(--bp-taskbar-base) 26%,
+    color-mix(in srgb, var(--bp-taskbar-base) 96%, #fff) 50%,
+    color-mix(in srgb, var(--bp-taskbar-base) 92%, #fff) 75%,
+    color-mix(in srgb, var(--bp-taskbar-base) 94%, #fff) 87%,
+    color-mix(in srgb, var(--bp-taskbar-base) 92%, #000) 95%,
+    color-mix(in srgb, var(--bp-taskbar-base) 72%, #000) 100%);
+}
+body.bp-taskbar-gradient {
+  --bp-xp-blue: var(--bp-taskbar-luna);
+  --bp-grad-section: var(--bp-taskbar-luna);
+}
+body.bp-taskbar-gradient:not(#bp-x) .view-header {
+  border-bottom: 1px solid var(--bp-accent-dark);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
