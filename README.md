@@ -83,3 +83,7 @@ Bliss is licensed under the MIT License. You may modify and redistribute it, but
 ## Disclaimer
 
 This theme is provided as is. It modifies significant parts of the Obsidian interface, so it may break with future updates and may be incompatible with other custom CSS.
+
+---
+
+Made with ❤️ using [Claude](https://claude.ai).
