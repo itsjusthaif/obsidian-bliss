@@ -1359,6 +1359,32 @@ body:not(#bp-x) .setting-page-back-button:hover {
   border-radius: 4px;
 }
 
+/* ---- Reading-view code block: language flair sits above code, compact ---- */
+body:not(#bp-x) .markdown-rendered pre:has(> .code-block-flair) {
+  padding-top: 26px;
+}
+body:not(#bp-x) .code-block-flair {
+  top: 4px;
+  right: 6px;
+  padding: 1px 6px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bp-text-faint);
+  background: var(--bp-card);
+  border: 1px solid var(--bp-line-soft);
+  border-radius: 3px;
+}
+
+/* ---- Navigator calendar: shorter rows so six weeks fit the sidebar pane ---- */
+body:not(#bp-x) .nn-navigation-calendar-day-cell {
+  height: 44px;
+  aspect-ratio: auto;
+}
+body:not(#bp-x) .nn-navigation-calendar-day {
+  height: 42px;
+}
+
 /* ---- Settings group titles: breathing room above ---- */
 .modal.mod-settings .setting-item-heading,
 .modal.mod-settings .setting-item.setting-item-heading,
