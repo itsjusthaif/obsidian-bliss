@@ -80,6 +80,8 @@ Most other plugins work, but are not themed specifically.
 
 ## Customizing
 
+To preview every element Bliss styles, copy [docs/Bliss Theme Showcase.md](docs/Bliss%20Theme%20Showcase.md) into a vault. It has headings, callouts, code blocks, tables, tasks, tags and properties.
+
 Colours, gradients, radii and button states are CSS variables prefixed `--bp-` at the top of `theme.css`. Override them in a [CSS snippet](https://help.obsidian.md/Extending+Obsidian/CSS+snippets) to change the look without editing the theme.
 
 ## License
