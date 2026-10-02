@@ -23,10 +23,6 @@ const log = existsSync("CHANGELOG.md") ? readFileSync("CHANGELOG.md", "utf8") : 
 log.includes(`## [${manifest.version}]`) ? ok(`CHANGELOG has [${manifest.version}]`) : fail(`CHANGELOG.md has no "## [${manifest.version}]" entry`);
 
 try {
-  execSync("node build.mjs --check", { stdio: "pipe" }); ok("theme.css matches src/");
-} catch { fail("theme.css is stale: run node build.mjs"); }
-
-try {
   const tags = execSync("git tag --list", { encoding: "utf8" }).split(/\s+/);
   tags.includes(`v${manifest.version}`) ? ok(`tag v${manifest.version} exists`) : console.log(`note tag v${manifest.version} not created yet`);
   const dirty = execSync("git status --porcelain", { encoding: "utf8" }).trim();

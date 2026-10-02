@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Build and test tooling for the Bliss Obsidian theme. theme.css is generated from src/.",
+  "description": "Test tooling for the Bliss Obsidian theme.",
   "scripts": {
-    "build": "node build.mjs",
-    "check": "node build.mjs --check",
     "lint": "node tests/lint.mjs",
     "perf": "node tests/perf.mjs",
     "selectors": "node tests/selectors.mjs",
@@ -14,7 +12,7 @@
     "live": "node tests/live.mjs",
     "visual": "node tests/visual.mjs",
     "visual:update": "node tests/visual.mjs --update",
-    "test": "node build.mjs --check && node tests/lint.mjs && node tests/perf.mjs",
+    "test": "node tests/lint.mjs && node tests/perf.mjs",
     "test:live": "node tests/live.mjs && node tests/visual.mjs"
   }
 }
