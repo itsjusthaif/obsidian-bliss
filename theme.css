@@ -2396,11 +2396,11 @@ body .nn-list-group-header .nn-list-group-header-collapse-button svg {
 
 
 /* ---- Style Settings: let the label column keep its width next to long dropdown values ---- */
-.setting-item-control > select.dropdown {
+.vertical-tab-content .setting-item-control > select.dropdown {
   max-width: 200px;
   text-overflow: ellipsis;
 }
-.setting-item-info {
+.vertical-tab-content .setting-item-info {
   flex: 1 1 60%;
   min-width: 0;
 }
@@ -2624,26 +2624,29 @@ body.theme-dark {
 
 
 /* ================= Dialogs: one padding rule for every direct child, so any content (text, links, checkboxes, buttons) is inset the same ================= */
-body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) {
+body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) {
   --bp-modal-pad: 16px;
   box-sizing: border-box;
-  max-width: min(90vw, 560px);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
-body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > :not(.modal-header):not(.modal-title):not(.modal-close-button):not(.modal-header-button):not(.modal-bg) {
+/* Zero specificity, so a plugin that sets its own dialog width wins */
+:where(.modal:not(.mod-settings):not(.mod-sidebar-layout)) {
+  max-width: min(90vw, 560px);
+}
+body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > :not(.modal-header):not(.modal-title):not(.modal-close-button):not(.modal-header-button):not(.modal-bg) {
   box-sizing: border-box;
   padding-inline: var(--bp-modal-pad) !important;
 }
-body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > .modal-content {
+body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > .modal-content {
   padding-block: 14px 8px !important;
 }
-body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > :is(.modal-button-container, .modal-footer) {
+body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > :is(.modal-button-container, .modal-footer) {
   align-items: center;
   gap: 8px;
   margin: 0 !important;
   padding-block: 8px 14px !important;
 }
-body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > :last-child:not(.modal-header):not(.modal-button-container) {
+body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > :last-child:not(.modal-header):not(.modal-button-container) {
   padding-bottom: 14px;
 }
 
@@ -2857,4 +2860,265 @@ body:not(#bp-x) .community-item.is-selected {
   background: var(--bp-accent-soft);
   border: 1px solid var(--bp-accent-line);
   border-radius: 6px;
+}
+
+/* ================= Code blocks: classic sunken frame, title bar and VS-style syntax colours ================= */
+body.theme-light {
+  --code-background: #fff;
+  --code-normal: #000;
+  --code-comment: #008000;
+  --code-keyword: #0000ff;
+  --code-string: #a31515;
+  --code-function: #000;
+  --code-value: #098658;
+  --code-property: #001080;
+  --code-operator: #000;
+  --code-punctuation: #000;
+  --code-tag: #800000;
+  --code-important: #f00;
+}
+body.theme-dark {
+  --code-background: #1e1e1e;
+  --code-normal: #d4d4d4;
+  --code-comment: #6a9955;
+  --code-keyword: #569cd6;
+  --code-string: #ce9178;
+  --code-function: #dcdcaa;
+  --code-value: #b5cea8;
+  --code-property: #9cdcfe;
+  --code-operator: #d4d4d4;
+  --code-punctuation: #d4d4d4;
+  --code-tag: #569cd6;
+  --code-important: #f44747;
+}
+body:not(#bp-x) .markdown-rendered pre {
+  background: var(--code-background);
+  color: var(--code-normal);
+  border: 1px solid #808080;
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0 #404040, inset -1px -1px 0 #fff;
+}
+body.theme-dark:not(#bp-x) .markdown-rendered pre {
+  border-color: var(--bp-border);
+  box-shadow: inset 1px 1px 0 #000, inset -1px -1px 0 var(--bp-border-soft);
+}
+body:not(#bp-x) .markdown-rendered pre code {
+  background: transparent;
+  border: 0;
+  padding: 0 12px;
+}
+
+/* Live preview: code lines form one framed block, matching reading view; the language badge keeps its original place */
+/* Space under headings equals the reading-view block margin (--p-spacing), so a block right after a heading looks the same in both modes */
+body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
+  padding-bottom: var(--p-spacing);
+}
+/* The h1/h2 rule is drawn 3px under the text so the gap below it stays empty, as in reading view */
+body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-header:is(.HyperMD-header-1, .HyperMD-header-2) {
+  background: linear-gradient(var(--bp-accent-soft-2), var(--bp-accent-soft-2)) no-repeat 0 calc(100% - var(--p-spacing) + 3px) / 100% 2px;
+  border-bottom: 0;
+}
+body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  border-left: 1px solid #808080;
+  border-right: 1px solid #808080;
+  box-shadow: inset 1px 0 0 #404040, inset -1px 0 0 #fff;
+}
+body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+  border-top: 1px solid #808080;
+  box-shadow: inset 1px 1px 0 #404040, inset -1px 0 0 #fff;
+}
+body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  border-bottom: 1px solid #808080;
+  box-shadow: inset 1px 0 0 #404040, inset -1px -1px 0 #fff;
+}
+body.theme-dark:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  border-color: var(--bp-border);
+  box-shadow: inset 1px 0 0 #000, inset -1px 0 0 var(--bp-border-soft);
+}
+body.theme-dark:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+  box-shadow: inset 1px 1px 0 #000, inset -1px 0 0 var(--bp-border-soft);
+}
+body.theme-dark:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  box-shadow: inset 1px 0 0 #000, inset -1px -1px 0 var(--bp-border-soft);
+}
+
+/* ================= Canvas: XP window cards, desk surface, folder-tab groups ================= */
+body {
+  --canvas-color-1: #d9392c;
+  --canvas-color-2: #e8890c;
+  --canvas-color-3: #d4a900;
+  --canvas-color-4: #3a9a2a;
+  --canvas-color-5: #3a78d6;
+  --canvas-color-6: #7a4a9e;
+}
+body.theme-light {
+  --canvas-background: var(--bp-panel);
+  --canvas-dot-pattern: rgba(0, 0, 0, 0.22);
+}
+body.theme-dark {
+  --canvas-background: var(--bp-panel);
+  --canvas-dot-pattern: rgba(255, 255, 255, 0.18);
+}
+body:not(#bp-x) .canvas-node-container {
+  background: var(--bp-card);
+  border: 1px solid var(--bp-border);
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7), inset -1px -1px 0 rgba(0, 0, 0, 0.25), 2px 2px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+body.theme-dark:not(#bp-x) .canvas-node-container {
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.12), inset -1px -1px 0 rgba(0, 0, 0, 0.4), 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+body:not(#bp-x) .canvas-node-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 14px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--canvas-color, #8a8a8a) 70%, #fff), var(--canvas-color, #8a8a8a));
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+body:not(#bp-x) .canvas-node:not([class*="mod-canvas-color"]) .canvas-node-container::before {
+  background: linear-gradient(to bottom, #d4d0c8, #a8a498);
+}
+body:not(#bp-x) .canvas-node-content {
+  padding-top: 22px;
+}
+body:not(#bp-x) .canvas-node-group .canvas-node-container {
+  background: transparent;
+  border: 1px dashed var(--bp-border);
+  box-shadow: none;
+}
+body:not(#bp-x) .canvas-node-group .canvas-node-container::before {
+  display: none;
+}
+body:not(#bp-x) .canvas-group-label {
+  background: var(--bp-grad-tab);
+  color: var(--bp-navy);
+  font-family: var(--bp-font-ui);
+  font-weight: 700;
+  border: 1px solid var(--bp-border);
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  padding: 2px 10px;
+}
+body.theme-dark:not(#bp-x) .canvas-group-label {
+  color: var(--bp-text);
+}
+body:not(#bp-x) .canvas-display-path {
+  stroke: var(--bp-accent-line);
+  stroke-width: 2px;
+}
+body:not(#bp-x) .canvas-control-group,
+body:not(#bp-x) .canvas-card-menu {
+  background: var(--bp-card);
+  border: 1px solid var(--bp-border);
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.6);
+}
+body:not(#bp-x) .canvas-control-item,
+body:not(#bp-x) .canvas-card-menu .canvas-card-menu-button {
+  background: var(--bp-grad-btn);
+  border: 1px solid var(--bp-border-soft);
+  border-radius: 3px;
+}
+
+/* Graph view, dark mode only (light mode already suits the theme): nodes and links follow the accent */
+body.theme-dark {
+  --graph-line: color-mix(in srgb, var(--bp-accent-link) 38%, #4d5560);
+  --graph-node: var(--bp-accent-link);
+  --graph-node-focused: #ffb454;
+  --graph-node-tag: #9ad07a;
+  --graph-node-attachment: #c9a6f0;
+  --graph-node-unresolved: #6b7280;
+  --graph-text: #e4e8ee;
+}
+body.theme-dark.bp-accent-orange {
+  --graph-node-focused: #8ecbff;
+}
+body.theme-dark.bp-accent-olive {
+  --graph-node-tag: #e8c27a;
+}
+
+/* ================= Plugin dialogs: shared button states and TaskNotes ================= */
+/* Primary buttons had hover but no pressed state, because the later hover rule outranked the earlier :active */
+body:not(#bp-x) button.mod-cta:active {
+  background: linear-gradient(to bottom, var(--bp-accent-bottom) 0%, var(--bp-accent-mid) 100%);
+  box-shadow: inset 0 0 0 2px var(--bp-ring-active), inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+body:not(#bp-x) button.mod-cta:focus-visible {
+  outline: 2px solid var(--bp-ring-hover);
+  outline-offset: 1px;
+}
+
+/* Plugin buttons that restyle themselves (transparent, accent-outlined, flat) get the standard secondary button look; add new plugin buttons to this list */
+body:not(#bp-x) .tasknotes-plugin :is(.tn-task-modal__open-note-button, .pomodoro-view__time-adjust-button, .pomodoro-view__pause-button, .pomodoro-view__stop-button, .pomodoro-view__skip-break-button, .stats-view__filter-button) {
+  background: var(--bp-xp-cream);
+  border: 1px solid var(--bp-btn-border);
+  border-radius: var(--bp-btn-radius);
+  box-shadow: var(--bp-btn-shadow);
+  color: var(--bp-text);
+  font-weight: normal;
+}
+body:not(#bp-x) .tasknotes-plugin :is(.tn-task-modal__open-note-button, .pomodoro-view__time-adjust-button, .pomodoro-view__pause-button, .pomodoro-view__stop-button, .pomodoro-view__skip-break-button, .stats-view__filter-button):hover {
+  background: var(--bp-xp-cream);
+  border: 1px solid var(--bp-btn-border);
+  box-shadow: var(--bp-btn-shadow-hover);
+  color: var(--bp-text);
+}
+body:not(#bp-x) .tasknotes-plugin :is(.tn-task-modal__open-note-button, .pomodoro-view__time-adjust-button, .pomodoro-view__pause-button, .pomodoro-view__stop-button, .pomodoro-view__skip-break-button, .stats-view__filter-button):active {
+  background: var(--bp-pressed);
+  border: 1px solid var(--bp-btn-border);
+  box-shadow: var(--bp-btn-shadow-active);
+  color: var(--bp-text);
+}
+body:not(#bp-x) .tasknotes-plugin :is(.tn-task-modal__open-note-button, .pomodoro-view__time-adjust-button, .pomodoro-view__pause-button, .pomodoro-view__stop-button, .pomodoro-view__skip-break-button, .stats-view__filter-button):focus-visible {
+  outline: 2px solid var(--bp-ring-hover);
+  outline-offset: 1px;
+}
+/* Plugin primary buttons that draw their own flat accent fill */
+body:not(#bp-x) .tasknotes-plugin .pomodoro-view__start-button {
+  background: var(--bp-xp-blue);
+  border: 1px solid var(--bp-accent-dark);
+  border-radius: var(--bp-btn-radius);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+body:not(#bp-x) .tasknotes-plugin .pomodoro-view__start-button:hover {
+  background: var(--bp-xp-blue);
+  box-shadow: inset 0 0 0 2px var(--bp-ring-hover), 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+body:not(#bp-x) .tasknotes-plugin .pomodoro-view__start-button:active {
+  background: linear-gradient(to bottom, var(--bp-accent-bottom) 0%, var(--bp-accent-mid) 100%);
+  box-shadow: inset 0 0 0 2px var(--bp-ring-active), inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+body:not(#bp-x) .tasknotes-plugin .pomodoro-view__start-button:focus-visible {
+  outline: 2px solid var(--bp-ring-hover);
+  outline-offset: 1px;
+}
+/* Many plugins use the accent as text and border colour; the raw dark-mode accent is too deep for that on slate */
+body.theme-dark {
+  --interactive-accent: var(--bp-accent-top);
+  --interactive-accent-hover: var(--bp-accent-hover-top);
+}
+
+/* TaskNotes reuses Obsidian's .metadata-container for its task information; undo the Properties factsheet look there */
+body:not(#bp-x) .tasknotes-plugin .metadata-container {
+  background: none;
+  border: 0;
+  border-top: 0.5px solid var(--background-modifier-border);
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  overflow: visible;
+}
+/* The split layout pulls the Details column up by the container padding; keep its label clear of the clipped edge */
+@media (min-width: 900px) {
+  body:not(#bp-x) .tasknotes-plugin.minimalist-task-modal.split-layout-enabled.expanded .modal-split-right .detail-label {
+    padding-top: calc(var(--size-4-3) + var(--size-4-4));
+  }
 }
