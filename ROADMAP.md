@@ -1,6 +1,16 @@
 # Polish and coverage
 
-- [ ] Plugin skins you already have installed: Tasks, TaskNotes, Dataview tables, Day Planner, Excalidraw, Omnisearch, Linter, Iconic/Icon Folder, Banners and Home Tab. These are the most likely places where default Obsidian styling still shows through.
+- [ ] Plugin skins you already have installed. These are the most likely places where default Obsidian styling still shows through.
+  - [ ] Tasks
+  - [ ] TaskNotes
+  - [ ] Dataview tables
+  - [ ] Day Planner
+  - [ ] Excalidraw
+  - [ ] Omnisearch
+  - [ ] Linter
+  - [ ] Iconic/Icon Folder
+  - [ ] Banners
+  - [ ] Home Tab. 
 
 - [ ] Canvas and Graph view: Luna-style nodes, group frames, edges and graph controls.
 
@@ -12,7 +22,7 @@
 
 ## New features (via Style Settings)
 
-- [ ] More presets: Olive Green and Silver (the other real XP themes), plus Royale and Zune, and optionally a Win98 classic mode.
+- [ ] More presets: Royale and Zune, and optionally a Win98 classic mode. (Luna Blue, Olive Green, Silver and Orange already exist.)
 
 - [ ] Per-element toggles: glossiness, bevel depth, corner radius slider, and desk texture on or off.
 
