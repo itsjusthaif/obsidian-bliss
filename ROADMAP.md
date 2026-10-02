@@ -1,8 +1,8 @@
 # Polish and coverage
 
 - [ ] Plugin skins you already have installed. These are the most likely places where default Obsidian styling still shows through.
-  - [ ] Tasks
-  - [ ] TaskNotes
+  - [x] Tasks - No issues noted
+  - [ ] TaskNotes 
   - [ ] Dataview tables
   - [ ] Day Planner
   - [ ] Excalidraw
@@ -10,7 +10,7 @@
   - [ ] Linter
   - [ ] Iconic/Icon Folder
   - [ ] Banners
-  - [ ] Home Tab. 
+  - [X] Home Tab - No issues noted
 
 - [x] Canvas and Graph view: Luna-style nodes, group frames, edges and graph controls.
 
@@ -25,5 +25,7 @@
 - [ ] More presets: Zune, and optionally a Win98 classic mode. (Luna Blue, Olive Green, Silver and Orange already exist.)
 
 - [ ] Per-element toggles: glossiness, bevel depth, corner radius slider, and desk texture on or off.
+
+~~XP touches: a title bar with minimise/maximise/close glyphs, a "Start"-style status bar, balloon-tip notices, and a progress-bar style for task completion.~~
 
 - [ ] Optional sounds: needs a plugin or script, kept off by default.

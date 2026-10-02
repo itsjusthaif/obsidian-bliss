@@ -32,6 +32,7 @@ Bliss is an Obsidian theme. The shipped files are `theme.css` and `manifest.json
 - Add cascaded showcase images in `docs/Images/releases/vX.Y.0/`, using the same rounded beige desk panel with overlapping windows as the README images.
 - Capture them from the dummy-content demo vault only, never from a personal vault. Only dummy content may appear in a screenshot, and no third-party artwork such as the Microsoft XP wallpaper.
 - Embed the image in the release notes and link the latest one from the README under "What's new".
+- Update README file as needed with latest cascade images of sections that were pre-existing. 
 
 ## Bug fixes
 
