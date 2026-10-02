@@ -2868,3 +2868,35 @@ body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-nav-button
   padding-inline: 0 !important;
   width: 22px;
 }
+
+/* ---- Pane header: Luna taskbar gradient, sampled from the XP reference ---- */
+body {
+  --bp-taskbar-blue: linear-gradient(to bottom, #3168d5 0%, #3888e9 3%, #4993e6 8%, #307be5 11%, #286add 14%, #245dd7 18%, #2257d5 26%, #245edc 50%, #2663e0 75%, #2561de 87%, #235bd9 91%, #1e50c4 95%, #1941a5 100%);
+}
+body:not(#bp-x) .view-header {
+  background: var(--bp-taskbar-blue);
+  border-bottom: 1px solid #0e2f7a;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* ---- Sunset strips: list date groups and Git sections ---- */
+body {
+  --bp-sunset-border: #b88a30;
+  --bp-sunset-text: #5a3a00;
+}
+body.theme-dark {
+  --bp-sunset-border: #8a6a30;
+  --bp-sunset-text: #f2d9a0;
+}
+body:not(#bp-x) .nn-list-group-header,
+body:not(#bp-x) .git-view .nav-folder-title {
+  background: var(--bp-grad-orange) !important;
+  border-top: 1px solid var(--bp-sunset-border);
+  border-bottom: 1px solid var(--bp-sunset-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  color: var(--bp-sunset-text);
+}
+body:not(#bp-x) .nn-list-group-header .nn-list-group-header-text,
+body:not(#bp-x) .git-view .nav-folder-title .nav-folder-title-content {
+  color: var(--bp-sunset-text);
+}
