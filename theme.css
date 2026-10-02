@@ -3027,3 +3027,104 @@ body.theme-dark:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codebl
 body.theme-dark:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
   box-shadow: inset 1px 0 0 #000, inset -1px -1px 0 var(--bp-border-soft);
 }
+
+/* ================= Canvas: XP window cards, desk surface, folder-tab groups ================= */
+body {
+  --canvas-color-1: #d9392c;
+  --canvas-color-2: #e8890c;
+  --canvas-color-3: #d4a900;
+  --canvas-color-4: #3a9a2a;
+  --canvas-color-5: #3a78d6;
+  --canvas-color-6: #7a4a9e;
+}
+body.theme-light {
+  --canvas-background: var(--bp-panel);
+  --canvas-dot-pattern: rgba(0, 0, 0, 0.22);
+}
+body.theme-dark {
+  --canvas-background: var(--bp-panel);
+  --canvas-dot-pattern: rgba(255, 255, 255, 0.18);
+}
+body:not(#bp-x) .canvas-node-container {
+  background: var(--bp-card);
+  border: 1px solid var(--bp-border);
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7), inset -1px -1px 0 rgba(0, 0, 0, 0.25), 2px 2px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+body.theme-dark:not(#bp-x) .canvas-node-container {
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.12), inset -1px -1px 0 rgba(0, 0, 0, 0.4), 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+body:not(#bp-x) .canvas-node-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 14px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--canvas-color, #8a8a8a) 70%, #fff), var(--canvas-color, #8a8a8a));
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+body:not(#bp-x) .canvas-node:not([class*="mod-canvas-color"]) .canvas-node-container::before {
+  background: linear-gradient(to bottom, #d4d0c8, #a8a498);
+}
+body:not(#bp-x) .canvas-node-content {
+  padding-top: 22px;
+}
+body:not(#bp-x) .canvas-node-group .canvas-node-container {
+  background: transparent;
+  border: 1px dashed var(--bp-border);
+  box-shadow: none;
+}
+body:not(#bp-x) .canvas-node-group .canvas-node-container::before {
+  display: none;
+}
+body:not(#bp-x) .canvas-group-label {
+  background: var(--bp-grad-tab);
+  color: var(--bp-navy);
+  font-family: var(--bp-font-ui);
+  font-weight: 700;
+  border: 1px solid var(--bp-border);
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  padding: 2px 10px;
+}
+body.theme-dark:not(#bp-x) .canvas-group-label {
+  color: var(--bp-text);
+}
+body:not(#bp-x) .canvas-display-path {
+  stroke: var(--bp-accent-line);
+  stroke-width: 2px;
+}
+body:not(#bp-x) .canvas-control-group,
+body:not(#bp-x) .canvas-card-menu {
+  background: var(--bp-card);
+  border: 1px solid var(--bp-border);
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.6);
+}
+body:not(#bp-x) .canvas-control-item,
+body:not(#bp-x) .canvas-card-menu .canvas-card-menu-button {
+  background: var(--bp-grad-btn);
+  border: 1px solid var(--bp-border-soft);
+  border-radius: 3px;
+}
+
+/* Graph view, dark mode only (light mode already suits the theme): nodes and links follow the accent */
+body.theme-dark {
+  --graph-line: color-mix(in srgb, var(--bp-accent-link) 38%, #4d5560);
+  --graph-node: var(--bp-accent-link);
+  --graph-node-focused: #ffb454;
+  --graph-node-tag: #9ad07a;
+  --graph-node-attachment: #c9a6f0;
+  --graph-node-unresolved: #6b7280;
+  --graph-text: #e4e8ee;
+}
+body.theme-dark.bp-accent-orange {
+  --graph-node-focused: #8ecbff;
+}
+body.theme-dark.bp-accent-olive {
+  --graph-node-tag: #e8c27a;
+}
