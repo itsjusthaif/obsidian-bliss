@@ -8,6 +8,7 @@
     "lint": "node tests/lint.mjs",
     "perf": "node tests/perf.mjs",
     "perf:live": "node tests/perf-live.mjs",
+    "parity": "node tests/parity.mjs",
     "selectors": "node tests/selectors.mjs",
     "release-check": "node tests/release-check.mjs",
     "live": "node tests/live.mjs",

@@ -1,0 +1,21 @@
+# Polish and coverage
+
+- [ ] Plugin skins you already have installed: Tasks, TaskNotes, Dataview tables, Day Planner, Excalidraw, Omnisearch, Linter, Iconic/Icon Folder, Banners and Home Tab. These are the most likely places where default Obsidian styling still shows through.
+
+- [ ] Canvas and Graph view: Luna-style nodes, group frames, edges and graph controls.
+
+- [ ] Code blocks and syntax highlighting: a Luna palette, a header bar with a copy button, and light and dark variants.
+
+- [ ] Mobile and narrow layouts: check the tabs, dialogs and NN panes, and use a larger touch target for the toggles and sliders.
+
+- [x] Dark mode parity audit: no light surfaces remain in dark mode across the workspace, palette, switcher, context menu and all 45 settings tabs (`npm run parity`).
+
+## New features (via Style Settings)
+
+- [ ] More presets: Olive Green and Silver (the other real XP themes), plus Royale and Zune, and optionally a Win98 classic mode.
+
+- [ ] Per-element toggles: glossiness, bevel depth, corner radius slider, and desk texture on or off.
+
+- [ ] XP touches: a title bar with minimise/maximise/close glyphs, a "Start"-style status bar, balloon-tip notices, and a progress-bar style for task completion.
+
+- [ ] Optional sounds or cursors: only as a snippet, kept off by default.
