@@ -1,0 +1,75 @@
+/* ================= Right sidebar: Notebook Navigator calendar ================= */
+body {
+  --nn-theme-calendar-header-color: var(--bp-accent-text);
+  --nn-theme-calendar-weekday-color: var(--bp-text-faint);
+  --nn-theme-calendar-week-color: var(--bp-text-faint);
+  --nn-theme-calendar-day-in-month-color: var(--bp-text);
+  --nn-theme-calendar-day-outside-month-color: var(--bp-text-dim);
+  --nn-theme-calendar-weekend-bg: transparent;
+  --nn-theme-calendar-hover-bg: var(--bp-accent-soft);
+  --nn-theme-calendar-day-today-color: #fff;
+  --nn-theme-calendar-day-today-bg: var(--bp-accent-mid);
+  --nn-theme-calendar-day-active-border-color: var(--bp-accent-text);
+  --nn-theme-calendar-day-active-border-width: 2px;
+  --nn-theme-calendar-note-indicator-color: var(--bp-accent-mid);
+  --nn-calendar-cell-radius: 6px;
+  --nn-calendar-header-chip-bg: transparent;
+  --nn-calendar-week-gap: 0px;
+}
+.nn-navigation-calendar button[class*="nn-navigation-calendar"],
+.nn-navigation-calendar button[class*="nn-navigation-calendar"]:hover,
+.nn-navigation-calendar button[class*="nn-navigation-calendar"]:active {
+  border: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  padding-block: 0 !important;
+}
+.nn-navigation-calendar button[class*="nn-navigation-calendar"]:not(.nn-navigation-calendar-day):not(.has-feature-image) {
+  background: transparent !important;
+}
+.nn-navigation-calendar button.nn-navigation-calendar-day:not(.has-feature-image):not(.has-feature-image-key) {
+  background: transparent !important;
+}
+.nn-navigation-calendar button.nn-navigation-calendar-day:not(.has-feature-image):not(.has-feature-image-key):hover {
+  background: var(--nn-theme-calendar-hover-bg) !important;
+}
+.nn-navigation-calendar button[class*="nn-navigation-calendar"]:not(.nn-navigation-calendar-day):hover {
+  background: var(--nn-theme-calendar-hover-bg) !important;
+}
+.nn-navigation-calendar-day-cell {
+  border-bottom: 1px solid var(--bp-line-soft);
+  border-right: 1px solid var(--bp-line-soft);
+  box-sizing: border-box;
+}
+.nn-navigation-calendar-day.is-today {
+  border-radius: 999px !important;
+}
+.nn-navigation-calendar-day.is-today .nn-navigation-calendar-day-number {
+  color: #fff;
+}
+.nn-navigation-calendar-month {
+  font-weight: 700;
+}
+.nn-navigation-calendar-month .nn-navigation-calendar-quarter-button {
+  border: 1px solid var(--bp-accent-line) !important;
+  border-radius: 999px !important;
+  color: var(--bp-accent-text);
+  font-size: 9px;
+  padding: 1px 6px !important;
+}
+.nn-navigation-calendar-weekdays {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.nn-navigation-calendar button.nn-navigation-calendar-nav-button {
+  border-radius: 999px !important;
+  color: var(--bp-text-faint);
+}
+.nn-navigation-calendar button.nn-navigation-calendar-today {
+  border-radius: 999px !important;
+  color: var(--bp-accent-link);
+  font-size: 10px;
+  font-weight: 700;
+  padding-inline: 8px !important;
+}
+

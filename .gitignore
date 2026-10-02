@@ -4,3 +4,5 @@ code-testing/
 inspiration/
 .DS_Store
 backups/
+tests/snapshots/
+node_modules/

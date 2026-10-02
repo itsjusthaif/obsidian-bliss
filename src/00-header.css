@@ -1,0 +1,117 @@
+/* ---------------------------------------------------------------------------
+
+Bliss Theme by @itsjusthaif 
+User interface replacement for Obsidian.
+
+Obsidian, but it's 2001. Bevelled buttons, Luna blues and the gloriously
+boring look of the early web.
+
+Bliss pairs the glossy blues and soft greens of Windows XP with a warm beige
+desk and the tidy intranet-portal layout of the early web. It is nostalgia you
+can take notes in.
+
+Rounded Luna chrome, orange hover glow, dithered scrollbars and a slate dark
+mode for late nights. Pick an XP accent (Luna, Olive, Silver, Orange) or use
+your own, then make it yours in Style Settings. 
+
+Readme: https://github.com/itsjusthaif/obsidian-bliss
+
+MIT License. Keep this notice if you redistribute or fork any part of this file.
+
+-----------------------------------------------------------------------------
+*/
+
+/* @settings
+
+name: Bliss
+id: bliss
+settings:
+    -
+        id: bp-accent-preset
+        title: Accent colour
+        description: XP-era colour schemes. Applies to title bars, primary buttons, sliders, dropdown arrows, links and selection. Obsidian accent uses the colour from Appearance settings.
+        type: class-select
+        allowEmpty: false
+        default: bp-accent-luna
+        options:
+            -
+                label: Luna Blue
+                value: bp-accent-luna
+            -
+                label: Olive Green
+                value: bp-accent-olive
+            -
+                label: Silver
+                value: bp-accent-silver
+            -
+                label: Orange
+                value: bp-accent-orange
+            -
+                label: Obsidian accent
+                value: bp-accent-native
+    -
+        id: bp-paper
+        title: Notes list background
+        description: Background of the middle Notebook Navigator pane.
+        type: class-select
+        allowEmpty: false
+        default: bp-paper-warm
+        options:
+            -
+                label: Off (flat)
+                value: bp-paper-flat
+            -
+                label: Warm paper
+                value: bp-paper-warm
+            -
+                label: Cream
+                value: bp-paper-cream
+    -
+        id: bp-note-fade
+        title: Note background fade
+        description: Soft top-to-bottom tint behind the open note. Dark mode uses a subtle slate fade.
+        type: class-select
+        allowEmpty: false
+        default: bp-note-flat
+        options:
+            -
+                label: Off (flat)
+                value: bp-note-flat
+            -
+                label: Warm paper
+                value: bp-note-warm
+            -
+                label: Cream
+                value: bp-note-cream
+    -
+        id: bp-ui-font
+        title: Interface text size
+        description: Size of labels, buttons, sidebars and menus. Note text size is set in Appearance > Font size.
+        type: variable-number
+        default: 12
+        format: px
+        min: 10
+        max: 14
+        step: 1
+    -
+        id: bp-classic-square
+        title: Classic square corners
+        description: Turns rounded boxes, pills and buttons square for the original intranet look. Toggles become square too; sliders keep their round thumb.
+        type: class-toggle
+    -
+        id: bp-no-texture
+        title: Disable desk texture
+        description: Removes the fine dot pattern from the window chrome and ribbon.
+        type: class-toggle
+    -
+        id: bp-toggle-follows-accent
+        title: Toggle switches follow the accent
+        description: Off keeps the classic XP green for switched-on toggles.
+        type: class-toggle
+    -
+        id: bp-xp-nostalgia
+        title: Windows XP Nostalgia Mode
+        description: Full Luna flashback. Curved, pressed-in taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles, plus glossy sunset-orange strips on list date groups and Git sections. Off keeps the original look.
+        type: class-toggle
+*/
+

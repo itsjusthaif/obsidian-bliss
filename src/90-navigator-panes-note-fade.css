@@ -1,0 +1,48 @@
+/* ================= Notebook Navigator: gradient panes ================= */
+body {
+  --nn-theme-list-bg: color-mix(in srgb, var(--bp-list-top) 50%, var(--bp-list-bottom));
+  --nn-theme-nav-bg: color-mix(in srgb, var(--bp-nav-top) 50%, var(--bp-nav-bottom));
+}
+body .nn-list-pane {
+  background: linear-gradient(to bottom, var(--bp-list-top), var(--bp-list-bottom)) !important;
+}
+body .nn-navigation-pane {
+  background: linear-gradient(to bottom, var(--bp-nav-top), var(--bp-nav-bottom)) !important;
+}
+body .nn-list-pane-scroller,
+body .nn-list-pane-content,
+body .nn-list-pane-panel,
+body .nn-navigation-pane-scroller,
+body .nn-navigation-pane-content,
+body .nn-navigation-pane-panel {
+  background: transparent !important;
+}
+
+/* ================= Note background fade ================= */
+body {
+  --bp-note-top: var(--bp-paper);
+  --bp-note-bottom: var(--bp-paper);
+}
+body.bp-note-warm {
+  --bp-note-top: #fffffb;
+  --bp-note-bottom: #f9f6ea;
+}
+body.bp-note-cream {
+  --bp-note-top: #fefdf8;
+  --bp-note-bottom: #f3f0e3;
+}
+body.theme-dark.bp-note-warm,
+body.theme-dark.bp-note-cream {
+  --bp-note-top: #33383f;
+  --bp-note-bottom: #2b3037;
+}
+body .workspace-split.mod-root .view-content {
+  background: linear-gradient(to bottom, var(--bp-note-top), var(--bp-note-bottom)) !important;
+}
+body .workspace-split.mod-root .markdown-source-view,
+body .workspace-split.mod-root .markdown-preview-view,
+body .workspace-split.mod-root .cm-editor,
+body .workspace-split.mod-root .cm-scroller {
+  background: transparent !important;
+}
+

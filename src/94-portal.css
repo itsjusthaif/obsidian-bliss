@@ -1,0 +1,101 @@
+/* ================= Portal refinements: desk texture ================= */
+body:not(.bp-no-texture) .app-container,
+body:not(.bp-no-texture) .workspace-ribbon,
+body:not(.bp-no-texture) .titlebar,
+body:not(.bp-no-texture) .mod-root .workspace-tabs .workspace-tab-header-container {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='black' fill-opacity='0.06'/></svg>");
+}
+body.theme-dark:not(.bp-no-texture) .app-container,
+body.theme-dark:not(.bp-no-texture) .workspace-ribbon,
+body.theme-dark:not(.bp-no-texture) .titlebar,
+body.theme-dark:not(.bp-no-texture) .mod-root .workspace-tabs .workspace-tab-header-container {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='white' fill-opacity='0.04'/></svg>");
+}
+
+/* ================= Portal refinements: current-row marker (pale highlight + orange bar) ================= */
+body .nn-file.nn-selected,
+body .nn-virtual-file-item.nn-selected .nn-file,
+body .nn-navitem.nn-selected,
+body .nav-file-title.is-active,
+body .tree-item-self.is-active {
+  background: var(--bp-current);
+  box-shadow: inset 3px 0 0 var(--bp-orange);
+}
+body .nn-navitem.nn-selected .nn-navitem-name,
+body .nn-file.nn-selected .nn-file-name-label {
+  font-weight: 700;
+}
+
+/* ================= Portal refinements: section kickers and panel headers ================= */
+.metadata-properties-title,
+.git-view .nav-folder-title .tree-item-inner,
+.embedded-backlinks .backlink-pane > .tree-item-self .tree-item-inner {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.nn-list-group-header-text,
+.vertical-tab-header-group-title,
+.modal.mod-settings .setting-item-heading .setting-item-name {
+  letter-spacing: 0.06em;
+}
+.embedded-backlinks .backlink-pane > .tree-item-self .tree-item-flair,
+.git-view .nav-folder-title .tree-item-flair {
+  font-weight: 700;
+}
+
+/* ================= Portal refinements: breadcrumb separators as ">" ================= */
+.view-header-breadcrumb-separator {
+  color: #fff;
+  font-size: 0;
+  margin: 0 2px;
+  opacity: 1;
+}
+.view-header-breadcrumb-separator::after {
+  color: #fff;
+  content: ">";
+  font-size: 11px;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ================= Portal refinements: classic square corners (optional) ================= */
+body.bp-classic-square {
+  --radius-s: 0;
+  --radius-m: 0;
+  --radius-l: 0;
+  --input-radius: 0;
+  --button-radius: 0;
+  --checkbox-radius: 0;
+  --tag-radius: 0;
+  --tab-radius: 0;
+  --tab-radius-active: 0;
+  --clickable-icon-radius: 0;
+  --callout-radius: 0;
+  --nn-theme-navitem-border-radius: 0;
+  --nn-theme-file-border-radius: 0;
+  --nn-theme-file-feature-border-radius: 0;
+  --nn-theme-file-tag-border-radius: 0;
+  --nn-theme-file-property-border-radius: 0;
+}
+body.bp-classic-square :is(
+  button, .clickable-icon, .nn-icon-button, .nn-list-group-header-collapse-button,
+  input[type="text"], input[type="search"], input[type="number"], input[type="email"], input[type="url"], input[type="password"],
+  textarea, select, .dropdown, .modal, .modal-header-button, .menu, .menu-item, .popover, .suggestion-container,
+  .callout, .metadata-container, .nn-file, .nn-file-content, .nn-file-tag, .nn-file-property, a.tag, .cm-hashtag,
+  .status-bar-item, .workspace-tab-header, .workspace-tab-header-inner, .vertical-tab-nav-item, .nav-file-title,
+  .nav-folder-title, .tree-item-self, .setting-group, .setting-items, .git-view .nav-action-button,
+  .git-view .git-tools .type, .git-view .tree-item-flair, .git-view .commit-msg-input,
+  .markdown-rendered pre, .markdown-rendered table, .markdown-rendered code, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track
+) {
+  border-radius: 0 !important;
+}
+body.bp-classic-square .nn-navigation-calendar button[class*="nn-navigation-calendar"],
+body.bp-classic-square .nn-navigation-calendar-day.is-today,
+body.bp-classic-square .nn-navigation-calendar[data-highlight-today='true'] .nn-navigation-calendar-day.is-today::before {
+  border-radius: 0 !important;
+}
+body.bp-classic-square .workspace-split.mod-root {
+  border-top-left-radius: 0;
+}
+

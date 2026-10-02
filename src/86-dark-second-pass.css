@@ -1,0 +1,63 @@
+/* ================= Dark mode: second pass (surfaces that were still light) ================= */
+body.theme-dark {
+  --nn-theme-nav-bg: var(--bp-panel);
+  --nn-theme-list-bg: var(--bp-paper);
+  --nn-theme-list-separator-color: var(--bp-line-soft);
+  --nn-theme-file-selected-bg: color-mix(in srgb, var(--bp-accent-mid) 28%, #2f343b);
+  --nn-theme-file-selected-inactive-bg: color-mix(in srgb, var(--bp-accent-mid) 20%, #2f343b);
+  --nn-theme-file-selected-border-color: var(--bp-accent-mid);
+  --nn-theme-foreground: var(--bp-text);
+}
+body.theme-dark .nn-list-pane,
+body.theme-dark .nn-list-pane-scroller,
+body.theme-dark .nn-list-pane-content,
+body.theme-dark .nn-list-pane-panel {
+  background: var(--bp-paper);
+}
+body.theme-dark .nn-file-name-label,
+body.theme-dark .nn-file-name {
+  color: var(--bp-text);
+}
+body.theme-dark .nn-file-preview,
+body.theme-dark .nn-file-date {
+  color: var(--bp-text-muted);
+}
+body.theme-dark .nn-list-group-header {
+  background: var(--bp-card-alt);
+  border-bottom-color: var(--bp-line-soft);
+  color: var(--bp-text-muted);
+}
+body.theme-dark .mod-root .workspace-tab-header .workspace-tab-header-inner {
+  background: var(--bp-grad-tab);
+  border-color: var(--bp-border);
+  color: var(--bp-text);
+}
+body.theme-dark .mod-root .workspace-tab-header:hover .workspace-tab-header-inner {
+  background: var(--bp-grad-btn-hover);
+}
+body.theme-dark .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner {
+  background: var(--bp-panel);
+}
+body.theme-dark .workspace-tab-header-inner-title,
+body.theme-dark .mod-root .workspace-tab-header .workspace-tab-header-inner-icon {
+  color: var(--bp-text);
+}
+body.theme-dark .markdown-rendered,
+body.theme-dark .cm-s-obsidian,
+body.theme-dark .markdown-source-view,
+body.theme-dark .markdown-preview-view {
+  color: var(--bp-text);
+}
+body.theme-dark .markdown-rendered code,
+body.theme-dark .cm-s-obsidian span.cm-inline-code,
+body.theme-dark .markdown-rendered pre {
+  background: var(--bp-card-alt);
+  color: var(--bp-text);
+}
+body.theme-dark .menu,
+body.theme-dark .suggestion-container,
+body.theme-dark .prompt,
+body.theme-dark .modal:not(.mod-settings) {
+  border-color: var(--bp-border);
+}
+

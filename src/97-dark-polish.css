@@ -1,0 +1,44 @@
+/* ================= Dark polish: side panel gradient, active sidebar tab icon ================= */
+body.theme-dark {
+  --bp-nav-top: #383e46;
+  --bp-nav-bottom: #2e333a;
+  --nn-theme-nav-bg: #333940;
+}
+body .nn-shortcut-pinned,
+body .nn-navigation-pane-chrome {
+  background: transparent !important;
+}
+body.theme-dark .nn-shortcut-pinned {
+  border-bottom-color: rgba(0, 0, 0, 0.35);
+}
+body.theme-dark .nn-shortcut-pinned::after {
+  display: none;
+}
+body.theme-dark .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header-container {
+  background: linear-gradient(to bottom, #3a4049 0%, #2f343b 100%);
+  border-bottom: 1px solid var(--bp-border);
+  --icon-color: #aab4c4;
+  --icon-color-hover: #fff;
+  --icon-color-active: #fff;
+  --icon-color-focused: #fff;
+}
+body.theme-dark .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header,
+body.theme-dark .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header .workspace-tab-header-inner-icon {
+  color: #aab4c4;
+}
+body.theme-dark .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active {
+  background: var(--bp-xp-blue);
+  border-color: var(--bp-accent-top);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+body.theme-dark .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active,
+body.theme-dark .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+body.theme-dark .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active svg {
+  color: #fff;
+}
+body.theme-dark .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header:not(.is-active):hover {
+  background: var(--bp-grad-btn-hover);
+  color: #fff;
+}
+
+

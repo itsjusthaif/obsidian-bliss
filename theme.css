@@ -2713,26 +2713,26 @@ body.theme-dark {
 
 
 /* ================= Dialogs: one padding rule for every direct child, so any content (text, links, checkboxes, buttons) is inset the same ================= */
-body:not(#bp-x) .modal:not(.mod-settings) {
+body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) {
   --bp-modal-pad: 16px;
   box-sizing: border-box;
   max-width: min(90vw, 560px);
   overflow-wrap: anywhere;
 }
-body:not(#bp-x) .modal:not(.mod-settings) > :not(.modal-header):not(.modal-title):not(.modal-close-button):not(.modal-header-button):not(.modal-bg) {
+body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > :not(.modal-header):not(.modal-title):not(.modal-close-button):not(.modal-header-button):not(.modal-bg) {
   box-sizing: border-box;
   padding-inline: var(--bp-modal-pad) !important;
 }
-body:not(#bp-x) .modal:not(.mod-settings) > .modal-content {
+body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > .modal-content {
   padding-block: 14px 8px !important;
 }
-body:not(#bp-x) .modal:not(.mod-settings) > :is(.modal-button-container, .modal-footer) {
+body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > :is(.modal-button-container, .modal-footer) {
   align-items: center;
   gap: 8px;
   margin: 0 !important;
   padding-block: 8px 14px !important;
 }
-body:not(#bp-x) .modal:not(.mod-settings) > :last-child:not(.modal-header):not(.modal-button-container) {
+body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > :last-child:not(.modal-header):not(.modal-button-container) {
   padding-bottom: 14px;
 }
 
@@ -2920,11 +2920,30 @@ body.bp-xp-nostalgia:not(#bp-x) .git-view .nav-folder-title {
   color: var(--bp-sunset-text);
 }
 
-/* Expanded groups: the first note row is painted after the header and covered its bottom border */
+/* Expanded groups: Notebook Navigator adds a separator line (::after) that painted over the header's bottom border */
 body:not(#bp-x) .nn-virtual-list-group-header {
   z-index: 2;
+}
+body:not(#bp-x) .nn-virtual-list-group-header::after {
+  display: none !important;
 }
 body.bp-xp-nostalgia:not(#bp-x) .nn-list-group-header .nn-list-group-header-text,
 body.bp-xp-nostalgia:not(#bp-x) .git-view .nav-folder-title .nav-folder-title-content {
   color: var(--bp-sunset-text);
+}
+
+/* Settings lists with a search box (community plugins): search band matches the card instead of a grey slab */
+body:not(#bp-x) .modal.mod-settings .setting-group-search {
+  background: var(--bp-card-alt);
+  border-bottom: 1px dotted var(--bp-line-dotted);
+  border-top: 1px dotted var(--bp-line-dotted);
+  padding-block: 10px;
+}
+body:not(#bp-x) .modal.mod-settings .vertical-tab-nav-item.is-active {
+  box-shadow: inset 0 0 0 1px var(--bp-accent-soft-line);
+}
+body:not(#bp-x) .community-item.is-selected {
+  background: var(--bp-accent-soft);
+  border: 1px solid var(--bp-accent-line);
+  border-radius: 6px;
 }

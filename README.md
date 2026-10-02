@@ -14,6 +14,7 @@ Inspired by: [Fernando Borretti on X](https://x.com/zetalyrae/status/20468053361
 - [Settings](#settings)
 - [Plugin support](#plugin-support)
 - [Customizing](#customizing)
+- [Development](#development)
 - [License](#license)
 - [Disclaimer](#disclaimer)
 
@@ -75,6 +76,20 @@ Most other plugins work, but are not themed specifically.
 To preview every element Bliss styles, copy [docs/Bliss Theme Showcase.md](docs/Bliss%20Theme%20Showcase.md) into a vault.
 
 Colours, gradients, radii and button states are CSS variables prefixed `--bp-` at the top of `theme.css`. Override them in a [CSS snippet](https://help.obsidian.md/Extending+Obsidian/CSS+snippets) to change the look without editing the theme.
+
+## Development
+
+`theme.css` is generated from the ordered parts in `src/`. Edit those, then run `npm run build`.
+
+| Command | What it does |
+| --- | --- |
+| `npm test` | Build check, CSS lint and static performance audit (also runs in CI) |
+| `npm run selectors` | Checks the Obsidian classes the theme depends on against the installed Obsidian; `--write` refreshes [docs/internal-selectors.md](docs/internal-selectors.md) |
+| `npm run live` | Contrast, clipping and hit-target audit in a running Obsidian (`--remote-debugging-port=9222`) |
+| `npm run visual` | Screenshot comparison against local baselines; `npm run visual:update` resets them |
+| `npm run release-check` | Verifies manifest, changelog, tag and submission files agree |
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes.
 
 ## License
 
