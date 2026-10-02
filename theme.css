@@ -2826,15 +2826,18 @@ body.bp-classic-square:not(#bp-x) .mod-root .workspace-tab-header-inner-close-bu
   border-radius: 0;
 }
 
-/* Right sidebar strip beside the window buttons: fades into the titlebar chrome instead of stopping dead */
+/* Right sidebar strip beside the window buttons: fades into the titlebar chrome; the button container is transparent so the fade shows behind the buttons */
+body:not(#bp-x) .titlebar-button-container.mod-right {
+  background: transparent;
+}
 body:not(#bp-x) .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
   background:
-    linear-gradient(to right, transparent calc(100% - 170px), var(--bp-chrome) calc(100% - 20px)),
+    linear-gradient(to right, transparent calc(100% - 200px), var(--bp-chrome) 100%),
     var(--bp-grad-part);
   border-bottom-color: color-mix(in srgb, var(--bp-accent-line) 60%, var(--bp-border));
 }
 body.theme-dark:not(#bp-x) .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
   background:
-    linear-gradient(to right, transparent calc(100% - 170px), var(--bp-chrome) calc(100% - 20px)),
+    linear-gradient(to right, transparent calc(100% - 200px), var(--bp-chrome) 100%),
     linear-gradient(to bottom, #3a4049 0%, #2f343b 100%);
 }
