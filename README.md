@@ -33,10 +33,6 @@ Callouts, code blocks and tables
 
 ![Notes](docs/Images/bliss-notes.png)
 
-Code blocks with language labels
-
-![Code blocks](docs/Images/bliss-code.png)
-
 Glossy settings: toggles, dropdowns and inputs in light and dark
 
 ![Controls](docs/Images/bliss-controls.png)
