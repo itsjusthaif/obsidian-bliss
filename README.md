@@ -27,7 +27,15 @@ XP accent presets: Luna Blue, Olive Green, Silver and Orange
 
 ![Accent presets](docs/Images/bliss-accents.png)
 
-Glossy controls: toggles, sliders, dropdowns and dialogs
+Callouts, code blocks and tables
+
+![Notes](docs/Images/bliss-notes.png)
+
+Notebook Navigator, calendar and Obsidian Git
+
+![Sidebars](docs/Images/bliss-sidebars.png)
+
+Glossy settings: toggles, dropdowns and inputs in light and dark
 
 ![Controls](docs/Images/bliss-controls.png)
 
