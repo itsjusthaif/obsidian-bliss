@@ -12,7 +12,7 @@
   - [ ] Banners
   - [ ] Home Tab. 
 
-- [ ] Canvas and Graph view: Luna-style nodes, group frames, edges and graph controls.
+- [x] Canvas and Graph view: Luna-style nodes, group frames, edges and graph controls.
 
 - [x] Code blocks and syntax highlighting: classic sunken frame and VS-style syntax colours in light and dark, in both reading and editing view. The language badge keeps Obsidian's default placement.
 
@@ -25,7 +25,5 @@
 - [ ] More presets: Zune, and optionally a Win98 classic mode. (Luna Blue, Olive Green, Silver and Orange already exist.)
 
 - [ ] Per-element toggles: glossiness, bevel depth, corner radius slider, and desk texture on or off.
-
-- [ ] XP touches: a title bar with minimise/maximise/close glyphs, a "Start"-style status bar, balloon-tip notices, and a progress-bar style for task completion.
 
 - [ ] Optional sounds: needs a plugin or script, kept off by default.
