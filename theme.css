@@ -109,9 +109,9 @@ settings:
         description: Off keeps the classic XP green for switched-on toggles.
         type: class-toggle
     -
-        id: bp-taskbar-gradient
-        title: XP taskbar gradient
-        description: Curved, pressed-in Luna taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles. Off keeps the original flat-glossy gradient.
+        id: bp-xp-nostalgia
+        title: Windows XP Nostalgia Mode
+        description: Full Luna flashback. Curved, pressed-in taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles, plus glossy sunset-orange strips on list date groups and Git sections. Off keeps the original look.
         type: class-toggle
 */
 
@@ -2894,11 +2894,11 @@ body:is(.bp-accent-olive, .bp-accent-silver, .bp-accent-orange, .bp-accent-nativ
     color-mix(in srgb, var(--bp-taskbar-base) 92%, #000) 95%,
     color-mix(in srgb, var(--bp-taskbar-base) 72%, #000) 100%);
 }
-body.bp-taskbar-gradient {
+body.bp-xp-nostalgia {
   --bp-xp-blue: var(--bp-taskbar-luna);
   --bp-grad-section: var(--bp-taskbar-luna);
 }
-body.bp-taskbar-gradient:not(#bp-x) .view-header {
+body.bp-xp-nostalgia:not(#bp-x) .view-header {
   border-bottom: 1px solid var(--bp-accent-dark);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
@@ -2912,15 +2912,15 @@ body.theme-dark {
   --bp-sunset-border: #8a6a30;
   --bp-sunset-text: #f2d9a0;
 }
-body:not(#bp-x) .nn-list-group-header,
-body:not(#bp-x) .git-view .nav-folder-title {
+body.bp-xp-nostalgia:not(#bp-x) .nn-list-group-header,
+body.bp-xp-nostalgia:not(#bp-x) .git-view .nav-folder-title {
   background: var(--bp-grad-orange) !important;
   border-top: 1px solid var(--bp-sunset-border);
   border-bottom: 1px solid var(--bp-sunset-border);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
   color: var(--bp-sunset-text);
 }
-body:not(#bp-x) .nn-list-group-header .nn-list-group-header-text,
-body:not(#bp-x) .git-view .nav-folder-title .nav-folder-title-content {
+body.bp-xp-nostalgia:not(#bp-x) .nn-list-group-header .nn-list-group-header-text,
+body.bp-xp-nostalgia:not(#bp-x) .git-view .nav-folder-title .nav-folder-title-content {
   color: var(--bp-sunset-text);
 }
