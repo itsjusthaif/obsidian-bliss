@@ -2484,11 +2484,11 @@ body .nn-list-group-header .nn-list-group-header-collapse-button svg {
 
 
 /* ---- Style Settings: let the label column keep its width next to long dropdown values ---- */
-.setting-item-control > select.dropdown {
+.vertical-tab-content .setting-item-control > select.dropdown {
   max-width: 200px;
   text-overflow: ellipsis;
 }
-.setting-item-info {
+.vertical-tab-content .setting-item-info {
   flex: 1 1 60%;
   min-width: 0;
 }
@@ -2713,26 +2713,29 @@ body.theme-dark {
 
 
 /* ================= Dialogs: one padding rule for every direct child, so any content (text, links, checkboxes, buttons) is inset the same ================= */
-body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) {
+body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) {
   --bp-modal-pad: 16px;
   box-sizing: border-box;
-  max-width: min(90vw, 560px);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
-body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > :not(.modal-header):not(.modal-title):not(.modal-close-button):not(.modal-header-button):not(.modal-bg) {
+/* Zero specificity, so a plugin that sets its own dialog width wins */
+:where(.modal:not(.mod-settings):not(.mod-sidebar-layout)) {
+  max-width: min(90vw, 560px);
+}
+body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > :not(.modal-header):not(.modal-title):not(.modal-close-button):not(.modal-header-button):not(.modal-bg) {
   box-sizing: border-box;
   padding-inline: var(--bp-modal-pad) !important;
 }
-body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > .modal-content {
+body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > .modal-content {
   padding-block: 14px 8px !important;
 }
-body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > :is(.modal-button-container, .modal-footer) {
+body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > :is(.modal-button-container, .modal-footer) {
   align-items: center;
   gap: 8px;
   margin: 0 !important;
   padding-block: 8px 14px !important;
 }
-body:not(#bp-x) .modal:not(.mod-settings):not(.mod-sidebar-layout) > :last-child:not(.modal-header):not(.modal-button-container) {
+body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > :last-child:not(.modal-header):not(.modal-button-container) {
   padding-bottom: 14px;
 }
 
@@ -3127,4 +3130,84 @@ body.theme-dark.bp-accent-orange {
 }
 body.theme-dark.bp-accent-olive {
   --graph-node-tag: #e8c27a;
+}
+
+/* ================= Plugin dialogs: shared button states and TaskNotes ================= */
+/* Primary buttons had hover but no pressed state, because the later hover rule outranked the earlier :active */
+body:not(#bp-x) button.mod-cta:active {
+  background: linear-gradient(to bottom, var(--bp-accent-bottom) 0%, var(--bp-accent-mid) 100%);
+  box-shadow: inset 0 0 0 2px var(--bp-ring-active), inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+body:not(#bp-x) button.mod-cta:focus-visible {
+  outline: 2px solid var(--bp-ring-hover);
+  outline-offset: 1px;
+}
+
+/* Plugin buttons that restyle themselves (transparent, accent-outlined, flat) get the standard secondary button look; add new plugin buttons to this list */
+body:not(#bp-x) .tasknotes-plugin :is(.tn-task-modal__open-note-button, .pomodoro-view__time-adjust-button, .pomodoro-view__pause-button, .pomodoro-view__stop-button, .pomodoro-view__skip-break-button, .stats-view__filter-button) {
+  background: var(--bp-xp-cream);
+  border: 1px solid var(--bp-btn-border);
+  border-radius: var(--bp-btn-radius);
+  box-shadow: var(--bp-btn-shadow);
+  color: var(--bp-text);
+  font-weight: normal;
+}
+body:not(#bp-x) .tasknotes-plugin :is(.tn-task-modal__open-note-button, .pomodoro-view__time-adjust-button, .pomodoro-view__pause-button, .pomodoro-view__stop-button, .pomodoro-view__skip-break-button, .stats-view__filter-button):hover {
+  background: var(--bp-xp-cream);
+  border: 1px solid var(--bp-btn-border);
+  box-shadow: var(--bp-btn-shadow-hover);
+  color: var(--bp-text);
+}
+body:not(#bp-x) .tasknotes-plugin :is(.tn-task-modal__open-note-button, .pomodoro-view__time-adjust-button, .pomodoro-view__pause-button, .pomodoro-view__stop-button, .pomodoro-view__skip-break-button, .stats-view__filter-button):active {
+  background: var(--bp-pressed);
+  border: 1px solid var(--bp-btn-border);
+  box-shadow: var(--bp-btn-shadow-active);
+  color: var(--bp-text);
+}
+body:not(#bp-x) .tasknotes-plugin :is(.tn-task-modal__open-note-button, .pomodoro-view__time-adjust-button, .pomodoro-view__pause-button, .pomodoro-view__stop-button, .pomodoro-view__skip-break-button, .stats-view__filter-button):focus-visible {
+  outline: 2px solid var(--bp-ring-hover);
+  outline-offset: 1px;
+}
+/* Plugin primary buttons that draw their own flat accent fill */
+body:not(#bp-x) .tasknotes-plugin .pomodoro-view__start-button {
+  background: var(--bp-xp-blue);
+  border: 1px solid var(--bp-accent-dark);
+  border-radius: var(--bp-btn-radius);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+body:not(#bp-x) .tasknotes-plugin .pomodoro-view__start-button:hover {
+  background: var(--bp-xp-blue);
+  box-shadow: inset 0 0 0 2px var(--bp-ring-hover), 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+body:not(#bp-x) .tasknotes-plugin .pomodoro-view__start-button:active {
+  background: linear-gradient(to bottom, var(--bp-accent-bottom) 0%, var(--bp-accent-mid) 100%);
+  box-shadow: inset 0 0 0 2px var(--bp-ring-active), inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+body:not(#bp-x) .tasknotes-plugin .pomodoro-view__start-button:focus-visible {
+  outline: 2px solid var(--bp-ring-hover);
+  outline-offset: 1px;
+}
+/* Many plugins use the accent as text and border colour; the raw dark-mode accent is too deep for that on slate */
+body.theme-dark {
+  --interactive-accent: var(--bp-accent-top);
+  --interactive-accent-hover: var(--bp-accent-hover-top);
+}
+
+/* TaskNotes reuses Obsidian's .metadata-container for its task information; undo the Properties factsheet look there */
+body:not(#bp-x) .tasknotes-plugin .metadata-container {
+  background: none;
+  border: 0;
+  border-top: 0.5px solid var(--background-modifier-border);
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  overflow: visible;
+}
+/* The split layout pulls the Details column up by the container padding; keep its label clear of the clipped edge */
+@media (min-width: 900px) {
+  body:not(#bp-x) .tasknotes-plugin.minimalist-task-modal.split-layout-enabled.expanded .modal-split-right .detail-label {
+    padding-top: calc(var(--size-4-3) + var(--size-4-4));
+  }
 }

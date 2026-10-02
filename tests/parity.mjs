@@ -68,20 +68,35 @@ const record = (scene, items) => {
   console.log(`scene ${scene}: ${items.length} light surface(s)`);
 };
 const capture = async scene => { await wait(500); record(scene, await run(`(${scan.toString()})(${minArea}, ${maxLum})`)); };
-const close = async () => { await run(`document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", bubbles: true }))`); await wait(250); };
+const close = async () => {
+  for (const type of ["keyDown", "keyUp"]) await send("Input.dispatchKeyEvent", { type, key: "Escape", code: "Escape", windowsVirtualKeyCode: 27 });
+  await run(`document.querySelector(".modal-container .modal-bg")?.click(); 0`);
+  await wait(250);
+};
 
 await capture("workspace");
 for (const [name, cmd] of [["palette", "command-palette:open"], ["switcher", "switcher:open"]]) {
   await run(`app.commands.executeCommandById(${JSON.stringify(cmd)})`); await capture(name); await close();
 }
 
-await run(`app.setting.open()`); await wait(600);
-const tabs = await run(`app.setting.settingTabs.map(t => t.id).concat(app.setting.pluginTabs.map(t => t.id))`);
-for (const tab of tabs) {
-  await run(`app.setting.openTabById(${JSON.stringify(tab)}); 0`);
-  await capture(`settings:${tab}`);
+// Settings is a separate window with its own debug target; tabs are switched from the main window.
+await run(`app.setting.open(); 0`); await wait(1500);
+const st = (await (await fetch(`http://127.0.0.1:${port}/json`)).json()).find(x => x.type === "page" && /Settings/i.test(x.title));
+if (!st) console.warn("Settings window not found: settings tabs skipped");
+else {
+  const ws2 = new WebSocket(st.webSocketDebuggerUrl);
+  await new Promise(r => (ws2.onopen = r));
+  let id2 = 0; const pending2 = new Map();
+  ws2.onmessage = m => { const d = JSON.parse(m.data); pending2.get(d.id)?.(d); };
+  const run2 = expr => new Promise(r => { const i = ++id2; pending2.set(i, r); ws2.send(JSON.stringify({ id: i, method: "Runtime.evaluate", params: { expression: expr, returnByValue: true, awaitPromise: true } })); }).then(d => d.result?.result?.value ?? []);
+  const tabs = await run(`app.setting.settingTabs.map(t => t.id).concat(app.setting.pluginTabs.map(t => t.id))`);
+  for (const tab of tabs) {
+    await run(`app.setting.openTabById(${JSON.stringify(tab)}); 0`); await wait(600);
+    record(`settings:${tab}`, await run2(`(${scan.toString()})(${minArea}, ${maxLum})`));
+  }
+  ws2.close();
 }
-await run(`app.setting.close()`); await wait(250);
+await run(`app.setting.close(); 0`); await wait(250);
 
 await run(`(() => { const el = document.querySelector(".nav-file-title, .tree-item-self"); if (el) el.dispatchEvent(new MouseEvent("contextmenu", { bubbles: true, clientX: 200, clientY: 200 })); })()`);
 await capture("context-menu"); await close();
