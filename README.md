@@ -8,14 +8,16 @@ Remember when the web felt new? Bliss brings back the glossy blues and soft gree
 
 ## Contents
 
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Companion plugins](#companion-plugins)
-- [Settings](#settings)
-- [Plugin support](#plugin-support)
-- [Customizing](#customizing)
-- [License](#license)
-- [Disclaimer](#disclaimer)
+- [Bliss](#bliss)
+  - [Contents](#contents)
+  - [Screenshots](#screenshots)
+  - [Installation](#installation)
+  - [Companion plugins](#companion-plugins)
+  - [Settings](#settings)
+  - [Plugin support](#plugin-support)
+  - [Customizing](#customizing)
+  - [License](#license)
+  - [Disclaimer](#disclaimer)
 
 ## Screenshots
 
@@ -80,7 +82,7 @@ Most other plugins work, but are not themed specifically.
 
 ## Customizing
 
-To preview every element Bliss styles, copy [docs/Bliss Theme Showcase.md](docs/Bliss%20Theme%20Showcase.md) into a vault. It has headings, callouts, code blocks, tables, tasks, tags and properties.
+To preview every element Bliss styles, copy [docs/Bliss Theme Showcase.md](docs/Bliss%20Theme%20Showcase.md) into a vault.
 
 Colours, gradients, radii and button states are CSS variables prefixed `--bp-` at the top of `theme.css`. Override them in a [CSS snippet](https://help.obsidian.md/Extending+Obsidian/CSS+snippets) to change the look without editing the theme.
 
