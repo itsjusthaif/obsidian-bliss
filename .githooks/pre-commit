@@ -1,0 +1,2 @@
+#!/bin/sh
+exec node tests/guard.mjs pre-commit

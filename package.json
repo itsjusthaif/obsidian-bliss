@@ -14,7 +14,11 @@
     "live": "node tests/live.mjs",
     "visual": "node tests/visual.mjs",
     "visual:update": "node tests/visual.mjs --update",
-    "test": "node tests/lint.mjs && node tests/perf.mjs",
+    "test": "node tests/lint.mjs && node tests/perf.mjs && node tests/regression.mjs",
+    "regression": "node tests/regression.mjs",
+    "setup": "git config core.hooksPath .githooks",
+    "task": "node tests/task.mjs",
+    "ship": "node tests/ship.mjs",
     "test:live": "node tests/live.mjs && node tests/visual.mjs"
   }
 }

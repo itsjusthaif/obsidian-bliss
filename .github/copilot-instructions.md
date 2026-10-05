@@ -17,9 +17,12 @@ Bliss is an Obsidian theme. The shipped files are `theme.css` and `manifest.json
 ## Branches
 
 - `main` is the released state. Only `main` is tagged.
-- `dev` collects finished work for the next release.
-- Build each new feature on its own `feature/<name>` branch cut from `main`, so a fix on `main` never has to be untangled from half-built work. Merge it into `dev` only when it is finished and working in Obsidian.
-- Fixes go on `dev` or on a `fix/<name>` branch. They may share a release with finished features.
+- `dev` collects finished, tested work for the next release.
+- Every change request gets its own task branch cut from `dev`: `npm run task -- <feature|fix|chore|docs>/<kebab-name>`. Commit only on that branch. Git hooks (`.githooks`, enabled by `npm run setup`) refuse commits and merges made directly on `main` or `dev`.
+- When the work is finished and tested, run `npm run ship`. It brings `dev` into the branch, runs `npm test`, checks the changelog entry and merges the branch into `dev` with `--no-ff`. `dev` is only ever updated this way.
+- `main` is only updated at release time (see Release routine). A release merge is the one exception to the hook and needs `BLISS_SHIP=1` with the owner's go-ahead.
+- A commit that removes more than 40 lines from `theme.css` (and far more than it adds) is blocked unless the owner approves it and it is repeated with `BLISS_ALLOW_DELETE=1`; this usually means a stale copy of the file.
+- Agents share one working folder. If two agents work at once, use `npm run task -- <name> --worktree` so each has its own folder, and never switch branches under another agent.
 - A hotfix branch off `main` (`release/X.Y.Z`) is used only for a real hotfix: the theme is visibly broken or the bug is common. It needs a changelog entry and a version bump, and `main` is merged back into `dev` afterwards.
 - Do not force-push `main`. Do not move or rewrite a tag once a GitHub release exists; ship a new patch instead.
 
@@ -54,14 +57,15 @@ Bliss is an Obsidian theme. The shipped files are `theme.css` and `manifest.json
 For every change request, without being asked:
 
 1. Classify it as a feature, fix or non-user-visible change, and say which.
-2. Put it on the right branch (`feature/<name>` for new features, `dev` for fixes and tooling).
+2. Start a task branch (`npm run task -- <feature|fix|chore|docs>/<name>`). Never commit on `main` or `dev` directly.
 3. Add the changelog line under `[Unreleased]` for user-visible changes, and use the commit prefix.
-4. Run `npm test` before committing `theme.css` changes.
+4. Run `npm test` before committing `theme.css` changes. `npm test` includes `tests/regression.mjs`, which lists the rules each finished feature needs; add markers for new features and remove them only when a feature is removed on purpose.
 5. When `[Unreleased]` holds enough finished work, or a fix is urgent, say so and propose the next version number and the release steps.
 6. Keep the README, `ROADMAP.md` and `CHANGELOG.md` in step with what shipped: tick off or remove finished roadmap items.
 
 ## Safety
 
+- Before editing `theme.css`, run `git status`. If it has uncommitted changes you did not make, stop and ask. Never edit from a stale copy of the file, and never use `git add -A` for it.
 - Commit only the files being worked on, and never revert or overwrite uncommitted edits to `theme.css`.
 - Pushing, tagging and deleting need the owner's go-ahead.
 - Commit identity is the GitHub noreply address already set in this repo's local git config.
