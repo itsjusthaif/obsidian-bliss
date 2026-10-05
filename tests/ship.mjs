@@ -8,7 +8,13 @@ const run = (cmd, args, env = {}) => spawnSync(cmd, args, { stdio: "inherit", sh
 
 const branch = git("rev-parse --abbrev-ref HEAD");
 if (["main", "dev"].includes(branch)) fail(`run this from a task branch, not '${branch}'. Start one with: npm run task -- fix/<name>`);
-if (git("status --porcelain")) fail("uncommitted changes. Commit the files this task owns first.");
+// Uncommitted edits elsewhere (another agent or the owner) are left alone, but anything this branch touches must be committed.
+const dirty = git("status --porcelain --untracked-files=no").split("\n").filter(Boolean).map(l => l.slice(3).trim());
+if (dirty.includes("theme.css")) fail("theme.css has uncommitted edits. Commit them on their own task branch (or ask the owner) before shipping.");
+const touched = git("diff --name-only dev...HEAD").split("\n").filter(Boolean);
+const clash = dirty.filter(f => touched.includes(f));
+if (clash.length) fail(`uncommitted edits to files this branch changes: ${clash.join(", ")}. Commit them first.`);
+if (dirty.length) console.log(`leaving unrelated uncommitted edits alone: ${dirty.join(", ")}`);
 
 console.log(`bringing dev into ${branch}`);
 if (!run("git", ["merge", "dev", "--no-edit"])) fail("merging dev hit conflicts. Resolve them on this branch, commit, then ship again.");

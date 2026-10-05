@@ -21,6 +21,6 @@ for (const [feature, marks] of Object.entries(MARKERS)) {
 }
 const opens = (css.match(/{/g) ?? []).length, closes = (css.match(/}/g) ?? []).length;
 if (opens !== closes) { missing++; console.error(`FAIL braces unbalanced: ${opens} { vs ${closes} }`); }
-if (!css.endsWith("}\n")) { missing++; console.error("FAIL theme.css does not end with a closed rule and a newline (truncated?)"); }
+if (!/}\r?\n$/.test(css)) { missing++; console.error("FAIL theme.css does not end with a closed rule and a newline (truncated?)"); }
 console.log(missing ? `regression: ${missing} problem(s)` : `regression: all ${Object.values(MARKERS).flat().length} markers present`);
 process.exit(missing ? 1 : 0);
