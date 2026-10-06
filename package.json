@@ -4,6 +4,14 @@
   "private": true,
   "type": "module",
   "description": "Test tooling for the Bliss Obsidian theme.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsjusthaif/obsidian-bliss.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "lint": "node tests/lint.mjs",
     "perf": "node tests/perf.mjs",

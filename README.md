@@ -60,6 +60,7 @@ All options live in Style Settings under **Bliss**.
 | Classic square corners | Square boxes, pills and buttons for the original intranet look |
 | Disable desk texture | Removes the fine dot pattern from the window chrome and ribbon |
 | Toggle switches follow the accent | Off keeps the classic XP green for switched-on toggles |
+| Windows XP Nostalgia Mode | Curved taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles, plus sunset-orange strips on list date groups and Git sections. Off keeps the original look |
 
 ## Plugin support
 
@@ -67,7 +68,8 @@ Bliss styles these directly:
 
 - [Notebook Navigator](https://github.com/johansan/notebook-navigator), including the calendar
 - [Obsidian Git](https://github.com/Vinzent03/obsidian-git)
-- Properties panel, embedded backlinks and callouts (core Obsidian)
+- [TaskNotes](https://github.com/callumalpass/tasknotes) and [Tasks](https://github.com/obsidian-tasks-group/obsidian-tasks)
+- Canvas and Graph view, code blocks, properties panel, embedded backlinks and callouts (core Obsidian)
 
 Most other plugins work, but are not themed specifically.
 
@@ -79,13 +81,18 @@ Colours, gradients, radii and button states are CSS variables prefixed `--bp-` a
 
 ## Development
 
+Contributions are welcome. Fork the repo, branch from `dev` and open a pull request; only the owner merges and releases. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 | Command | What it does |
 | --- | --- |
-| `npm test` | CSS lint and static performance audit (also runs in CI) |
+| `npm test` | CSS lint, static performance audit and a check that finished features are still present (also runs in CI) |
+| `npm run release-check` | Verifies manifest, changelog, tag and submission files agree (also runs in CI) |
+| `npm run live` | Contrast, clipping and hit-target audit; needs Obsidian running with `--remote-debugging-port=9222` |
+| `npm run parity` | Checks that dark mode has no light surfaces left; needs the same running Obsidian |
+| `npm run perf:live` | Runtime performance comparison; needs the same running Obsidian |
+| `npm run visual` | Screenshot comparison against local baselines (git-ignored); `npm run visual:update` resets them |
 | `npm run selectors` | Checks the Obsidian classes the theme depends on against the installed Obsidian; `--write` refreshes [docs/internal-selectors.md](docs/internal-selectors.md) |
-| `npm run live` | Contrast, clipping and hit-target audit in a running Obsidian (`--remote-debugging-port=9222`) |
-| `npm run visual` | Screenshot comparison against local baselines; `npm run visual:update` resets them |
-| `npm run release-check` | Verifies manifest, changelog, tag and submission files agree |
+| `npm run task -- <name>` and `npm run ship` | Optional helpers for task branches and merging into `dev`; `npm run setup` enables the matching git hooks |
 
 See [CHANGELOG.md](CHANGELOG.md) for release notes.
 
