@@ -55,7 +55,7 @@ Obsidian marketplace support is coming soon.
 ## Companion plugins
 
 - [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) unlocks every option listed below. Recommended for all users of Bliss.
-- [Notebook Navigator](https://github.com/johansan/notebook-navigator) and [Obsidian Git](https://github.com/Vinzent03/obsidian-git) have dedicated styling. Both are optional.
+- [Notebook Navigator](https://github.com/johansan/notebook-navigator) [Recommended]
 
 ## Settings
 
