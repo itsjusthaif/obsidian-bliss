@@ -1,5 +1,5 @@
 // Merges the current task branch into dev after the checks pass. Usage: npm run ship [-- --no-changelog]
-// Steps: clean tree -> bring in dev -> npm test -> changelog check -> merge --no-ff into dev. Nothing is pushed or deleted.
+// Steps: clean tree -> bring in dev -> npm test -> changelog check -> merge --no-ff into dev (in the folder where dev is checked out). Nothing is pushed or deleted.
 import { execSync, spawnSync } from "node:child_process";
 
 const git = a => execSync(`git ${a}`, { encoding: "utf8", stdio: ["ignore", "pipe", "inherit"] }).trim();
@@ -28,6 +28,20 @@ if (changed.includes("theme.css") && !changed.includes("CHANGELOG.md") && !proce
   fail("theme.css changed but CHANGELOG.md has no entry under [Unreleased]. Add one (or pass --no-changelog for a non-visible change).");
 }
 
-git("switch dev");
-if (!run("git", ["merge", "--no-ff", branch, "-m", `"Merge ${branch}"`], { BLISS_SHIP: "1" })) fail(`merge into dev failed; dev is untouched or mid-merge, check 'git status'.`);
-console.log(`\nshipped ${branch} into dev (${git("rev-parse --short HEAD")}).\nBefore a release, load the theme in Obsidian and check it. The branch is kept; remove it with: git branch -d ${branch}`);
+// dev can be checked out in another folder (the main one, when this is a --worktree task); merge there instead of switching.
+const here = git("rev-parse --show-toplevel");
+const devDir = execSync("git worktree list --porcelain", { encoding: "utf8" }).split(/\r?\n\r?\n/)
+  .map(b => ({ dir: (b.match(/^worktree (.+)$/m) ?? [])[1], branch: (b.match(/^branch refs\/heads\/(.+)$/m) ?? [])[1] }))
+  .find(w => w.branch === "dev")?.dir;
+const inDevDir = devDir && devDir !== here;
+const gitIn = (dir, a) => execSync(`git -C "${dir}" ${a}`, { encoding: "utf8", stdio: ["ignore", "pipe", "inherit"] }).trim();
+if (inDevDir) {
+  const devDirty = gitIn(devDir, "status --porcelain --untracked-files=no").split("\n").filter(Boolean).map(l => l.slice(3).trim());
+  const devClash = devDirty.filter(f => changed.includes(f));
+  if (devClash.length) fail(`dev (${devDir}) has uncommitted edits to files this branch changes: ${devClash.join(", ")}. Commit or stash them there first.`);
+} else {
+  git("switch dev");
+}
+const merged = spawnSync("git", [...(inDevDir ? ["-C", `"${devDir}"`] : []), "merge", "--no-ff", branch, "-m", `"Merge ${branch}"`], { stdio: "inherit", shell: true, env: { ...process.env, BLISS_SHIP: "1" } }).status === 0;
+if (!merged) fail(`merge into dev failed; dev is untouched or mid-merge, check 'git status'${inDevDir ? ` in ${devDir}` : ""}.`);
+console.log(`\nshipped ${branch} into dev (${inDevDir ? gitIn(devDir, "rev-parse --short HEAD") : git("rev-parse --short HEAD")}).\nBefore a release, load the theme in Obsidian and check it. The branch is kept; remove it with: git branch -d ${branch}`);
