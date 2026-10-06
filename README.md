@@ -28,6 +28,18 @@ XP accent presets: Luna Blue, Olive Green, Silver and Orange
 
 ![Accent presets](docs/Images/bliss-accents.png)
 
+The same accents in dark mode
+
+![Accent presets, dark](docs/Images/bliss-accents-dark.png)
+
+Windows XP Nostalgia Mode, off and on
+
+![XP Nostalgia Mode off and on](docs/Images/bliss-xp-nostalgia.png)
+
+Classic square corners, off and on
+
+![Classic square corners off and on](docs/Images/bliss-classic-square.png)
+
 Callouts, code blocks and tables
 
 ![Notes](docs/Images/bliss-notes.png)
