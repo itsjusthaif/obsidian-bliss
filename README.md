@@ -24,13 +24,9 @@ Light and dark modes
 
 ![Light and dark](docs/Images/bliss-light-dark.png)
 
-XP accent presets: Luna Blue, Olive Green, Silver and Orange
+XP accent presets: Luna Blue, Olive Green, Silver and Orange, light above and dark below
 
 ![Accent presets](docs/Images/bliss-accents.png)
-
-The same accents in dark mode
-
-![Accent presets, dark](docs/Images/bliss-accents-dark.png)
 
 Windows XP Nostalgia Mode, off and on
 
