@@ -1,7 +1,7 @@
 name: Release
 on:
   push:
-    tags: ["v*.*.*"]
+    tags: ["[0-9]+.[0-9]+.[0-9]+"]
 permissions:
   contents: write
 jobs:
@@ -12,10 +12,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Tag must match manifest.json
+      - name: Tag must equal the manifest version, with no v prefix
         run: |
           v=$(node -p "require('./manifest.json').version")
-          [ "refs/tags/v$v" = "$GITHUB_REF" ] || { echo "tag $GITHUB_REF does not match manifest version $v"; exit 1; }
+          [ "$GITHUB_REF_NAME" = "$v" ] || { echo "tag $GITHUB_REF_NAME must equal manifest version $v (Obsidian requires no 'v' prefix)"; exit 1; }
       - run: npm test
       - name: Release notes from CHANGELOG.md
         run: |
@@ -25,4 +25,4 @@ jobs:
       - name: Create release with theme assets
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" theme.css manifest.json --title "Bliss ${GITHUB_REF_NAME#v}" --notes-file notes.md
+        run: gh release create "$GITHUB_REF_NAME" theme.css manifest.json --title "Bliss $GITHUB_REF_NAME" --notes-file notes.md

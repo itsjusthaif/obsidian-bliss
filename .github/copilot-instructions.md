@@ -37,7 +37,7 @@ Bliss is an Obsidian theme. The shipped files are `theme.css` and `manifest.json
 1. Move `[Unreleased]` entries under a new `## [X.Y.Z]` heading and add a fresh empty `[Unreleased]`.
 2. Bump `version` in `manifest.json` and `package.json` (they must match).
 3. `npm test` and `npm run release-check` pass.
-4. Merge to `main`, then tag `vX.Y.Z` and push the tag. The `Release` workflow creates the GitHub release with `theme.css`, `manifest.json` and the changelog section as notes.
+4. Merge to `main`, then tag `X.Y.Z` and push the tag. The tag must equal the `manifest.json` version exactly, with no `v` prefix: Obsidian installs the theme from the GitHub release tagged with that version. The `Release` workflow creates the GitHub release with `theme.css`, `manifest.json` and the changelog section as notes.
 
 ## Feature releases (minor and major)
 

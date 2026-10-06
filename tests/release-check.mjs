@@ -24,7 +24,7 @@ log.includes(`## [${manifest.version}]`) ? ok(`CHANGELOG has [${manifest.version
 
 try {
   const tags = execSync("git tag --list", { encoding: "utf8" }).split(/\s+/);
-  tags.includes(`v${manifest.version}`) ? ok(`tag v${manifest.version} exists`) : console.log(`note tag v${manifest.version} not created yet`);
+  tags.includes(manifest.version) ? ok(`tag ${manifest.version} exists`) : console.log(`note tag ${manifest.version} not created yet (Obsidian needs the release tag to equal the manifest version, with no 'v' prefix)`);
   const dirty = execSync("git status --porcelain", { encoding: "utf8" }).trim();
   if (dirty) console.log("note working tree has uncommitted changes");
 } catch { /* not a git repo */ }

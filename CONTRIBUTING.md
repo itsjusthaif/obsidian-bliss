@@ -29,7 +29,7 @@ These are not run in CI. They need Obsidian started with `--remote-debugging-por
 ## Branches and releases
 
 - `main` is the released state and `dev` collects finished work for the next release. Contributors branch from and target `dev`.
-- The owner reviews, merges and publishes releases. Releases are tagged `vX.Y.Z` on `main`, and a workflow creates the GitHub release.
+- The owner reviews, merges and publishes releases. Releases are tagged `X.Y.Z` (no `v` prefix, matching `manifest.json`) on `main`, and a workflow creates the GitHub release.
 - `npm run setup` enables optional local git hooks that refuse direct commits to `main` and `dev`; `npm run task -- <feature|fix|chore|docs>/<name>` starts a branch from `dev`.
 
 ## Guidelines
