@@ -8,6 +8,7 @@ Inspired by: [Fernando Borretti on X](https://x.com/zetalyrae/status/20468053361
 
 ## Contents
 
+- [Contents](#contents)
 - [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Companion plugins](#companion-plugins)
