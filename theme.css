@@ -104,6 +104,11 @@ settings:
         description: Removes the fine dot pattern from the window chrome and ribbon.
         type: class-toggle
     -
+        id: bp-hide-status-bar
+        title: Auto-hide status bar
+        description: Slides the bottom-right status bar (backlinks, word count, zoom) out of view. Hover the bottom-right corner to slide it back up.
+        type: class-toggle
+    -
         id: bp-toggle-follows-accent
         title: Toggle switches follow the accent
         description: Off keeps the classic XP green for switched-on toggles.
@@ -257,6 +262,9 @@ body.theme-light {
   --tag-radius: 0;
   --code-background: var(--bp-card-alt);
   --code-normal: var(--bp-text);
+  --code-border-width: 1px;
+  --code-border-color: var(--bp-line-dotted);
+  --code-radius: 6px;
   --blockquote-border-color: var(--bp-accent-top);
   --blockquote-background-color: var(--bp-card-alt);
   --hr-color: var(--bp-accent-soft-2);
@@ -325,6 +333,9 @@ body.theme-light {
 .markdown-rendered pre code {
   background: transparent;
   border: 0;
+}
+.cm-s-obsidian div.HyperMD-codeblock-bg {
+  border-left: 3px solid var(--bp-accent-top);
 }
 
 /* Buttons and inputs */
@@ -2335,6 +2346,22 @@ body.theme-dark:not(.bp-no-texture) .workspace-ribbon,
 body.theme-dark:not(.bp-no-texture) .titlebar,
 body.theme-dark:not(.bp-no-texture) .mod-root .workspace-tabs .workspace-tab-header-container {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='white' fill-opacity='0.04'/></svg>");
+}
+
+/* ================= Auto-hide status bar ================= */
+/* Leaves a 4px sliver visible so the bar still receives :hover */
+body.bp-hide-status-bar .status-bar {
+  transform: translateY(calc(100% - 4px));
+  transition: transform 0.25s ease;
+}
+body.bp-hide-status-bar .status-bar:hover,
+body.bp-hide-status-bar .status-bar:focus-within {
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  body.bp-hide-status-bar .status-bar {
+    transition: none;
+  }
 }
 
 /* ================= Portal refinements: current-row marker (pale highlight + orange bar) ================= */
