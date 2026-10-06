@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.1.0]
+
 ### Added
 
 - Code blocks: classic sunken Luna frame and VS-style syntax colours, identical in editing and reading views; the language badge is unchanged.
