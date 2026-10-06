@@ -61,7 +61,7 @@ For every change request, without being asked:
 3. Add the changelog line under `[Unreleased]` for user-visible changes, and use the commit prefix.
 4. Run `npm test` before committing `theme.css` changes. `npm test` includes `tests/regression.mjs`, which lists the rules each finished feature needs; add markers for new features and remove them only when a feature is removed on purpose.
 5. When `[Unreleased]` holds enough finished work, or a fix is urgent, say so and propose the next version number and the release steps.
-6. Keep the README, `ROADMAP.md` and `CHANGELOG.md` in step with what shipped: tick off or remove finished roadmap items.
+6. Keep the README and `CHANGELOG.md` in step with what shipped. `ROADMAP.md` is a local, git-ignored working file for now: tick off or remove finished items there, and do not commit it.
 
 ## Safety
 
