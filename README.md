@@ -30,32 +30,35 @@ XP accent presets: Luna Blue, Olive Green, Silver and Orange
 
 ![Accent presets, dark](docs/Images/bliss-accents-dark.png)
 
-Windows XP Nostalgia Mode, off and on
+Windows XP Nostalgia Mode, on and off
 
 ![XP Nostalgia Mode off and on](docs/Images/bliss-xp-nostalgia.png)
 
-Classic square corners, off and on
+Classic square corners, on and off
 
 ![Classic square corners off and on](docs/Images/bliss-classic-square.png)
 
-Callouts, code blocks and tables
+Callouts, tables and classic sunken Luna frame code blocks with VS-style syntax colours
 
 ![Notes](docs/Images/bliss-notes.png)
 
-Glossy settings: toggles, dropdowns and inputs in light and dark
+Extended Style Settings
 
 ![Controls](docs/Images/bliss-controls.png)
 
 ## Installation
+To install the theme
+
+- Open Obsidian Settings
+- Go to `Appearance` and click `Manage`
+- Under community themes search for "Bliss" and click `Use`
 
 To install manually, download and copy `theme.css` and `manifest.json` into `<vault>/.obsidian/themes/Bliss/`, then select Bliss under **Appearance**.
 
-Obsidian marketplace support is coming soon. 
-
 ## Companion plugins
 
-- [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) unlocks every option listed below. Recommended for all users of Bliss.
-- [Notebook Navigator](https://github.com/johansan/notebook-navigator) [Recommended]
+- [Style Settings](https://community.obsidian.md/plugins/obsidian-style-settings) unlocks every option listed below. [Recommended for all users of Bliss]
+- [Notebook Navigator](https://community.obsidian.md/plugins/notebook-navigator) [Recommended]
 
 ## Settings
 
@@ -104,7 +107,30 @@ Contributions are welcome. Fork the repo, branch from `dev` and open a pull requ
 | `npm run selectors` | Checks the Obsidian classes the theme depends on against the installed Obsidian; `--write` refreshes [docs/internal-selectors.md](docs/internal-selectors.md) |
 | `npm run task -- <name>` and `npm run ship` | Optional helpers for task branches and merging into `dev`; `npm run setup` enables the matching git hooks |
 
-See [CHANGELOG.md](CHANGELOG.md) for release notes.
+## Changelog
+## [1.1.0]
+
+### Added
+
+- Code blocks: classic sunken Luna frame and VS-style syntax colours, identical in editing and reading views; the language badge is unchanged.
+- Canvas: XP window cards, a desk surface and folder-tab groups; the dark graph view follows the accent colour.
+
+### Fixed
+
+- Headings: the gap under a heading is the same in editing and reading view, and the h1/h2 rule is drawn under the text.
+- Light mode: faint text is darker for better contrast.
+- Settings: the dropdown and label layout fixes now apply only inside the Settings window.
+- TaskNotes Edit task dialog: the Details panel is visible again, the Open note button matches the other buttons, and the task information box no longer takes the Properties panel look.
+- Primary buttons (Save and similar) now show a pressed state.
+- Plugin dialogs that set their own width are no longer capped at 560px.
+- TaskNotes Pomodoro and Statistics: buttons use the Luna look and the Statistics title no longer wraps into a narrow column.
+- Dark mode: the accent used by plugins as text and border colour is lighter so it reads on slate.
+
+### Changed
+
+- Smaller stylesheet: removed overridden declarations, empty rules and unused variables, with no visual change
+
+See [CHANGELOG.md](CHANGELOG.md) for complete release notes.
 
 ## License
 
@@ -112,7 +138,8 @@ Bliss is licensed under the MIT License. You may modify and redistribute it, but
 
 ## Disclaimer
 
-This theme is provided as is. It modifies significant parts of the Obsidian interface, so it may break with future updates and may be incompatible with other custom CSS.
+This theme is provided as is and is designed for my personal use of Obsidian on Windows. As such it is not thoroughly tested across all operating systems, use cases and plugins.
+This theme modifies significant parts of the Obsidian interface, so it may break with future updates. It may also be incompatible with other bits of custom CSS you have.
 
 ---
 
