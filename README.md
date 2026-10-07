@@ -15,6 +15,7 @@ Inspired by: [Fernando Borretti on X](https://x.com/zetalyrae/status/20468053361
 - [Plugin support](#plugin-support)
 - [Customizing](#customizing)
 - [Development](#development)
+- [Changelog](#changelog)
 - [License](#license)
 - [Disclaimer](#disclaimer)
 
