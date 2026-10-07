@@ -1402,9 +1402,21 @@ textarea::placeholder {
 }
 
 
-/* ---- Keep the left sidebar from covering the window buttons when the window is narrow ---- */
+/* ---- Narrow windows: sidebars shrink and the note keeps a minimum width, so the right sidebar's tab strip never slides under the window buttons ---- */
 .workspace-split.mod-left-split.mod-sidedock {
   max-width: calc(100vw - 44px - 150px) !important;
+}
+body .workspace-split.mod-sidedock {
+  flex-shrink: 1 !important;
+}
+body .workspace-split.mod-left-split.mod-sidedock {
+  min-width: 220px;
+}
+body .workspace-split.mod-right-split.mod-sidedock {
+  min-width: 280px;
+}
+body .workspace-split.mod-root {
+  min-width: 150px;
 }
 
 
