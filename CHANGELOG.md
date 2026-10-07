@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Narrow windows: the sidebars now shrink and the note keeps a minimum width, so the right sidebar's tab icons no longer slide under the minimise, maximise and close buttons.
+
 ## [1.1.0]
 
 ### Added
