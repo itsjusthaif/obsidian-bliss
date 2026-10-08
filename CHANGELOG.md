@@ -8,6 +8,7 @@
 
 ### Changed
 
+- Dark mode: the desk texture dots are slightly more visible on Slate, blue-tinted on Midnight and fainter on Contrast.
 - Dark mode: the note and list pane are now a lighter shade than the sidebars and window chrome, so the working surfaces feel raised. Properties, callouts, selected note card, hover and calendar colours, and muted text were retuned for the lighter surface.
 - Cleaner stylesheet for the community theme checks: most `!important` rules replaced with higher selector specificity, and the unused `:has()` code block rule removed. No visual change intended.
 
