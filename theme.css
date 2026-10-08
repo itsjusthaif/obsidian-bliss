@@ -1291,7 +1291,7 @@ body:not(#bp-x) .setting-page-back-button:hover {
 }
 
 /* ---- Reading-view code block: language flair sits above code, compact ---- */
-body:not(#bp-x) .markdown-rendered pre:has(> .code-block-flair) {
+body:not(#bp-x) .markdown-rendered pre[class*="language-"] {
   padding-top: 26px;
 }
 body:not(#bp-x) .code-block-flair {
