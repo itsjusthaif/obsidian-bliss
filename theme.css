@@ -1768,8 +1768,8 @@ body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-heade
 }
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top-right-space) .workspace-tab-header-container {
   box-sizing: border-box;
-  height: 32px;
-  padding: 5px 8px;
+  height: var(--bp-strip-h);
+  padding: 0 8px;
 }
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header-container-inner {
   align-items: center;
@@ -2483,6 +2483,7 @@ body.theme-dark .workspace-split:is(.mod-left-split, .mod-right-split) .workspac
 body, body.theme-dark, body.theme-light {
   --bp-btn-border: #003c74;
   --bp-btn-radius: 4px;
+  --bp-strip-h: var(--header-height, 40px);
   --bp-ring-hover: #fcc863;
   --bp-ring-active: #e0a840;
   --bp-btn-shadow: inset 0 1px 0 #fff, inset -1px -1px 1px var(--bp-bevel), 0 1px 1px rgba(0, 0, 0, 0.15);
