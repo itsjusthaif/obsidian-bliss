@@ -1486,6 +1486,19 @@ body:not(#bp-x) .nn-navigation-calendar button[class*="nn-navigation-calendar"]:
 .nn-navigation-calendar-day.is-today .nn-navigation-calendar-day-number {
   color: #fff;
 }
+/* Year view: the transparent-button reset above hid the current-month fill, leaving white text on a pale cell */
+body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-year-month.is-current-month:not(.has-feature-image),
+body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-year-month.is-current-month:not(.has-feature-image):hover {
+  background: var(--nn-theme-calendar-day-today-bg);
+  border-radius: var(--nn-calendar-cell-radius);
+}
+body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-year-month.is-current-month:not(.has-feature-image) {
+  --nn-theme-calendar-note-indicator-color: #fff;
+  --nn-theme-calendar-unfinished-task-indicator-color: #fff;
+}
+body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-year-month.is-current-month:not(.has-feature-image):hover {
+  background: color-mix(in srgb, var(--nn-theme-calendar-day-today-bg) 85%, #000);
+}
 .nn-navigation-calendar-month {
   font-weight: 700;
 }
@@ -2337,6 +2350,9 @@ body.bp-classic-square :is(
 body.bp-classic-square .nn-navigation-calendar button[class*="nn-navigation-calendar"],
 body.bp-classic-square .nn-navigation-calendar-day.is-today,
 body.bp-classic-square .nn-navigation-calendar[data-highlight-today='true'] .nn-navigation-calendar-day.is-today::before {
+  border-radius: 0;
+}
+body.bp-classic-square:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-year-month.is-current-month:not(.has-feature-image) {
   border-radius: 0;
 }
 body.bp-classic-square .workspace-split.mod-root {
