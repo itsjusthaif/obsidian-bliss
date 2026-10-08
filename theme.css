@@ -1921,39 +1921,40 @@ body.bp-paper-flat {
 /* ================= Dark mode: slate grey ================= */
 body.theme-dark {
   color-scheme: dark;
-  --bp-list-top: #31363e;
-  --bp-list-bottom: #2a2f36;
+  --bp-list-top: #434953;
+  --bp-list-bottom: #3b414b;
   --bp-chrome: #2b2f36;
-  --bp-panel: #343941;
-  --bp-paper: #2f343b;
-  --bp-border: #5a636f;
-  --bp-border-soft: #4d5560;
+  --bp-panel: #2f343b;
+  --bp-paper: #3e444e;
+  --bp-border: #646e7c;
+  --bp-border-soft: #566070;
   --bp-card: #3c424b;
-  --bp-card-alt: #383e47;
-  --bp-zebra: #333840;
+  --bp-card-alt: #353a43;
+  --bp-zebra: #434952;
   --bp-status-top: #3a4049;
-  --bp-line-soft: #454c57;
-  --bp-line-dotted: #4a525e;
+  --bp-line-soft: #505866;
+  --bp-line-dotted: #566070;
   --bp-text: #e4e7ec;
-  --bp-text-muted: #a9b0bb;
-  --bp-text-faint: #9aa2b0;
-  --bp-text-dim: #7d8696;
+  --bp-text-muted: #bec5d0;
+  --bp-text-faint: #b0b8c4;
+  --bp-text-dim: #a8b1be;
   --bp-text-strong: #fff;
-  --bp-hilite: #3f4a5e;
-  --bp-hilite-2: #465270;
-  --bp-current: #47516a;
+  --bp-hilite: #455168;
+  --bp-hilite-2: #4b5875;
+  --bp-current: #4c5974;
   --bp-pressed: linear-gradient(to bottom, #2f343c 0%, #3a4049 100%);
-  --bp-field: #3a4049;
+  --bp-field: #353b44;
   --bp-grad-orange: linear-gradient(to bottom, #6b5330 0%, #4f3d22 100%);
-  --bp-accent-soft-0: color-mix(in srgb, var(--bp-accent-mid) 14%, #2f343b);
-  --bp-accent-soft: color-mix(in srgb, var(--bp-accent-mid) 20%, #2f343b);
-  --bp-accent-soft-2: color-mix(in srgb, var(--bp-accent-mid) 30%, #2f343b);
-  --bp-accent-soft-3: color-mix(in srgb, var(--bp-accent-mid) 24%, #2f343b);
-  --bp-accent-soft-line: color-mix(in srgb, var(--bp-accent-mid) 45%, #343941);
-  --bp-accent-line: color-mix(in srgb, var(--bp-accent-mid) 50%, #4d5560);
-  --bp-accent-text: color-mix(in srgb, var(--bp-accent-top) 55%, #fff);
-  --bp-accent-link: color-mix(in srgb, var(--bp-accent-top) 62%, #fff);
-  --bp-select: color-mix(in srgb, var(--bp-accent-mid) 40%, #2f343b);
+  --bp-accent-soft-0: color-mix(in srgb, var(--bp-accent-mid) 14%, #3e444e);
+  --bp-accent-soft: color-mix(in srgb, var(--bp-accent-mid) 20%, #3e444e);
+  --bp-accent-soft-2: color-mix(in srgb, var(--bp-accent-mid) 30%, #3e444e);
+  --bp-accent-soft-3: color-mix(in srgb, var(--bp-accent-mid) 24%, #3e444e);
+  --bp-accent-soft-line: color-mix(in srgb, var(--bp-accent-mid) 45%, #3e444e);
+  --bp-accent-line: color-mix(in srgb, var(--bp-accent-mid) 50%, #566070);
+  --bp-accent-text: color-mix(in srgb, var(--bp-accent-top) 40%, #fff);
+  --bp-accent-link: color-mix(in srgb, var(--bp-accent-top) 45%, #fff);
+  --bp-select: color-mix(in srgb, var(--bp-accent-mid) 40%, #3e444e);
+  --link-unresolved-color: #ff9a9a;
   --text-highlight-bg: rgba(240, 200, 80, 0.3);
   --nn-theme-file-tag-bg: #2f4a33;
   --nn-theme-file-tag-border-color: #4a9a4a;
@@ -1998,12 +1999,12 @@ body.theme-dark .cm-s-obsidian span.cm-hashtag {
 }
 body.theme-dark .callout {
   --cb: #c9a63a;
-  background: color-mix(in srgb, var(--cb) 14%, #2f343b);
-  border-color: color-mix(in srgb, var(--cb) 55%, #2f343b);
+  background: color-mix(in srgb, var(--cb) 14%, #3e444e);
+  border-color: color-mix(in srgb, var(--cb) 55%, #3e444e);
 }
 body.theme-dark .callout .callout-title {
-  background: color-mix(in srgb, var(--cb) 30%, #2f343b);
-  border-bottom-color: color-mix(in srgb, var(--cb) 55%, #2f343b);
+  background: color-mix(in srgb, var(--cb) 30%, #3e444e);
+  border-bottom-color: color-mix(in srgb, var(--cb) 55%, #3e444e);
   color: var(--bp-text);
 }
 body.theme-dark .callout[data-callout="info"],
@@ -2052,13 +2053,16 @@ body.theme-dark .nn-file-tag,
 body.theme-dark .nn-file-property {
   color: #a8dba8;
 }
+body.theme-dark .nn-navigation-calendar-day-cell.is-weekend::before {
+  background: rgba(0, 0, 0, 0.16);
+}
 
 /* ================= Dark mode: second pass (surfaces that were still light) ================= */
 body.theme-dark {
   --nn-theme-list-bg: var(--bp-paper);
   --nn-theme-list-separator-color: var(--bp-line-soft);
-  --nn-theme-file-selected-bg: color-mix(in srgb, var(--bp-accent-mid) 28%, #2f343b);
-  --nn-theme-file-selected-inactive-bg: color-mix(in srgb, var(--bp-accent-mid) 20%, #2f343b);
+  --nn-theme-file-selected-bg: color-mix(in srgb, var(--bp-accent-mid) 28%, #3e444e);
+  --nn-theme-file-selected-inactive-bg: color-mix(in srgb, var(--bp-accent-mid) 20%, #3e444e);
   --nn-theme-file-selected-border-color: var(--bp-accent-mid);
   --nn-theme-foreground: var(--bp-text);
 }
@@ -2150,8 +2154,8 @@ body.bp-note-cream {
 }
 body.theme-dark.bp-note-warm,
 body.theme-dark.bp-note-cream {
-  --bp-note-top: #33383f;
-  --bp-note-bottom: #2b3037;
+  --bp-note-top: #424852;
+  --bp-note-bottom: #3b414b;
 }
 body .workspace-split.mod-root .view-content {
   background: linear-gradient(to bottom, var(--bp-note-top), var(--bp-note-bottom));
@@ -2453,9 +2457,9 @@ body {
 
 /* ================= Dark polish: side panel gradient, active sidebar tab icon ================= */
 body.theme-dark {
-  --bp-nav-top: #383e46;
-  --bp-nav-bottom: #2e333a;
-  --nn-theme-nav-bg: #333940;
+  --bp-nav-top: #343a42;
+  --bp-nav-bottom: #2b2f36;
+  --nn-theme-nav-bg: #30353c;
 }
 body .nn-shortcut-pinned,
 body .nn-navigation-pane-chrome {
