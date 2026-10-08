@@ -8,6 +8,7 @@ Inspired by: [Fernando Borretti on X](https://x.com/zetalyrae/status/20468053361
 
 ## Contents
 
+- [Contents](#contents)
 - [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Companion plugins](#companion-plugins)
@@ -16,6 +17,10 @@ Inspired by: [Fernando Borretti on X](https://x.com/zetalyrae/status/20468053361
 - [Customizing](#customizing)
 - [Development](#development)
 - [Changelog](#changelog)
+- [\[1.1.0\]](#110)
+  - [Added](#added)
+  - [Fixed](#fixed)
+  - [Changed](#changed)
 - [License](#license)
 - [Disclaimer](#disclaimer)
 
@@ -70,6 +75,7 @@ All options live in Style Settings under **Bliss**.
 | Accent colour | Luna Blue, Olive Green, Silver, Orange, or your Obsidian accent colour |
 | Notes list background | Flat, warm paper or cream behind the Notebook Navigator list |
 | Note background fade | Soft top-to-bottom tint behind the open note |
+| Dark style | Dark mode only: Slate (the default), Midnight (deep blue-black with soft glow) or Contrast (near-black with brighter borders, text and focus rings) |
 | Interface text size | 10 to 14 px for labels, buttons, sidebars and menus |
 | Classic square corners | Square boxes, pills and buttons for the original intranet look |
 | Disable desk texture | Removes the fine dot pattern from the window chrome and ribbon |
