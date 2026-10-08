@@ -1275,11 +1275,11 @@ body.theme-light {
 
 /* ---- Settings sub-page titlebar: XP-style strip instead of white fade ---- */
 body:not(#bp-x) .setting-page-titlebar {
-  background: linear-gradient(to bottom, var(--bp-nav-top), var(--bp-nav-bottom)) !important;
-  box-shadow: 0 1px 0 var(--bp-border-soft), 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+  background: linear-gradient(to bottom, var(--bp-nav-top), var(--bp-nav-bottom));
+  box-shadow: 0 1px 0 var(--bp-border-soft), 0 2px 4px rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid var(--bp-border-soft);
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 body:not(#bp-x) .setting-page-title {
   color: var(--bp-navy);
@@ -1291,7 +1291,7 @@ body:not(#bp-x) .setting-page-back-button:hover {
 }
 
 /* ---- Reading-view code block: language flair sits above code, compact ---- */
-body:not(#bp-x) .markdown-rendered pre:has(> .code-block-flair) {
+body:not(#bp-x) .markdown-rendered pre[class*="language-"] {
   padding-top: 26px;
 }
 body:not(#bp-x) .code-block-flair {
@@ -1329,9 +1329,7 @@ body:not(#bp-x) .nn-navigation-calendar-day {
 }
 
 /* ---- Readability fix: dropdowns, suggesters, search fields, popups ---- */
-select,
-.dropdown,
-input[type="text"],
+body:not(#bp-x) :is(input[type="text"],
 input[type="search"],
 input[type="number"],
 input[type="email"],
@@ -1339,9 +1337,9 @@ input[type="url"],
 input[type="password"],
 textarea,
 .prompt-input,
-.search-input-container input {
-  background-color: var(--bp-field) !important;
-  color: var(--bp-text) !important;
+.search-input-container input) {
+  background-color: var(--bp-field);
+  color: var(--bp-text);
   caret-color: var(--bp-text);
 }
 select option,
@@ -1351,7 +1349,7 @@ select optgroup {
 }
 input::placeholder,
 textarea::placeholder {
-  color: var(--bp-text-faint) !important;
+  color: var(--bp-text-faint);
   opacity: 1;
 }
 .suggestion-container,
@@ -1359,8 +1357,8 @@ textarea::placeholder {
 .menu,
 .tooltip,
 .notice {
-  background: var(--bp-panel) !important;
-  color: var(--bp-text) !important;
+  background: var(--bp-panel);
+  color: var(--bp-text);
 }
 .suggestion-item,
 .suggestion-content,
@@ -1369,18 +1367,18 @@ textarea::placeholder {
 .menu-item,
 .menu-item-title,
 .notice-message {
-  color: var(--bp-text) !important;
+  color: var(--bp-text);
 }
 .suggestion-item.is-selected,
 .suggestion-item:hover,
 .menu-item:hover {
-  background: var(--bp-hilite) !important;
-  color: var(--bp-text-strong) !important;
+  background: var(--bp-hilite);
+  color: var(--bp-text-strong);
 }
 .suggestion-container svg,
 .search-input-container svg,
 .search-input-clear-button {
-  color: var(--bp-text-muted) !important;
+  color: var(--bp-text-muted);
 }
 
 
@@ -1390,11 +1388,11 @@ textarea::placeholder {
   color: var(--bp-text);
 }
 .titlebar-button:hover {
-  background: var(--bp-xp-cream) !important;
+  background: var(--bp-xp-cream);
   color: var(--bp-text-strong);
 }
 .titlebar-button.mod-close:hover {
-  background: linear-gradient(to bottom, #ee8a78 0%, #c8402c 100%) !important;
+  background: linear-gradient(to bottom, #ee8a78 0%, #c8402c 100%);
   color: #fff;
 }
 .titlebar-button:active {
@@ -1404,10 +1402,10 @@ textarea::placeholder {
 
 /* ---- Narrow windows: sidebars shrink and the note keeps a minimum width, so the right sidebar's tab strip never slides under the window buttons ---- */
 .workspace-split.mod-left-split.mod-sidedock {
-  max-width: calc(100vw - 44px - 150px) !important;
+  max-width: calc(100vw - 44px - 150px);
 }
 body .workspace-split.mod-sidedock {
-  flex-shrink: 1 !important;
+  flex-shrink: 1;
 }
 body .workspace-split.mod-left-split.mod-sidedock {
   min-width: 220px;
@@ -1460,25 +1458,25 @@ body {
   --nn-calendar-header-chip-bg: transparent;
   --nn-calendar-week-gap: 0px;
 }
-.nn-navigation-calendar button[class*="nn-navigation-calendar"],
-.nn-navigation-calendar button[class*="nn-navigation-calendar"]:hover,
-.nn-navigation-calendar button[class*="nn-navigation-calendar"]:active {
-  border: 0 !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  padding-block: 0 !important;
+body:not(#bp-x) .nn-navigation-calendar button[class*="nn-navigation-calendar"],
+body:not(#bp-x) .nn-navigation-calendar button[class*="nn-navigation-calendar"]:hover,
+body:not(#bp-x) .nn-navigation-calendar button[class*="nn-navigation-calendar"]:active {
+  border: 0;
+  box-shadow: none;
+  text-shadow: none;
+  padding-block: 0;
 }
-.nn-navigation-calendar button[class*="nn-navigation-calendar"]:not(.nn-navigation-calendar-day):not(.has-feature-image) {
-  background: transparent !important;
+body:not(#bp-x) .nn-navigation-calendar button[class*="nn-navigation-calendar"]:not(.nn-navigation-calendar-day):not(.has-feature-image) {
+  background: transparent;
 }
-.nn-navigation-calendar button.nn-navigation-calendar-day:not(.has-feature-image):not(.has-feature-image-key) {
-  background: transparent !important;
+body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-day:not(.has-feature-image):not(.has-feature-image-key) {
+  background: transparent;
 }
-.nn-navigation-calendar button.nn-navigation-calendar-day:not(.has-feature-image):not(.has-feature-image-key):hover {
-  background: var(--nn-theme-calendar-hover-bg) !important;
+body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-day:not(.has-feature-image):not(.has-feature-image-key):hover {
+  background: var(--nn-theme-calendar-hover-bg);
 }
-.nn-navigation-calendar button[class*="nn-navigation-calendar"]:not(.nn-navigation-calendar-day):hover {
-  background: var(--nn-theme-calendar-hover-bg) !important;
+body:not(#bp-x) .nn-navigation-calendar button[class*="nn-navigation-calendar"]:not(.nn-navigation-calendar-day):hover {
+  background: var(--nn-theme-calendar-hover-bg);
 }
 .nn-navigation-calendar-day-cell {
   border-bottom: 1px solid var(--bp-line-soft);
@@ -1486,7 +1484,7 @@ body {
   box-sizing: border-box;
 }
 .nn-navigation-calendar-day.is-today {
-  border-radius: 999px !important;
+  border-radius: 999px;
 }
 .nn-navigation-calendar-day.is-today .nn-navigation-calendar-day-number {
   color: #fff;
@@ -1495,26 +1493,26 @@ body {
   font-weight: 700;
 }
 .nn-navigation-calendar-month .nn-navigation-calendar-quarter-button {
-  border: 1px solid var(--bp-accent-line) !important;
-  border-radius: 999px !important;
+  border: 1px solid var(--bp-accent-line);
+  border-radius: 999px;
   color: var(--bp-accent-text);
   font-size: 9px;
-  padding: 1px 6px !important;
+  padding: 1px 6px;
 }
 .nn-navigation-calendar-weekdays {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 .nn-navigation-calendar button.nn-navigation-calendar-nav-button {
-  border-radius: 999px !important;
+  border-radius: 999px;
   color: var(--bp-text-faint);
 }
 .nn-navigation-calendar button.nn-navigation-calendar-today {
-  border-radius: 999px !important;
+  border-radius: 999px;
   color: var(--bp-accent-link);
   font-size: 10px;
   font-weight: 700;
-  padding-inline: 8px !important;
+  padding-inline: 8px;
 }
 
 /* ================= Right sidebar: Obsidian Git ================= */
@@ -1618,8 +1616,8 @@ body {
 }
 .nn-navigation-calendar[data-highlight-today='true']
   .nn-navigation-calendar-day.is-today:not(.has-feature-image):not(.has-feature-image-key)::before {
-  border-radius: 50% !important;
-  inset: 16% !important;
+  border-radius: 50%;
+  inset: 16%;
 }
 
 /* 2. Modal close button: centred in the title bar, theme red on hover */
@@ -1767,25 +1765,25 @@ body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-heade
 
 /* ---- Sidebar tab strips: every icon is the same bevelled button as the Notebook Navigator header; centred with even padding ---- */
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header-container {
-  align-items: center !important;
-  padding-bottom: 0 !important;
-  padding-top: 0 !important;
+  align-items: center;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top-right-space) .workspace-tab-header-container {
   box-sizing: border-box;
-  height: 32px !important;
-  padding: 5px 8px !important;
+  height: 32px;
+  padding: 5px 8px;
 }
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header-container-inner {
-  align-items: center !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  align-items: center;
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header::before,
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header::after,
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header-inner::after {
-  display: none !important;
+  display: none;
 }
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header,
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active {
@@ -1801,12 +1799,12 @@ body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-heade
 }
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header .workspace-tab-header-inner,
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active .workspace-tab-header-inner {
-  background: transparent !important;
-  border: 0 !important;
-  border-top: 0 !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  background: transparent;
+  border: 0;
+  border-top: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
 }
 body .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active {
   background: linear-gradient(to bottom, var(--bp-accent-soft-2) 0%, var(--bp-accent-soft) 100%);
@@ -1967,9 +1965,9 @@ body.theme-dark input[type="password"],
 body.theme-dark textarea,
 body.theme-dark .prompt-input,
 body.theme-dark .search-input-container input {
-  background-color: var(--bp-field) !important;
+  background-color: var(--bp-field);
   border-color: var(--bp-border);
-  color: var(--bp-text) !important;
+  color: var(--bp-text);
   caret-color: var(--bp-text);
 }
 body.theme-dark select option,
@@ -2112,19 +2110,19 @@ body {
   --nn-theme-list-bg: color-mix(in srgb, var(--bp-list-top) 50%, var(--bp-list-bottom));
   --nn-theme-nav-bg: color-mix(in srgb, var(--bp-nav-top) 50%, var(--bp-nav-bottom));
 }
-body .nn-list-pane {
-  background: linear-gradient(to bottom, var(--bp-list-top), var(--bp-list-bottom)) !important;
+body:not(#bp-x) .nn-list-pane {
+  background: linear-gradient(to bottom, var(--bp-list-top), var(--bp-list-bottom));
 }
-body .nn-navigation-pane {
-  background: linear-gradient(to bottom, var(--bp-nav-top), var(--bp-nav-bottom)) !important;
+body:not(#bp-x) .nn-navigation-pane {
+  background: linear-gradient(to bottom, var(--bp-nav-top), var(--bp-nav-bottom));
 }
-body .nn-list-pane-scroller,
-body .nn-list-pane-content,
-body .nn-list-pane-panel,
-body .nn-navigation-pane-scroller,
-body .nn-navigation-pane-content,
-body .nn-navigation-pane-panel {
-  background: transparent !important;
+body:not(#bp-x) .nn-list-pane-scroller,
+body:not(#bp-x) .nn-list-pane-content,
+body:not(#bp-x) .nn-list-pane-panel,
+body:not(#bp-x) .nn-navigation-pane-scroller,
+body:not(#bp-x) .nn-navigation-pane-content,
+body:not(#bp-x) .nn-navigation-pane-panel {
+  background: transparent;
 }
 
 /* ================= Note background fade ================= */
@@ -2146,33 +2144,33 @@ body.theme-dark.bp-note-cream {
   --bp-note-bottom: #2b3037;
 }
 body .workspace-split.mod-root .view-content {
-  background: linear-gradient(to bottom, var(--bp-note-top), var(--bp-note-bottom)) !important;
+  background: linear-gradient(to bottom, var(--bp-note-top), var(--bp-note-bottom));
 }
 body .workspace-split.mod-root .markdown-source-view,
 body .workspace-split.mod-root .markdown-preview-view,
 body .workspace-split.mod-root .cm-editor,
 body .workspace-split.mod-root .cm-scroller {
-  background: transparent !important;
+  background: transparent;
 }
 
 /* ================= Dialogs: flush XP-style title bar with the close button inside it ================= */
 body .modal {
-  padding: 0 !important;
+  padding: 0;
 }
 body .modal .modal-header,
 body .modal .modal-title {
   border-radius: 0;
-  margin: 0 !important;
-  padding: 5px 40px 5px 12px !important;
+  margin: 0;
+  padding: 5px 40px 5px 12px;
 }
 body .modal .modal-content {
   padding: 14px 16px 16px;
 }
 body .modal .modal-close-button {
   height: 22px;
-  inset: 3px 6px auto auto !important;
+  inset: 3px 6px auto auto;
   position: absolute;
-  top: 3px !important;
+  top: 3px;
   width: 22px;
   z-index: 2;
 }
@@ -2186,22 +2184,22 @@ body .modal .modal-button-container {
 /* ---- Dialog close button: always XP red, matching the window close button ---- */
 body .modal .modal-close-button,
 body .modal .modal-close-button.clickable-icon {
-  background: linear-gradient(to bottom, #e8806c 0%, #c8402c 100%) !important;
-  border: 1px solid #8a2a1a !important;
+  background: linear-gradient(to bottom, #e8806c 0%, #c8402c 100%);
+  border: 1px solid #8a2a1a;
   border-radius: 4px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 1px rgba(0, 0, 0, 0.25) !important;
-  color: #fff !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #fff;
 }
 body .modal .modal-close-button svg {
-  color: #fff !important;
+  color: #fff;
   stroke: #fff;
 }
 body .modal .modal-close-button:hover {
-  background: linear-gradient(to bottom, #f09a88 0%, #d4503a 100%) !important;
+  background: linear-gradient(to bottom, #f09a88 0%, #d4503a 100%);
 }
 body .modal .modal-close-button:active {
-  background: linear-gradient(to bottom, #a83422 0%, #c8402c 100%) !important;
-  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4) !important;
+  background: linear-gradient(to bottom, #a83422 0%, #c8402c 100%);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -2209,43 +2207,43 @@ body .modal .modal-close-button:active {
 body .modal .modal-header {
   box-sizing: border-box;
   min-height: 32px;
-  padding: 7px 40px 7px 12px !important;
+  padding: 7px 40px 7px 12px;
 }
 body .modal .modal-header .modal-title {
-  background: transparent !important;
+  background: transparent;
   border: 0;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
 }
 body .modal .modal-header-button,
 body .modal .modal-header-button.clickable-icon,
 body .modal .modal-header-button.mod-raised {
   align-items: center;
-  background: linear-gradient(to bottom, #e8806c 0%, #c8402c 100%) !important;
-  border: 1px solid #8a2a1a !important;
+  background: linear-gradient(to bottom, #e8806c 0%, #c8402c 100%);
+  border: 1px solid #8a2a1a;
   border-radius: 4px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 1px rgba(0, 0, 0, 0.25) !important;
-  color: #fff !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #fff;
   display: flex;
   height: 22px;
-  inset: 5px 6px auto auto !important;
+  inset: 5px 6px auto auto;
   justify-content: center;
   padding: 0;
   position: absolute;
   width: 22px;
 }
 body .modal .modal-header-button svg {
-  color: #fff !important;
+  color: #fff;
   height: 14px;
   stroke: #fff;
   width: 14px;
 }
 body .modal .modal-header-button:hover {
-  background: linear-gradient(to bottom, #f09a88 0%, #d4503a 100%) !important;
+  background: linear-gradient(to bottom, #f09a88 0%, #d4503a 100%);
 }
 body .modal .modal-header-button:active {
-  background: linear-gradient(to bottom, #a83422 0%, #c8402c 100%) !important;
-  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4) !important;
+  background: linear-gradient(to bottom, #a83422 0%, #c8402c 100%);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* ================= Portal refinements: desk texture ================= */
@@ -2337,12 +2335,12 @@ body.bp-classic-square :is(
   .git-view .git-tools .type, .git-view .tree-item-flair, .git-view .commit-msg-input,
   .markdown-rendered pre, .markdown-rendered table, .markdown-rendered code, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track
 ) {
-  border-radius: 0 !important;
+  border-radius: 0;
 }
 body.bp-classic-square .nn-navigation-calendar button[class*="nn-navigation-calendar"],
 body.bp-classic-square .nn-navigation-calendar-day.is-today,
 body.bp-classic-square .nn-navigation-calendar[data-highlight-today='true'] .nn-navigation-calendar-day.is-today::before {
-  border-radius: 0 !important;
+  border-radius: 0;
 }
 body.bp-classic-square .workspace-split.mod-root {
   border-top-left-radius: 0;
@@ -2362,25 +2360,25 @@ body .nn-virtual-list-group-header .nn-list-group-header {
 body .nn-list-group-header .nn-list-group-header-collapse-button,
 body .nn-list-sticky-header .nn-list-group-header-collapse-button {
   align-items: center;
-  background: var(--bp-xp-cream) !important;
-  border: 1px solid var(--bp-btn-border) !important;
-  border-radius: 4px !important;
-  box-shadow: inset 0 1px 0 #fff, inset -1px -1px 1px var(--bp-bevel), 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+  background: var(--bp-xp-cream);
+  border: 1px solid var(--bp-btn-border);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 #fff, inset -1px -1px 1px var(--bp-bevel), 0 1px 1px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   display: inline-flex;
-  height: 22px !important;
+  height: 22px;
   justify-content: center;
-  margin: 0 0 0 auto !important;
+  margin: 0 0 0 auto;
   min-width: 30px;
-  padding: 0 6px !important;
+  padding: 0 6px;
   width: 30px;
 }
 body .nn-list-group-header .nn-list-group-header-collapse-button:hover {
-  box-shadow: inset 0 0 0 2px var(--bp-ring-hover), 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: inset 0 0 0 2px var(--bp-ring-hover), 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 body .nn-list-group-header .nn-list-group-header-collapse-button:active {
-  background: var(--bp-pressed) !important;
-  box-shadow: inset 0 0 0 2px var(--bp-ring-active), inset 1px 1px 3px rgba(0, 0, 0, 0.3) !important;
+  background: var(--bp-pressed);
+  box-shadow: inset 0 0 0 2px var(--bp-ring-active), inset 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 body .nn-list-group-header .nn-list-group-header-collapse-button svg {
   height: 14px;
@@ -2403,7 +2401,7 @@ body .nn-list-group-header .nn-list-group-header-collapse-button svg {
   max-width: 100%;
   min-width: 6em;
   text-overflow: clip;
-  width: auto !important;
+  width: auto;
 }
 
 
@@ -2448,7 +2446,7 @@ body.theme-dark {
 }
 body .nn-shortcut-pinned,
 body .nn-navigation-pane-chrome {
-  background: transparent !important;
+  background: transparent;
 }
 body.theme-dark .nn-shortcut-pinned {
   border-bottom-color: rgba(0, 0, 0, 0.35);
@@ -2511,21 +2509,21 @@ body:not(#bp-x) :is(select, .dropdown) {
   --bp-face: var(--bp-xp-cream);
   background:
     conic-gradient(from -45deg at 50% 100%, var(--bp-text) 0 90deg, transparent 0) calc(100% - 9px) 50% / 10px 5px no-repeat,
-    var(--bp-face) !important;
-  border: 1px solid var(--bp-btn-border) !important;
-  border-radius: var(--bp-btn-radius) !important;
-  box-shadow: var(--bp-btn-shadow) !important;
-  color: var(--bp-text) !important;
+    var(--bp-face);
+  border: 1px solid var(--bp-btn-border);
+  border-radius: var(--bp-btn-radius);
+  box-shadow: var(--bp-btn-shadow);
+  color: var(--bp-text);
   height: 24px;
   min-width: 110px;
-  padding: 0 28px 0 10px !important;
+  padding: 0 28px 0 10px;
 }
 body:not(#bp-x) :is(select, .dropdown):hover {
-  box-shadow: var(--bp-btn-shadow-hover) !important;
+  box-shadow: var(--bp-btn-shadow-hover);
 }
 body:not(#bp-x) :is(select, .dropdown):active {
   --bp-face: var(--bp-pressed);
-  box-shadow: var(--bp-btn-shadow-active) !important;
+  box-shadow: var(--bp-btn-shadow-active);
 }
 body:not(#bp-x) :is(select, .dropdown):focus-visible {
   outline: 2px solid var(--bp-ring-hover);
@@ -2534,11 +2532,11 @@ body:not(#bp-x) :is(select, .dropdown):focus-visible {
 
 /* Classic square corners also squares the toggles */
 body.bp-classic-square .checkbox-container {
-  border-radius: 3px !important;
+  border-radius: 3px;
 }
 body.bp-classic-square .checkbox-container::after,
 body.bp-classic-square .checkbox-container.is-enabled::after {
-  border-radius: 1px !important;
+  border-radius: 1px;
 }
 
 /* ================= Scrollbars: slim beveled thumb on a dithered track, no arrow buttons ================= */
@@ -2548,36 +2546,36 @@ height: 10px;
 background: transparent;
 }
 body:not(#bp-x) ::-webkit-scrollbar-button {
-display: none !important;
+display: none;
 }
 body:not(#bp-x) ::-webkit-scrollbar-track,
 body:not(#bp-x) ::-webkit-scrollbar-track-piece {
 background:
   repeating-conic-gradient(color-mix(in srgb, var(--bp-line-soft) 70%, transparent) 0% 25%, transparent 0% 50%) 0 0 / 2px 2px,
-  var(--bp-panel) !important;
-border: 0 !important;
-border-radius: 0 !important;
+  var(--bp-panel);
+border: 0;
+border-radius: 0;
 box-shadow: inset 1px 0 0 var(--bp-line-soft);
 }
 body:not(#bp-x) ::-webkit-scrollbar-corner {
 background: var(--bp-panel);
 }
 body:not(#bp-x) ::-webkit-scrollbar-thumb {
-background-clip: border-box !important;
-border: 1px solid var(--bp-border) !important;
-border-radius: 2px !important;
+background-clip: border-box;
+border: 1px solid var(--bp-border);
+border-radius: 2px;
 box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 1px var(--bp-bevel);
 min-height: 24px;
 min-width: 24px;
 }
 body:not(#bp-x) ::-webkit-scrollbar-thumb:vertical {
-background: linear-gradient(to right, #fff 0%, #f4f2e8 45%, #d9d4c6 100%) !important;
+background: linear-gradient(to right, #fff 0%, #f4f2e8 45%, #d9d4c6 100%);
 }
 body:not(#bp-x) ::-webkit-scrollbar-thumb:horizontal {
-background: linear-gradient(to bottom, #fff 0%, #f4f2e8 45%, #d9d4c6 100%) !important;
+background: linear-gradient(to bottom, #fff 0%, #f4f2e8 45%, #d9d4c6 100%);
 }
 body:not(#bp-x) ::-webkit-scrollbar-thumb:hover {
-border-color: var(--bp-btn-border) !important;
+border-color: var(--bp-btn-border);
 box-shadow: inset 0 0 0 2px var(--bp-ring-hover);
 }
 body:not(#bp-x) ::-webkit-scrollbar-thumb:active {
@@ -2587,29 +2585,29 @@ body.theme-dark:not(#bp-x) ::-webkit-scrollbar-thumb {
 box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.15), inset -1px -1px 1px var(--bp-bevel);
 }
 body.theme-dark:not(#bp-x) ::-webkit-scrollbar-thumb:vertical {
-background: linear-gradient(to right, #5e6571 0%, #4e5560 45%, #394049 100%) !important;
+background: linear-gradient(to right, #5e6571 0%, #4e5560 45%, #394049 100%);
 }
 body.theme-dark:not(#bp-x) ::-webkit-scrollbar-thumb:horizontal {
-background: linear-gradient(to bottom, #5e6571 0%, #4e5560 45%, #394049 100%) !important;
+background: linear-gradient(to bottom, #5e6571 0%, #4e5560 45%, #394049 100%);
 }
 body.theme-dark:not(#bp-x) ::-webkit-scrollbar-thumb:hover {
 box-shadow: inset 0 0 0 2px var(--bp-ring-hover);
 }
 body.bp-classic-square:not(#bp-x) ::-webkit-scrollbar-thumb {
-border-radius: 0 !important;
+border-radius: 0;
 }
 
 /* Reveal only while hovering a known scroller; scoped so no universal :not(:hover) selector is needed */
 body:not(#bp-x) :is(.cm-scroller, .markdown-preview-view, .nn-list-pane-scroller, .nn-navigation-pane-scroller, .workspace-leaf-content, .view-content, .vertical-tab-content, .vertical-tab-header, .modal-content, .suggestion-container, .menu):not(:hover)::-webkit-scrollbar-track,
 body:not(#bp-x) :is(.cm-scroller, .markdown-preview-view, .nn-list-pane-scroller, .nn-navigation-pane-scroller, .workspace-leaf-content, .view-content, .vertical-tab-content, .vertical-tab-header, .modal-content, .suggestion-container, .menu):not(:hover)::-webkit-scrollbar-track-piece,
 body:not(#bp-x) :is(.cm-scroller, .markdown-preview-view, .nn-list-pane-scroller, .nn-navigation-pane-scroller, .workspace-leaf-content, .view-content, .vertical-tab-content, .vertical-tab-header, .modal-content, .suggestion-container, .menu):not(:hover)::-webkit-scrollbar-corner {
-background: transparent !important;
-box-shadow: none !important;
+background: transparent;
+box-shadow: none;
 }
 body:not(#bp-x) :is(.cm-scroller, .markdown-preview-view, .nn-list-pane-scroller, .nn-navigation-pane-scroller, .workspace-leaf-content, .view-content, .vertical-tab-content, .vertical-tab-header, .modal-content, .suggestion-container, .menu):not(:hover)::-webkit-scrollbar-thumb {
-background: transparent !important;
-border-color: transparent !important;
-box-shadow: none !important;
+background: transparent;
+border-color: transparent;
+box-shadow: none;
 }
 
 
@@ -2647,16 +2645,16 @@ body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknote
 }
 body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > :not(.modal-header):not(.modal-title):not(.modal-close-button):not(.modal-header-button):not(.modal-bg) {
   box-sizing: border-box;
-  padding-inline: var(--bp-modal-pad) !important;
+  padding-inline: var(--bp-modal-pad);
 }
 body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > .modal-content {
-  padding-block: 14px 8px !important;
+  padding-block: 14px 8px;
 }
 body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > :is(.modal-button-container, .modal-footer) {
   align-items: center;
   gap: 8px;
-  margin: 0 !important;
-  padding-block: 8px 14px !important;
+  margin: 0;
+  padding-block: 8px 14px;
 }
 body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknotes)) > :last-child:not(.modal-header):not(.modal-button-container) {
   padding-bottom: 14px;
@@ -2664,19 +2662,19 @@ body:not(#bp-x) .modal:not(:is(.mod-settings, .mod-sidebar-layout, .mod-tasknote
 
 /* Destructive buttons: raised red Luna button; focus ring instead of Obsidian's flat inset look */
 body:not(#bp-x) button.mod-warning {
-  background: linear-gradient(to bottom, #f09a88 0%, #d4503a 16%, #c8402c 70%, #a83422 100%) !important;
-  border: 1px solid #8a2a1a !important;
-  border-radius: var(--bp-btn-radius) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), inset -1px -1px 1px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.25) !important;
-  color: #fff !important;
+  background: linear-gradient(to bottom, #f09a88 0%, #d4503a 16%, #c8402c 70%, #a83422 100%);
+  border: 1px solid #8a2a1a;
+  border-radius: var(--bp-btn-radius);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), inset -1px -1px 1px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
 }
 body:not(#bp-x) button.mod-warning:hover {
-  box-shadow: inset 0 0 0 2px var(--bp-ring-hover), 0 1px 1px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: inset 0 0 0 2px var(--bp-ring-hover), 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 body:not(#bp-x) button.mod-warning:active {
-  background: linear-gradient(to bottom, #a83422 0%, #c8402c 100%) !important;
-  box-shadow: inset 0 0 0 2px var(--bp-ring-active), inset 1px 1px 3px rgba(0, 0, 0, 0.4) !important;
+  background: linear-gradient(to bottom, #a83422 0%, #c8402c 100%);
+  box-shadow: inset 0 0 0 2px var(--bp-ring-active), inset 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 body:not(#bp-x) button.mod-warning:focus-visible {
   outline: 2px solid var(--bp-ring-hover);
@@ -2792,11 +2790,11 @@ body:not(#bp-x) .nn-navigation-calendar-header {
 }
 body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-period-month,
 body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-period-year {
-  padding-inline: 4px !important;
+  padding-inline: 4px;
 }
 body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-nav-button {
   justify-content: center;
-  padding-inline: 0 !important;
+  padding-inline: 0;
   width: 22px;
 }
 
@@ -2840,7 +2838,7 @@ body.theme-dark {
 }
 body.bp-xp-nostalgia:not(#bp-x) .nn-list-group-header,
 body.bp-xp-nostalgia:not(#bp-x) .git-view .nav-folder-title {
-  background: var(--bp-grad-orange) !important;
+  background: var(--bp-grad-orange);
   border: 1px solid var(--bp-sunset-border);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
   color: var(--bp-sunset-text);
@@ -2851,7 +2849,7 @@ body:not(#bp-x) .nn-virtual-list-group-header {
   z-index: 2;
 }
 body:not(#bp-x) .nn-virtual-list-group-header::after {
-  display: none !important;
+  display: none;
 }
 body.bp-xp-nostalgia:not(#bp-x) .nn-list-group-header .nn-list-group-header-text,
 body.bp-xp-nostalgia:not(#bp-x) .git-view .nav-folder-title .nav-folder-title-content {

@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Cleaner stylesheet for the community theme checks: most `!important` rules replaced with higher selector specificity, and the code block language label no longer uses `:has()`. No visual change intended.
+
 ### Fixed
 
 - Narrow windows: the sidebars now shrink and the note keeps a minimum width, so the right sidebar's tab icons no longer slide under the minimise, maximise and close buttons.
