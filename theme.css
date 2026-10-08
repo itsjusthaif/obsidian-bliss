@@ -52,7 +52,7 @@ settings:
     -
         id: bp-paper
         title: Notes list background
-        description: Background of the middle Notebook Navigator pane. In dark mode, Off is flat and Warm paper and Cream share one subtle gradient.
+        description: Light mode only. Background of the middle Notebook Navigator pane.
         type: class-select
         allowEmpty: false
         default: bp-paper-warm
@@ -69,7 +69,7 @@ settings:
     -
         id: bp-note-fade
         title: Note background fade
-        description: Soft top-to-bottom tint behind the open note. In dark mode, Off is flat and Warm paper and Cream share one subtle fade.
+        description: Light mode only. Soft top-to-bottom tint behind the open note.
         type: class-select
         allowEmpty: false
         default: bp-note-flat
@@ -2193,8 +2193,8 @@ body.bp-note-cream {
 }
 body.theme-dark.bp-note-warm,
 body.theme-dark.bp-note-cream {
-  --bp-note-top: color-mix(in srgb, var(--bp-paper), #fff 3%);
-  --bp-note-bottom: color-mix(in srgb, var(--bp-paper), #000 5%);
+  --bp-note-top: var(--bp-paper);
+  --bp-note-bottom: var(--bp-paper);
 }
 body .workspace-split.mod-root .view-content {
   background: linear-gradient(to bottom, var(--bp-note-top), var(--bp-note-bottom));
@@ -3275,10 +3275,4 @@ body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast):not(#bp-x) :is(button, 
 body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast):not(#bp-x) :is(input[type="text"], input[type="search"], input[type="number"], textarea, .prompt-input):focus {
   border-color: var(--bp-accent-link);
   box-shadow: var(--bp-glow);
-}
-
-/* Keep after the dark styles above: Off (flat) must beat each style's own list gradient */
-body.theme-dark.bp-paper-flat {
-  --bp-list-top: var(--bp-paper);
-  --bp-list-bottom: var(--bp-paper);
 }
