@@ -84,6 +84,23 @@ settings:
                 label: Cream
                 value: bp-note-cream
     -
+        id: bp-dark-style
+        title: Dark style
+        description: Only applies in dark mode. Midnight is a deep blue-black with soft glow; Contrast is near-black with brighter borders, higher text contrast and clear focus rings. Both add layered shadows to menus, dialogs and the active tab.
+        type: class-select
+        allowEmpty: false
+        default: bp-dark-slate
+        options:
+            -
+                label: Slate
+                value: bp-dark-slate
+            -
+                label: Midnight
+                value: bp-dark-midnight
+            -
+                label: Contrast
+                value: bp-dark-contrast
+    -
         id: bp-ui-font
         title: Interface text size
         description: Size of labels, buttons, sidebars and menus. Note text size is set in Appearance > Font size.
@@ -1926,6 +1943,7 @@ body.theme-dark {
   --bp-chrome: #2b2f36;
   --bp-panel: #2f343b;
   --bp-paper: #3e444e;
+  --bp-dark-base: #3e444e;
   --bp-border: #646e7c;
   --bp-border-soft: #566070;
   --bp-card: #3c424b;
@@ -1945,15 +1963,15 @@ body.theme-dark {
   --bp-pressed: linear-gradient(to bottom, #2f343c 0%, #3a4049 100%);
   --bp-field: #353b44;
   --bp-grad-orange: linear-gradient(to bottom, #6b5330 0%, #4f3d22 100%);
-  --bp-accent-soft-0: color-mix(in srgb, var(--bp-accent-mid) 14%, #3e444e);
-  --bp-accent-soft: color-mix(in srgb, var(--bp-accent-mid) 20%, #3e444e);
-  --bp-accent-soft-2: color-mix(in srgb, var(--bp-accent-mid) 30%, #3e444e);
-  --bp-accent-soft-3: color-mix(in srgb, var(--bp-accent-mid) 24%, #3e444e);
-  --bp-accent-soft-line: color-mix(in srgb, var(--bp-accent-mid) 45%, #3e444e);
+  --bp-accent-soft-0: color-mix(in srgb, var(--bp-accent-mid) 14%, var(--bp-dark-base));
+  --bp-accent-soft: color-mix(in srgb, var(--bp-accent-mid) 20%, var(--bp-dark-base));
+  --bp-accent-soft-2: color-mix(in srgb, var(--bp-accent-mid) 30%, var(--bp-dark-base));
+  --bp-accent-soft-3: color-mix(in srgb, var(--bp-accent-mid) 24%, var(--bp-dark-base));
+  --bp-accent-soft-line: color-mix(in srgb, var(--bp-accent-mid) 45%, var(--bp-dark-base));
   --bp-accent-line: color-mix(in srgb, var(--bp-accent-mid) 50%, #566070);
   --bp-accent-text: color-mix(in srgb, var(--bp-accent-top) 40%, #fff);
   --bp-accent-link: color-mix(in srgb, var(--bp-accent-top) 45%, #fff);
-  --bp-select: color-mix(in srgb, var(--bp-accent-mid) 40%, #3e444e);
+  --bp-select: color-mix(in srgb, var(--bp-accent-mid) 40%, var(--bp-dark-base));
   --link-unresolved-color: #ff9a9a;
   --text-highlight-bg: rgba(240, 200, 80, 0.3);
   --nn-theme-file-tag-bg: #2f4a33;
@@ -1999,12 +2017,12 @@ body.theme-dark .cm-s-obsidian span.cm-hashtag {
 }
 body.theme-dark .callout {
   --cb: #c9a63a;
-  background: color-mix(in srgb, var(--cb) 14%, #3e444e);
-  border-color: color-mix(in srgb, var(--cb) 55%, #3e444e);
+  background: color-mix(in srgb, var(--cb) 14%, var(--bp-dark-base));
+  border-color: color-mix(in srgb, var(--cb) 55%, var(--bp-dark-base));
 }
 body.theme-dark .callout .callout-title {
-  background: color-mix(in srgb, var(--cb) 30%, #3e444e);
-  border-bottom-color: color-mix(in srgb, var(--cb) 55%, #3e444e);
+  background: color-mix(in srgb, var(--cb) 30%, var(--bp-dark-base));
+  border-bottom-color: color-mix(in srgb, var(--cb) 55%, var(--bp-dark-base));
   color: var(--bp-text);
 }
 body.theme-dark .callout[data-callout="info"],
@@ -2061,8 +2079,8 @@ body.theme-dark .nn-navigation-calendar-day-cell.is-weekend::before {
 body.theme-dark {
   --nn-theme-list-bg: var(--bp-paper);
   --nn-theme-list-separator-color: var(--bp-line-soft);
-  --nn-theme-file-selected-bg: color-mix(in srgb, var(--bp-accent-mid) 28%, #3e444e);
-  --nn-theme-file-selected-inactive-bg: color-mix(in srgb, var(--bp-accent-mid) 20%, #3e444e);
+  --nn-theme-file-selected-bg: color-mix(in srgb, var(--bp-accent-mid) 28%, var(--bp-dark-base));
+  --nn-theme-file-selected-inactive-bg: color-mix(in srgb, var(--bp-accent-mid) 20%, var(--bp-dark-base));
   --nn-theme-file-selected-border-color: var(--bp-accent-mid);
   --nn-theme-foreground: var(--bp-text);
 }
@@ -3149,4 +3167,85 @@ body:not(#bp-x) .tasknotes-plugin .metadata-container {
   body:not(#bp-x) .tasknotes-plugin.minimalist-task-modal.split-layout-enabled.expanded .modal-split-right .detail-label {
     padding-top: calc(var(--size-4-3) + var(--size-4-4));
   }
+}
+
+/* ================= Dark style: Midnight and Contrast (Slate is the default above) ================= */
+body.theme-dark.bp-dark-midnight {
+  --bp-dark-base: #1d2436;
+  --bp-chrome: #0e1320;
+  --bp-panel: #141a2a;
+  --bp-paper: #1d2436;
+  --bp-list-top: #252d44;
+  --bp-list-bottom: #1f2639;
+  --bp-nav-top: #1a2134;
+  --bp-nav-bottom: #0e1320;
+  --nn-theme-nav-bg: #131929;
+  --bp-border: #44527a;
+  --bp-border-soft: #323d5c;
+  --bp-card: #232b42;
+  --bp-card-alt: #192033;
+  --bp-zebra: #222a40;
+  --bp-status-top: #1a2134;
+  --bp-line-soft: #323d5c;
+  --bp-line-dotted: #3a4768;
+  --bp-text: #e8edf8;
+  --bp-text-muted: #bac4da;
+  --bp-text-faint: #aab5cf;
+  --bp-text-dim: #98a4c2;
+  --bp-hilite: #2b3a60;
+  --bp-hilite-2: #32457a;
+  --bp-current: #354a82;
+  --bp-pressed: linear-gradient(to bottom, #121827 0%, #1d2436 100%);
+  --bp-field: #121827;
+  --bp-glow: 0 0 0 1px color-mix(in srgb, var(--bp-accent-top) 60%, transparent), 0 0 12px color-mix(in srgb, var(--bp-accent-top) 40%, transparent);
+}
+body.theme-dark.bp-dark-contrast {
+  --bp-dark-base: #1b1c1f;
+  --bp-chrome: #0b0b0c;
+  --bp-panel: #121214;
+  --bp-paper: #1b1c1f;
+  --bp-list-top: #232427;
+  --bp-list-bottom: #1e1f22;
+  --bp-nav-top: #19191b;
+  --bp-nav-bottom: #0b0b0c;
+  --nn-theme-nav-bg: #111113;
+  --bp-border: #8c929d;
+  --bp-border-soft: #666c77;
+  --bp-card: #26272b;
+  --bp-card-alt: #1f2023;
+  --bp-zebra: #212225;
+  --bp-status-top: #19191b;
+  --bp-line-soft: #3d4047;
+  --bp-line-dotted: #4d515a;
+  --bp-text: #f6f7f9;
+  --bp-text-muted: #d2d6dd;
+  --bp-text-faint: #c4c9d2;
+  --bp-text-dim: #adb3be;
+  --bp-hilite: #2a3850;
+  --bp-hilite-2: #314668;
+  --bp-current: #34507c;
+  --bp-pressed: linear-gradient(to bottom, #0e0e10 0%, #1b1c1f 100%);
+  --bp-field: #0e0e10;
+  --bp-glow: 0 0 0 1px var(--bp-accent-link), 0 0 10px color-mix(in srgb, var(--bp-accent-top) 55%, transparent);
+}
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast) {
+  --bp-lift: 0 10px 28px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast) :is(.modal, .menu, .popover, .suggestion-container, .prompt) {
+  box-shadow: var(--bp-lift);
+}
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header-container {
+  background: linear-gradient(to bottom, var(--bp-nav-top) 0%, var(--bp-panel) 100%);
+}
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast):not(#bp-x) .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner {
+  background: linear-gradient(to bottom, var(--bp-card) 0%, var(--bp-paper) 100%);
+  box-shadow: inset 0 3px 0 var(--bp-orange), inset 0 4px 0 rgba(255, 255, 255, 0.1), 0 -4px 14px -6px color-mix(in srgb, var(--bp-accent-top) 70%, transparent);
+}
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast):not(#bp-x) :is(button, select, .dropdown, .checkbox-container, .clickable-icon, .vertical-tab-nav-item):focus-visible {
+  outline: 2px solid var(--bp-accent-link);
+  outline-offset: 1px;
+}
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast):not(#bp-x) :is(input[type="text"], input[type="search"], input[type="number"], textarea, .prompt-input):focus {
+  border-color: var(--bp-accent-link);
+  box-shadow: var(--bp-glow);
 }
