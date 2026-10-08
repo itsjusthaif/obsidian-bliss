@@ -7,3 +7,4 @@ backups/
 tests/snapshots/
 node_modules/
 ROADMAP.md
+*.code-workspace
