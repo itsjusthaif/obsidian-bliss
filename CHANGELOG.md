@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.2.0]
+
 ### Added
 
 - Style Settings: new Dark style option with Slate (the current look), Midnight (deep blue-black) and Contrast (near-black, brighter borders and text, clear focus rings). Midnight and Contrast add layered shadows to menus, dialogs and the active tab, and an accent glow on focused fields.
