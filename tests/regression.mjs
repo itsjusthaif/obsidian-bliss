@@ -15,7 +15,7 @@ const MARKERS = {
   tasknotes: [".mod-tasknotes", ".tn-task-modal__open-note-button", ".pomodoro-view__start-button", ".tasknotes-plugin .metadata-container", "--interactive-accent: var(--bp-accent-top)"],
   "dark elevation": ["--bp-paper: #3e444e;", "--bp-panel: #2f343b;", "--bp-list-top: #434953;", "--bp-text-muted: #bec5d0;"],
   "dark style": ["id: bp-dark-style", "body.theme-dark.bp-dark-midnight {", "body.theme-dark.bp-dark-contrast {", "--bp-lift:"],
-  "auto-hide status bar": ["id: bp-hide-status-bar", "body.bp-hide-status-bar .status-bar {", "body.bp-hide-status-bar .status-bar:hover,"],
+  "auto-hide status bar": ["id: bp-hide-status-bar", "body.bp-hide-status-bar .status-bar {", "body.bp-hide-status-bar .status-bar:hover {", "--bp-reveal-delay: 400ms;"],
 };
 
 const css = readFileSync(process.argv[2] ?? "theme.css", "utf8");

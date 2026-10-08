@@ -5,7 +5,7 @@
 ### Added
 
 - Style Settings: new Dark style option with Slate (the current look), Midnight (deep blue-black) and Contrast (near-black, brighter borders and text, clear focus rings). Midnight and Contrast add layered shadows to menus, dialogs and the active tab, and an accent glow on focused fields.
-- Style Settings: new Auto-hide status bar toggle that slides the bottom-right status bar out of view and back on hover (thanks to @rcegan, #1).
+- Style Settings: new Auto-hide status bar toggle that slides the bottom-right status bar out of view and back on hover after a short XP-style delay (thanks to @rcegan, #1).
 
 ### Changed
 
