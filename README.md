@@ -17,10 +17,10 @@ Inspired by: [Fernando Borretti on X](https://x.com/zetalyrae/status/20468053361
 - [Customizing](#customizing)
 - [Development](#development)
 - [Changelog](#changelog)
-- [\[1.1.0\]](#110)
+- [\[1.2.0\]](#120)
   - [Added](#added)
-  - [Fixed](#fixed)
   - [Changed](#changed)
+  - [Fixed](#fixed)
 - [License](#license)
 - [Disclaimer](#disclaimer)
 
@@ -116,27 +116,25 @@ Contributions are welcome. Fork the repo, branch from `dev` and open a pull requ
 | `npm run task -- <name>` and `npm run ship` | Optional helpers for task branches and merging into `dev`; `npm run setup` enables the matching git hooks |
 
 ## Changelog
-## [1.1.0]
+## [1.2.0]
 
 ### Added
 
-- Code blocks: classic sunken Luna frame and VS-style syntax colours, identical in editing and reading views; the language badge is unchanged.
-- Canvas: XP window cards, a desk surface and folder-tab groups; the dark graph view follows the accent colour.
-
-### Fixed
-
-- Headings: the gap under a heading is the same in editing and reading view, and the h1/h2 rule is drawn under the text.
-- Light mode: faint text is darker for better contrast.
-- Settings: the dropdown and label layout fixes now apply only inside the Settings window.
-- TaskNotes Edit task dialog: the Details panel is visible again, the Open note button matches the other buttons, and the task information box no longer takes the Properties panel look.
-- Primary buttons (Save and similar) now show a pressed state.
-- Plugin dialogs that set their own width are no longer capped at 560px.
-- TaskNotes Pomodoro and Statistics: buttons use the Luna look and the Statistics title no longer wraps into a narrow column.
-- Dark mode: the accent used by plugins as text and border colour is lighter so it reads on slate.
+- Style Settings: new Dark style option with Slate (the current look), Midnight (deep blue-black) and Contrast (near-black, brighter borders and text, clear focus rings). Midnight and Contrast add layered shadows to menus, dialogs and the active tab, and an accent glow on focused fields.
+- Style Settings: new Auto-hide status bar toggle that slides the bottom-right status bar out of view and back on hover with a smooth glide (thanks to @rcegan, #1).
 
 ### Changed
 
-- Smaller stylesheet: removed overridden declarations, empty rules and unused variables, with no visual change
+- Dark mode: the desk texture dots are slightly more visible on Slate, blue-tinted on Midnight and fainter on Contrast.
+- Dark mode: the note and list pane are now a lighter shade than the sidebars and window chrome, so the working surfaces feel raised. Properties, callouts, selected note card, hover and calendar colours, and muted text were retuned for the lighter surface.
+- Cleaner stylesheet for the community theme checks: most `!important` rules replaced with higher selector specificity, and the unused `:has()` code block rule removed. No visual change intended.
+
+### Fixed
+
+- Dark mode: unresolved links are now readable, and calendar weekend cells use a subtle shade instead of a heavy block.
+- Narrow windows: the sidebars now shrink and the note keeps a minimum width, so the right sidebar's tab icons no longer slide under the minimise, maximise and close buttons.
+- Top row alignment: the left sidebar tab strip now uses the same height as the note tab bar and the ribbon, so the lines across the top line up.
+- Notebook Navigator calendar year view: the current month is a filled accent cell again, so its white label is readable.
 
 See [CHANGELOG.md](CHANGELOG.md) for complete release notes.
 
