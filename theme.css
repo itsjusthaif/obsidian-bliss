@@ -121,6 +121,11 @@ settings:
         description: Removes the fine dot pattern from the window chrome and ribbon.
         type: class-toggle
     -
+        id: bp-hide-status-bar
+        title: Auto-hide status bar
+        description: Slides the bottom-right status bar (backlinks, word count, zoom) out of view. Hover the bottom-right corner to slide it back up.
+        type: class-toggle
+    -
         id: bp-toggle-follows-accent
         title: Toggle switches follow the accent
         description: Off keeps the classic XP green for switched-on toggles.
@@ -930,6 +935,20 @@ body.theme-light {
 }
 .status-bar {
   box-shadow: inset 0 1px 0 #fff;
+}
+/* A 4px sliver stays visible so the bar can still receive :hover */
+body.bp-hide-status-bar .status-bar {
+  transform: translateY(calc(100% - 4px));
+  transition: transform 0.25s ease;
+}
+body.bp-hide-status-bar .status-bar:hover,
+body.bp-hide-status-bar .status-bar:focus-within {
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  body.bp-hide-status-bar .status-bar {
+    transition: none;
+  }
 }
 .status-bar-item {
   border: 1px solid transparent;
