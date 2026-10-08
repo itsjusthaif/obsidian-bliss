@@ -4,7 +4,7 @@
 
 ### Changed
 
-- Cleaner stylesheet for the community theme checks: most `!important` rules replaced with higher selector specificity, and the code block language label no longer uses `:has()`. No visual change intended.
+- Cleaner stylesheet for the community theme checks: most `!important` rules replaced with higher selector specificity, and the unused `:has()` code block rule removed. No visual change intended.
 
 ### Fixed
 
