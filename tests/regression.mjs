@@ -6,6 +6,7 @@ import { readFileSync } from "node:fs";
 const MARKERS = {
   "code blocks": ["Code blocks: classic sunken frame", ".HyperMD-codeblock-begin", "--code-keyword: #0000ff"],
   "heading spacing": ["Space under headings equals the reading-view block margin"],
+  "calendar year current month": ["nn-navigation-calendar-year-month.is-current-month"],
   canvas: ["Canvas: XP window cards", ".canvas-group-label", "--canvas-color-5"],
   "graph (dark)": ["--graph-node-focused", "--graph-line: color-mix"],
   "dialog width": [":where(.modal:not(.mod-settings):not(.mod-sidebar-layout))", ".vertical-tab-content .setting-item-info"],
