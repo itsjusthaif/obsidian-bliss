@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Dark mode: the Notes list background option now works. Off gives a flat list pane in every dark style, and Warm paper and Cream share one subtle gradient. The note background fade now follows the active dark style instead of a fixed slate tint.
+
 ## [1.2.0]
 
 ### Added
