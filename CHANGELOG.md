@@ -4,10 +4,12 @@
 
 ### Changed
 
+- Dark mode: the note and list pane are now a lighter shade than the sidebars and window chrome, so the working surfaces feel raised. Properties, callouts, selected note card, hover and calendar colours, and muted text were retuned for the lighter surface.
 - Cleaner stylesheet for the community theme checks: most `!important` rules replaced with higher selector specificity, and the unused `:has()` code block rule removed. No visual change intended.
 
 ### Fixed
 
+- Dark mode: unresolved links are now readable, and calendar weekend cells use a subtle shade instead of a heavy block.
 - Narrow windows: the sidebars now shrink and the note keeps a minimum width, so the right sidebar's tab icons no longer slide under the minimise, maximise and close buttons.
 - Top row alignment: the left sidebar tab strip now uses the same height as the note tab bar and the ribbon, so the lines across the top line up.
 - Notebook Navigator calendar year view: the current month is a filled accent cell again, so its white label is readable.
