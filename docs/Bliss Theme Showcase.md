@@ -297,6 +297,7 @@ This is a very long line of text that should overflow the width of the code bloc
 | Interface text size | Number | 12px | 10 to 14 px |
 | Classic square corners | Toggle | Off | Original intranet look |
 | Disable desk texture | Toggle | Off | Removes dot pattern |
+| Auto-hide status bar | Toggle | Off | Slides away, reveals on hover |
 | Toggles follow accent | Toggle | Off | Off keeps XP green |
 
 | Left | Centre | Right |

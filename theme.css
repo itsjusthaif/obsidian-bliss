@@ -121,6 +121,11 @@ settings:
         description: Removes the fine dot pattern from the window chrome and ribbon.
         type: class-toggle
     -
+        id: bp-hide-status-bar
+        title: Auto-hide status bar
+        description: Slides the bottom-right status bar (backlinks, word count, zoom) out of view. Hover the bottom-right corner to slide it back up.
+        type: class-toggle
+    -
         id: bp-toggle-follows-accent
         title: Toggle switches follow the accent
         description: Off keeps the classic XP green for switched-on toggles.
@@ -930,6 +935,22 @@ body.theme-light {
 }
 .status-bar {
   box-shadow: inset 0 1px 0 #fff;
+}
+/* Auto-hide: a 4px sliver stays so the bar receives :hover. Any future hover-reveal item should use --bp-reveal-speed and --bp-reveal-ease the same way. */
+body.bp-hide-status-bar .status-bar {
+  transform: translateY(calc(100% - 4px));
+  transition: transform var(--bp-reveal-speed) var(--bp-reveal-ease);
+}
+body.bp-hide-status-bar .status-bar:hover {
+  transform: translateY(0);
+}
+body.bp-hide-status-bar .status-bar:focus-within {
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  body.bp-hide-status-bar .status-bar {
+    transition: none;
+  }
 }
 .status-bar-item {
   border: 1px solid transparent;
@@ -2529,6 +2550,8 @@ body, body.theme-dark, body.theme-light {
   --bp-btn-border: #003c74;
   --bp-btn-radius: 4px;
   --bp-strip-h: var(--header-height, 40px);
+  --bp-reveal-speed: 450ms;
+  --bp-reveal-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --bp-ring-hover: #fcc863;
   --bp-ring-active: #e0a840;
   --bp-btn-shadow: inset 0 1px 0 #fff, inset -1px -1px 1px var(--bp-bevel), 0 1px 1px rgba(0, 0, 0, 0.15);
