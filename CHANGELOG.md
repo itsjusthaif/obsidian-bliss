@@ -6,6 +6,10 @@
 
 - Notes list background and Note background fade are now light mode only, because they made almost no visible difference in dark. Dark mode always uses its fixed list gradient and a flat note, and the option descriptions say so.
 
+### Fixed
+
+- Editing view: the underline below a heading is no longer covered by inline code in that heading.
+
 ## [1.2.0]
 
 ### Added
