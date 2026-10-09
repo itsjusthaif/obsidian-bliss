@@ -95,7 +95,7 @@ settings:
     -
         id: bp-dark-style
         title: Dark style
-        description: Only applies in dark mode. Auto follows the accent: Zune gets Royale Dark, Embedded gets Midnight, everything else gets Slate. Midnight is a deep blue-black with soft glow; Contrast is near-black with brighter borders, higher text contrast and clear focus rings; Royale Dark is neutral charcoal with glossy split-shine buttons, after the XP Royale dark theme. All but Slate add layered shadows to menus, dialogs and the active tab.
+        description: Only applies in dark mode. Auto follows the accent, so Zune gets Royale Dark, Embedded gets Midnight and everything else gets Slate. Midnight is a deep blue-black with soft glow; Contrast is near-black with brighter borders, higher text contrast and clear focus rings; Royale Dark is neutral charcoal with glossy split-shine buttons, after the XP Royale dark theme. All but Slate add layered shadows to menus, dialogs and the active tab.
         type: class-select
         allowEmpty: false
         default: bp-dark-auto
@@ -3218,11 +3218,11 @@ body.theme-dark.bp-accent-whistler-chartreuse {
 /* Dark companions: Luna goes Royale Energy Blue and Silver goes Royale Noir in dark mode; Embedded lifts its light stops for slate */
 body.theme-dark.bp-accent-luna,
 body.theme-dark:not([class*="bp-accent-"]) {
-  --bp-accent-top: #5693dc;
-  --bp-accent-mid: #3d72cc;
-  --bp-accent-bottom: #2f60b8;
+  --bp-accent-top: #5a96e8;
+  --bp-accent-mid: #4478da;
+  --bp-accent-bottom: #2f62c4;
   --bp-accent-dark: #0e3270;
-  --bp-accent-hover-top: #78aef0;
+  --bp-accent-hover-top: #86b8f6;
 }
 body.theme-dark.bp-accent-silver {
   --bp-accent-top: #7f8c9b;

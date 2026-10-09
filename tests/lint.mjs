@@ -74,6 +74,7 @@ else {
   if (!/^name:/m.test(block)) add("error", base, "@settings: `name:` must be at column 0 (Style Settings regex ^name:)");
   if (!/^id:/m.test(block)) add("error", base, "@settings: `id:` must be at column 0");
   if (/\t/.test(block)) add("error", base, "@settings: tab characters break YAML");
+  for (const m of block.matchAll(/^\s*(?:title|description|label):\s*(?!["'])(.*:\s.*)$/gm)) add("error", lineOf(sm.index + m.index), "@settings: an unquoted value contains ': ' and breaks YAML parsing; reword it or quote the value");
   const ids = [...block.matchAll(/^\s*id:\s*(\S+)/gm)].map(m => m[1]).filter(id => id !== "bliss");
   const classValues = [...block.matchAll(/^\s*value:\s*(\S+)/gm)].map(m => m[1]);
   const body = src.slice(sm.index + sm[0].length);
