@@ -1920,10 +1920,14 @@ body.bp-accent-silver {
 }
 /* Light Metallic title bars with dark text, as in the XP reference; dark mode keeps white text on the Noir companion */
 body.theme-light.bp-accent-silver {
-  --bp-grad-section: linear-gradient(to bottom, #eceef4 0%, #d9dae6 14%, #e2e4ec 50%, #f6f6fa 86%, #d8d9e4 100%);
+  --bp-grad-section: linear-gradient(to bottom, #f2f3f8 0%, #d6d8e6 100%);
   --bp-header-text: #2c3050;
   --bp-header-shadow: rgba(255, 255, 255, 0.7);
   --bp-header-hover: rgba(44, 48, 80, 0.12);
+}
+/* Nostalgia Mode adds the glossy convex Metallic shading, sampled from the XP title bar */
+body.theme-light.bp-accent-silver.bp-xp-nostalgia {
+  --bp-grad-section: linear-gradient(to bottom, #eceef4 0%, #d9dae6 14%, #e2e4ec 50%, #f6f6fa 86%, #d8d9e4 100%);
 }
 /* Zune: orange sampled from the XP Zune theme; the id stays bp-accent-orange so saved settings keep working */
 body.bp-accent-orange {
