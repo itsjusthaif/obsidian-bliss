@@ -2984,9 +2984,9 @@ body:not(#bp-x) .markdown-rendered pre code {
 /* Live preview: code lines form one framed block, matching reading view; the language badge keeps its original place */
 /* Space under headings equals the reading-view block margin (--p-spacing), so a block right after a heading looks the same in both modes */
 body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
-  padding-bottom: var(--p-spacing);
+  padding-bottom: calc(var(--p-spacing) + 3px);
 }
-/* The h1/h2 rule is drawn 3px under the text so the gap below it stays empty, as in reading view */
+/* The h1/h2 rule sits 6px under the text so inline code in a heading cannot paint over it */
 body:not(#bp-x) .markdown-source-view.mod-cm6 .cm-line.HyperMD-header:is(.HyperMD-header-1, .HyperMD-header-2) {
   background: linear-gradient(var(--bp-accent-soft-2), var(--bp-accent-soft-2)) no-repeat 0 calc(100% - var(--p-spacing) + 3px) / 100% 2px;
   border-bottom: 0;
