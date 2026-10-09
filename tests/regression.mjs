@@ -20,6 +20,7 @@ const MARKERS = {
   "classic window shadow": ["box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);", "--bp-lift:"],
   "small controls": ["Small controls: balloon notices", ".progress-bar-indicator", "--bp-balloon-bg:", "--checkbox-color: #3a9a3a;", "section.footnotes"],
   "dark style": ["id: bp-dark-style", "body.theme-dark.bp-dark-midnight,", "body.theme-dark.bp-dark-contrast {", "body.theme-dark.bp-dark-royale,", "body.theme-dark.bp-dark-auto.bp-accent-orange {", "body.theme-dark.bp-dark-auto.bp-accent-embedded {", "value: bp-dark-auto", "--bp-lift:"],
+  "nostalgia taskbar": ["XP Mode taskbar: the status bar wears the accent-coloured", "body.bp-xp-nostalgia:not(#bp-x) .status-bar .status-bar-item.mod-clickable:active", "--bp-sb-error:", "body.bp-xp-nostalgia:not(#bp-x) .status-bar .status-bar-item.mod-clickable:active", "--bp-sb-error:"],
   "auto-hide status bar": ["id: bp-hide-status-bar", "body.bp-hide-status-bar .status-bar {", "body.bp-hide-status-bar .status-bar:hover {", "--bp-reveal-speed: 450ms;"],
 };
 
