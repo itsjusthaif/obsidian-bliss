@@ -95,7 +95,7 @@ settings:
     -
         id: bp-dark-style
         title: Dark style
-        description: Only applies in dark mode. Auto follows the accent, so Zune gets Royale Dark, Embedded gets Midnight and everything else gets Slate. Midnight is a deep blue-black with soft glow; Contrast is near-black with brighter borders, higher text contrast and clear focus rings; Royale Dark is neutral charcoal with glossy split-shine buttons, after the XP Royale dark theme. All but Slate add layered shadows to menus, dialogs and the active tab.
+        description: Dark mode only. Auto pairs Zune with Royale Dark and Embedded with Midnight, and uses Slate for the rest.
         type: class-select
         allowEmpty: false
         default: bp-dark-auto
