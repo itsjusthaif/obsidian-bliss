@@ -4,7 +4,6 @@
 
 ### Added
 
-- Style Settings: new Window shadows option (Auto, Flat, Classic, Lifted) for dialogs, menus, popups and notices. Auto keeps each style's own look.
 - Small controls: pale-yellow balloon notices and tooltips, segmented green progress bars, glossy task checkboxes with struck-through done items, blue list bullets and fold arrows, ring hover and pressed state on ribbon buttons, sticky-note highlights and pill footnote markers.
 - Style Settings: new accent colour Embedded, sampled from the Windows XP Embedded theme.
 - Style Settings: new Dark style option Auto (follows accent), now the default. Zune pairs with XP Royale Dark and Embedded with Midnight; every other accent keeps Slate. Picking a dark style yourself always overrides it.
@@ -14,7 +13,7 @@
 
 ### Changed
 
-- Windows XP Nostalgia Mode now also turns the status bar into a taskbar-style strip with raised glossy buttons.
+- Windows XP Nostalgia Mode now also dresses the status bar in the XP Start-button colours of the chosen accent (green on Luna Blue, orange on Zune and so on), with flat items that press in only on click.
 - The Orange accent is now called Zune and uses the orange sampled from the XP Zune theme. Saved settings keep working.
 - The Silver accent is lighter and lavender-tinted, with light Metallic title bars and dark title text in light mode, closer to the XP Metallic theme.
 - Notes list background and Note background fade are now light mode only, because they made almost no visible difference in dark. Dark mode always uses its fixed list gradient and a flat note, and the option descriptions say so.
