@@ -16,6 +16,7 @@ const MARKERS = {
   "dark elevation": ["--bp-paper: #3e444e;", "--bp-panel: #2f343b;", "--bp-list-top: #434953;", "--bp-text-muted: #bec5d0;"],
   "light-only list and note options": ["description: Light mode only. Background of the middle", "description: Light mode only. Soft top-to-bottom tint"],
   "dark style": ["id: bp-dark-style", "body.theme-dark.bp-dark-midnight {", "body.theme-dark.bp-dark-contrast {", "--bp-lift:"],
+  "small controls": ["Small controls: balloon notices", ".progress-bar-indicator", "--bp-balloon-bg:", "--checkbox-color: #3a9a3a;", "section.footnotes"],
   "auto-hide status bar": ["id: bp-hide-status-bar", "body.bp-hide-status-bar .status-bar {", "body.bp-hide-status-bar .status-bar:hover {", "--bp-reveal-speed: 450ms;"],
 };
 

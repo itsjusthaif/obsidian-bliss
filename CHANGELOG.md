@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Small controls: pale-yellow balloon notices and tooltips, segmented green progress bars, glossy task checkboxes with struck-through done items, blue list bullets and fold arrows, ring hover and pressed state on ribbon buttons, sticky-note highlights and pill footnote markers.
+
 ### Changed
 
 - Notes list background and Note background fade are now light mode only, because they made almost no visible difference in dark. Dark mode always uses its fixed list gradient and a flat note, and the option descriptions say so.
