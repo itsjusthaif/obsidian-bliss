@@ -30,7 +30,7 @@ XP accent presets: Luna Blue, Olive Green, Silver, Zune, Embedded (New), plus tw
 
 ![Accent presets](docs/Images/bliss-accents.png)
 
-Dark mode with extended dark styles: XP Royale Dark (New), Midnight, Contrast and Slate
+Dark mode with extended dark styles: XP Royale Dark (New), Contras, Midnight and Slate
 
 ![Accent presets, dark](docs/Images/bliss-accents-dark.png)
 
