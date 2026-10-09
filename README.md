@@ -36,9 +36,9 @@ XP accent presets: Luna Blue, Olive Green, Silver, Zune, Embedded, plus two bonu
 
 ![Accent presets, dark](docs/Images/bliss-accents-dark.png)
 
-Windows XP Nostalgia Mode, on and off
+Windows XP Mode, on and off
 
-![XP Nostalgia Mode off and on](docs/Images/bliss-xp-nostalgia.png)
+![Windows XP Mode off and on](docs/Images/bliss-xp-nostalgia.png)
 
 Classic square corners, on and off
 
@@ -82,7 +82,7 @@ All options live in Style Settings under **Bliss**.
 | Disable desk texture | Removes the fine dot pattern from the window chrome and ribbon |
 | Auto-hide status bar | Slides the bottom-right status bar out of view; hover the corner to reveal it |
 | Toggle switches follow the accent | Off keeps the classic XP green for switched-on toggles |
-| Windows XP Nostalgia Mode | Curved taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles, plus sunset-orange strips on list date groups and Git sections, and a taskbar-style status bar in the accent colour. Off keeps the original look |
+| Windows XP Mode | Taskbar-style gradients on pane headers, dialog title bars, primary buttons, sliders and the status bar (in the accent colour), plus sunset-orange strips on list date groups and Git sections. Off keeps the original look |
 
 ## Plugin support
 

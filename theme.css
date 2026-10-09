@@ -147,8 +147,8 @@ settings:
         type: class-toggle
     -
         id: bp-xp-nostalgia
-        title: Windows XP Nostalgia Mode
-        description: Full Luna flashback. Curved, pressed-in taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles, plus glossy sunset-orange strips on list date groups and Git sections, and a taskbar-style status bar. Off keeps the original look.
+        title: Windows XP Mode
+        description: Taskbar-style gradients on pane headers, dialog title bars, primary buttons, sliders and the status bar, plus sunset-orange strips on list groups and Git sections. Off keeps the original look.
         type: class-toggle
 */
 
@@ -1925,7 +1925,7 @@ body.theme-light.bp-accent-silver {
   --bp-header-shadow: rgba(255, 255, 255, 0.7);
   --bp-header-hover: rgba(44, 48, 80, 0.12);
 }
-/* Nostalgia Mode adds the glossy convex Metallic shading, sampled from the XP title bar */
+/* Windows XP Mode adds the glossy convex Metallic shading, sampled from the XP title bar */
 body.theme-light.bp-accent-silver.bp-xp-nostalgia {
   --bp-grad-section: linear-gradient(to bottom, #eceef4 0%, #d9dae6 14%, #e2e4ec 50%, #f6f6fa 86%, #d8d9e4 100%);
 }
@@ -3612,7 +3612,7 @@ body.bp-classic-square:not(#bp-x) .markdown-rendered sup.footnote-ref a {
   border-radius: 0;
 }
 
-/* Nostalgia taskbar: the status bar wears the accent-coloured pane-header gradient, with flat items */
+/* XP Mode taskbar: the status bar wears the accent-coloured pane-header gradient, with flat items */
 body.bp-xp-nostalgia:not(#bp-x) .status-bar {
   background: var(--bp-grad-section);
   border-top: 1px solid var(--bp-accent-dark);
