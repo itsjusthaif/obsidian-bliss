@@ -75,7 +75,8 @@ All options live in Style Settings under **Bliss**.
 | Accent colour | Luna Blue, Olive Green, Silver, Zune, Embedded, Whistler Chartreuse Mongoose, Whistler Blue Lagoon, or your Obsidian accent colour |
 | Notes list background | Flat, warm paper or cream behind the Notebook Navigator list |
 | Note background fade | Soft top-to-bottom tint behind the open note |
-| Dark style | Dark mode only: Slate (the default), Midnight (deep blue-black with soft glow) or Contrast (near-black with brighter borders, text and focus rings) |
+| Dark style | Dark mode only: Auto (default, pairs Zune with Royale Dark and Embedded with Midnight, Slate for the rest), Slate, Midnight (deep blue-black with soft glow), Contrast (near-black with brighter borders, text and focus rings) or Royale Dark (neutral charcoal with glossy split-shine buttons) |
+| Accents in light and dark | Every accent works in both modes. Luna Blue becomes Royale Energy Blue and Silver becomes Royale Noir in dark mode; Zune and Embedded get their own dark styles through Auto |
 | Interface text size | 10 to 14 px for labels, buttons, sidebars and menus |
 | Classic square corners | Square boxes, pills and buttons for the original intranet look |
 | Disable desk texture | Removes the fine dot pattern from the window chrome and ribbon |

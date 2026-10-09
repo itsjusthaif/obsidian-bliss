@@ -29,7 +29,7 @@ settings:
     -
         id: bp-accent-preset
         title: Accent colour
-        description: XP-era colour schemes. Applies to title bars, primary buttons, sliders, dropdown arrows, links and selection. Whistler entries are pre-release XP builds. Obsidian accent uses the colour from Appearance settings.
+        description: XP colour schemes for title bars, buttons, sliders, links and selection. Luna and Silver become Royale Blue and Noir in dark mode. Whistler entries are pre-release XP builds.
         type: class-select
         allowEmpty: false
         default: bp-accent-luna
