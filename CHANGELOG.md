@@ -4,13 +4,14 @@
 
 ### Added
 
-- Style Settings: new accent colours Royale Energy Blue, Royale Noir and Embedded, sampled from the Windows XP Royale family.
+- Style Settings: new accent colour Embedded, sampled from the Windows XP Embedded theme.
+- Dark mode: Luna Blue now becomes Royale Energy Blue and Silver becomes Royale Noir, so each light accent has an XP-era dark companion.
 - Style Settings: two bonus pre-release accents from Windows XP build 2419 (Whistler, Mallard style): Chartreuse Mongoose (green with golden highlights) and Blue Lagoon (teal with purple highlights).
 
 ### Changed
 
 - The Orange accent is now called Zune and uses the orange sampled from the XP Zune theme. Saved settings keep working.
-- The Silver accent is lighter and lavender-tinted, closer to the XP Metallic theme.
+- The Silver accent is lighter and lavender-tinted, with light Metallic title bars and dark title text in light mode, closer to the XP Metallic theme.
 - Accent dropdown is wider so the full theme names stay readable.
 - Notes list background and Note background fade are now light mode only, because they made almost no visible difference in dark. Dark mode always uses its fixed list gradient and a flat note, and the option descriptions say so.
 

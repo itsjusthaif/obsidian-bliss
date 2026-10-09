@@ -11,7 +11,7 @@ desk and the tidy intranet-portal layout of the early web. It is nostalgia you
 can take notes in.
 
 Rounded Luna chrome, orange hover glow, dithered scrollbars and a slate dark
-mode for late nights. Pick an XP accent (Luna, Olive, Silver, Royale, Zune,
+mode for late nights. Pick an XP accent (Luna, Olive, Silver, Zune,
 Embedded and more) or use your own, then make it yours in Style Settings. 
 
 Readme: https://github.com/itsjusthaif/obsidian-bliss
@@ -43,12 +43,6 @@ settings:
             -
                 label: Silver
                 value: bp-accent-silver
-            -
-                label: Royale Energy Blue
-                value: bp-accent-royale
-            -
-                label: Royale Noir
-                value: bp-accent-noir
             -
                 label: Zune
                 value: bp-accent-orange
@@ -204,6 +198,9 @@ body.theme-light {
   --bp-hilite: #ffffcc;
   --bp-current: #fff3b8;
   --bp-orange: #d48a00;
+  --bp-header-text: #fff;
+  --bp-header-shadow: rgba(0, 0, 0, 0.3);
+  --bp-header-hover: rgba(255, 255, 255, 0.25);
   --bp-grad-btn: linear-gradient(to bottom, #fff 0%, #e0dcd4 100%);
   --bp-grad-btn-hover: linear-gradient(to bottom, #fffce0 0%, #f4e8a8 100%);
   --bp-grad-tab: linear-gradient(to bottom, #f4f4f4, #d8d4cc);
@@ -438,18 +435,18 @@ textarea:focus {
 .view-header {
   background: var(--bp-grad-section);
   border-bottom: 1px solid var(--bp-navy);
-  color: #fff;
+  color: var(--bp-header-text);
 }
 .view-header-title,
 .is-focused .workspace-leaf.mod-active .view-header-title,
 .view-header-title-parent,
 .view-header-breadcrumb {
-  color: #fff;
+  color: var(--bp-header-text);
   font-weight: bold;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 0 var(--bp-header-shadow);
 }
 .view-header .clickable-icon {
-  color: #fff;
+  color: var(--bp-header-text);
 }
 /* Sidebar header bars */
 .workspace-split.mod-left-split .workspace-tab-header-container,
@@ -648,11 +645,11 @@ a.tag[href*="urgent"] {
 }
 .modal-title,
 .modal-header {
-  color: #fff;
+  color: var(--bp-header-text);
   font-size: var(--bp-ui-font);
   margin: 0;
   padding: 3px 8px;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 0 var(--bp-header-shadow);
 }
 .modal-close-button {
   color: #fff;
@@ -762,16 +759,16 @@ body.theme-light {
 
 /* View header: visible nav arrows, readable title */
 .view-header {
-  --icon-color: #fff;
-  --icon-color-hover: #fff;
-  --icon-color-active: #fff;
-  --icon-color-focused: #fff;
+  --icon-color: var(--bp-header-text);
+  --icon-color-hover: var(--bp-header-text);
+  --icon-color-active: var(--bp-header-text);
+  --icon-color-focused: var(--bp-header-text);
   --clickable-icon-radius: 0;
 }
 .view-header .clickable-icon:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-  color: #fff;
+  background: var(--bp-header-hover);
+  box-shadow: inset 0 0 0 1px var(--bp-header-hover);
+  color: var(--bp-header-text);
 }
 .view-header .clickable-icon:active {
   background: rgba(0, 0, 0, 0.25);
@@ -1215,7 +1212,7 @@ input[type="checkbox"]:checked,
 }
 .modal-title,
 .modal-header {
-  background: var(--bp-xp-blue);
+  background: var(--bp-grad-section);
   border-radius: 0;
 }
 .menu,
@@ -1900,11 +1897,11 @@ body.bp-accent-olive {
 }
 /* Silver (Luna Metallic): lavender-tinted, sampled from the XP reference */
 body.bp-accent-silver {
-  --bp-accent-top: #8588ad;
-  --bp-accent-mid: #7a7ea3;
-  --bp-accent-bottom: #62668c;
-  --bp-accent-dark: #444868;
-  --bp-accent-hover-top: #a9acc9;
+  --bp-accent-top: #9498bb;
+  --bp-accent-mid: #8286ab;
+  --bp-accent-bottom: #6d7199;
+  --bp-accent-dark: #4a4e72;
+  --bp-accent-hover-top: #adb0cd;
   --bp-accent-link: #3f4380;
   --bp-accent-text: #444868;
   --bp-accent-soft-0: #f6f6fa;
@@ -1914,6 +1911,13 @@ body.bp-accent-silver {
   --bp-accent-soft-line: #bec1d0;
   --bp-accent-line: #a1a4bc;
   --bp-select: #d5d6e6;
+}
+/* Light Metallic title bars with dark text, as in the XP reference; dark mode keeps white text on the Noir companion */
+body.theme-light.bp-accent-silver {
+  --bp-grad-section: linear-gradient(to bottom, #eceef4 0%, #d9dae6 14%, #e2e4ec 50%, #f6f6fa 86%, #d8d9e4 100%);
+  --bp-header-text: #2c3050;
+  --bp-header-shadow: rgba(255, 255, 255, 0.7);
+  --bp-header-hover: rgba(44, 48, 80, 0.12);
 }
 /* Zune: orange sampled from the XP Zune theme; the id stays bp-accent-orange so saved settings keep working */
 body.bp-accent-orange {
@@ -1931,40 +1935,6 @@ body.bp-accent-orange {
   --bp-accent-soft-line: #f0b896;
   --bp-accent-line: #d8a07c;
   --bp-select: #ffdcc3;
-}
-/* Royale Energy Blue: brighter, glossier blue sampled from the Royale theme */
-body.bp-accent-royale {
-  --bp-accent-top: #4f8ee0;
-  --bp-accent-mid: #3668c0;
-  --bp-accent-bottom: #2c5aae;
-  --bp-accent-dark: #0e3270;
-  --bp-accent-hover-top: #7bb3e6;
-  --bp-accent-link: #1f4fa8;
-  --bp-accent-text: #0e3270;
-  --bp-accent-soft-0: #f0f6fe;
-  --bp-accent-soft: #e4eefc;
-  --bp-accent-soft-2: #bdd2f2;
-  --bp-accent-soft-3: #d6e4f8;
-  --bp-accent-soft-line: #a8c4ec;
-  --bp-accent-line: #6c85bf;
-  --bp-select: #c4d8f6;
-}
-/* Royale Noir: slate with a blue tint; the dark-mode override keeps it readable on slate */
-body.bp-accent-noir {
-  --bp-accent-top: #75838e;
-  --bp-accent-mid: #5e6a7a;
-  --bp-accent-bottom: #485163;
-  --bp-accent-dark: #121a29;
-  --bp-accent-hover-top: #8a97a6;
-  --bp-accent-link: #3d4a63;
-  --bp-accent-text: #232d3e;
-  --bp-accent-soft-0: #f7f8fa;
-  --bp-accent-soft: #eceef1;
-  --bp-accent-soft-2: #cdd2d9;
-  --bp-accent-soft-3: #dde1e6;
-  --bp-accent-soft-line: #b3bac4;
-  --bp-accent-line: #7e8896;
-  --bp-select: #d3d8df;
 }
 /* Embedded: deep navy from the Windows Embedded theme */
 body.bp-accent-embedded {
@@ -2463,17 +2433,17 @@ body .nn-file.nn-selected .nn-file-name-label {
 
 /* ================= Portal refinements: breadcrumb separators as ">" ================= */
 .view-header-breadcrumb-separator {
-  color: #fff;
+  color: var(--bp-header-text);
   font-size: 0;
   margin: 0 2px;
   opacity: 1;
 }
 .view-header-breadcrumb-separator::after {
-  color: #fff;
+  color: var(--bp-header-text);
   content: ">";
   font-size: 11px;
   font-weight: 700;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 0 var(--bp-header-shadow);
 }
 
 /* ================= Portal refinements: classic square corners (optional) ================= */
@@ -3230,10 +3200,20 @@ body.theme-dark.bp-accent-whistler-chartreuse {
   --graph-node-tag: #e8c27a;
 }
 
-/* Dark-leaning accents: lift the light stops so title bars and selection stay distinct from the slate chrome */
-body.theme-dark.bp-accent-noir {
+/* Dark companions: Luna goes Royale Energy Blue and Silver goes Royale Noir in dark mode; Embedded lifts its light stops for slate */
+body.theme-dark.bp-accent-luna,
+body.theme-dark:not([class*="bp-accent-"]) {
+  --bp-accent-top: #5693dc;
+  --bp-accent-mid: #3d72cc;
+  --bp-accent-bottom: #2f60b8;
+  --bp-accent-dark: #0e3270;
+  --bp-accent-hover-top: #78aef0;
+}
+body.theme-dark.bp-accent-silver {
   --bp-accent-top: #7f8c9b;
   --bp-accent-mid: #6a7686;
+  --bp-accent-bottom: #485163;
+  --bp-accent-dark: #121a29;
   --bp-accent-hover-top: #a0acba;
 }
 body.theme-dark.bp-accent-embedded {

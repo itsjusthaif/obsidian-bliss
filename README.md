@@ -30,7 +30,7 @@ Light and dark modes
 
 ![Light and dark](docs/Images/bliss-light-dark.png)
 
-XP accent presets: Luna Blue, Olive Green, Silver, Royale Energy Blue, Royale Noir, Zune, Embedded, plus two bonus Whistler pre-release schemes (Chartreuse Mongoose and Blue Lagoon, from the Mallard style)
+XP accent presets: Luna Blue, Olive Green, Silver, Zune, Embedded, plus two bonus Whistler pre-release schemes (Chartreuse Mongoose and Blue Lagoon, from the Mallard style). In dark mode Luna Blue becomes Royale Energy Blue and Silver becomes Royale Noir
 
 ![Accent presets](docs/Images/bliss-accents.png)
 
@@ -72,7 +72,7 @@ All options live in Style Settings under **Bliss**.
 
 | Setting | What it does |
 | --- | --- |
-| Accent colour | Luna Blue, Olive Green, Silver, Royale Energy Blue, Royale Noir, Zune, Embedded, Whistler Chartreuse Mongoose, Whistler Blue Lagoon, or your Obsidian accent colour |
+| Accent colour | Luna Blue, Olive Green, Silver, Zune, Embedded, Whistler Chartreuse Mongoose, Whistler Blue Lagoon, or your Obsidian accent colour |
 | Notes list background | Flat, warm paper or cream behind the Notebook Navigator list |
 | Note background fade | Soft top-to-bottom tint behind the open note |
 | Dark style | Dark mode only: Slate (the default), Midnight (deep blue-black with soft glow) or Contrast (near-black with brighter borders, text and focus rings) |
