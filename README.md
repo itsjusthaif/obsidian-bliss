@@ -17,7 +17,7 @@ Inspired by: [Fernando Borretti on X](https://x.com/zetalyrae/status/20468053361
 - [Customizing](#customizing)
 - [Development](#development)
 - [Changelog](#changelog)
-- [\[1.2.0\]](#120)
+- [\[1.3.0\]](#130)
   - [Added](#added)
   - [Changed](#changed)
   - [Fixed](#fixed)
@@ -30,15 +30,13 @@ Light and dark modes
 
 ![Light and dark](docs/Images/bliss-light-dark.png)
 
-XP accent presets: Luna Blue, Olive Green, Silver, Zune, Embedded, plus two bonus Whistler pre-release schemes (Chartreuse Mongoose and Blue Lagoon, from the Mallard style). In dark mode Luna Blue becomes Royale Energy Blue and Silver becomes Royale Noir
+XP accent presets: Luna Blue, Olive Green, Silver, Zune, Embedded (New), plus two bonus Whistler pre-release schemes (Chartreuse Mongoose and Blue Lagoon, from the Mallard style). In dark mode Luna Blue becomes Royale Energy Blue and Silver becomes Royale Noir
 
 ![Accent presets](docs/Images/bliss-accents.png)
 
+Dark mode with extended dark styles: XP Royale Dark (New), Midnight, Contrast and Slate
+
 ![Accent presets, dark](docs/Images/bliss-accents-dark.png)
-
-Dark styles: Slate, Midnight and Contrast
-
-![Dark styles](docs/Images/releases/v1.2.0/dark-styles.png)
 
 Windows XP Mode, on and off
 
@@ -77,8 +75,8 @@ All options live in Style Settings under **Bliss**.
 | Setting | What it does |
 | --- | --- |
 | Accent colour | Luna Blue, Olive Green, Silver, Zune, Embedded, Whistler Chartreuse Mongoose, Whistler Blue Lagoon, or your Obsidian accent colour |
-| Notes list background | Flat, warm paper or cream behind the Notebook Navigator list |
-| Note background fade | Soft top-to-bottom tint behind the open note |
+| Notes list background | Light mode only: flat, warm paper or cream behind the Notebook Navigator list |
+| Note background fade | Light mode only: soft top-to-bottom tint behind the open note |
 | Dark style | Dark mode only: Auto (default, pairs Zune with XP Royale Dark and Embedded with Midnight, Slate for the rest), Slate, Midnight (deep blue-black with soft glow), Contrast (near-black with brighter borders, text and focus rings) or XP Royale Dark (neutral charcoal with glossy split-shine buttons) |
 | Accents in light and dark | Every accent works in both modes. Luna Blue becomes Royale Energy Blue and Silver becomes Royale Noir in dark mode; Zune and Embedded get their own dark styles through Auto |
 | Interface text size | 10 to 14 px for labels, buttons, sidebars and menus |
@@ -121,25 +119,28 @@ Contributions are welcome. Fork the repo, branch from `dev` and open a pull requ
 | `npm run task -- <name>` and `npm run ship` | Optional helpers for task branches and merging into `dev`; `npm run setup` enables the matching git hooks |
 
 ## Changelog
-## [1.2.0]
+## [1.3.0]
 
 ### Added
 
-- Style Settings: new Dark style option with Slate (the current look), Midnight (deep blue-black) and Contrast (near-black, brighter borders and text, clear focus rings). Midnight and Contrast add layered shadows to menus, dialogs and the active tab, and an accent glow on focused fields.
-- Style Settings: new Auto-hide status bar toggle that slides the bottom-right status bar out of view and back on hover with a smooth glide (thanks to @rcegan, #1).
+- Small controls: pale-yellow balloon notices and tooltips, XP-style segmented green progress bars, glossy task checkboxes with struck-through done items, blue list bullets and fold arrows, ring hover and pressed state on ribbon buttons, sticky-note highlights and pill footnote markers.
+- Style Settings: new accent colour Embedded, sampled from the Windows XP Embedded theme.
+- Style Settings: new Dark style option Auto (follows accent), now the default. Zune pairs with XP Royale Dark and Embedded with Midnight; every other accent keeps Slate. Picking a dark style yourself always overrides it.
+- Style Settings: new Dark style option XP Royale Dark, a neutral charcoal look with glossy split-shine buttons and tabs after the XP Royale theme.
+- Dark mode: Luna Blue now becomes Royale Energy Blue and Silver becomes Royale Noir, so each light accent now has an XP-era dark companion.
+- Style Settings: two bonus pre-release accents from Windows XP build 2419 (Whistler) "Mallard" style: Chartreuse Mongoose (green with golden highlights) and Blue Lagoon (teal with purple highlights).
 
 ### Changed
 
-- Dark mode: the desk texture dots are slightly more visible on Slate, blue-tinted on Midnight and fainter on Contrast.
-- Dark mode: the note and list pane are now a lighter shade than the sidebars and window chrome, so the working surfaces feel raised. Properties, callouts, selected note card, hover and calendar colours, and muted text were retuned for the lighter surface.
-- Cleaner stylesheet for the community theme checks: most `!important` rules replaced with higher selector specificity, and the unused `:has()` code block rule removed. No visual change intended.
+- Windows XP Nostalgia Mode is now called Windows XP Mode. Saved settings keep working.
+- Windows XP Mode now also turns the status bar into a taskbar strip in the chosen accent's colour, with flat items that press in only on click and sync status icons tinted to stay readable.
+- The Orange accent is now called Zune and uses the orange sampled from the XP Zune theme. Saved settings keep working.
+- The Silver accent is lighter and lavender-tinted, with light Metallic title bars and dark title text in light mode, closer to the XP Metallic theme.
+- Notes list background and Note background fade are now light mode only, because they made almost no visible difference in dark. Dark mode always uses its fixed list gradient and a flat note, and the option descriptions say so.
 
 ### Fixed
 
-- Dark mode: unresolved links are now readable, and calendar weekend cells use a subtle shade instead of a heavy block.
-- Narrow windows: the sidebars now shrink and the note keeps a minimum width, so the right sidebar's tab icons no longer slide under the minimise, maximise and close buttons.
-- Top row alignment: the left sidebar tab strip now uses the same height as the note tab bar and the ribbon, so the lines across the top line up.
-- Notebook Navigator calendar year view: the current month is a filled accent cell again, so its white label is readable.
+- Editing view: the underline below a heading is no longer covered by inline code in that heading.
 
 See [CHANGELOG.md](CHANGELOG.md) for complete release notes.
 

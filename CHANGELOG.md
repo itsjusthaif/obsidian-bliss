@@ -2,18 +2,20 @@
 
 ## [Unreleased]
 
+## [1.3.0]
+
 ### Added
 
-- Small controls: pale-yellow balloon notices and tooltips, segmented green progress bars, glossy task checkboxes with struck-through done items, blue list bullets and fold arrows, ring hover and pressed state on ribbon buttons, sticky-note highlights and pill footnote markers.
+- Small controls: pale-yellow balloon notices and tooltips, XP-style segmented green progress bars, glossy task checkboxes with struck-through done items, blue list bullets and fold arrows, ring hover and pressed state on ribbon buttons, sticky-note highlights and pill footnote markers.
 - Style Settings: new accent colour Embedded, sampled from the Windows XP Embedded theme.
 - Style Settings: new Dark style option Auto (follows accent), now the default. Zune pairs with XP Royale Dark and Embedded with Midnight; every other accent keeps Slate. Picking a dark style yourself always overrides it.
 - Style Settings: new Dark style option XP Royale Dark, a neutral charcoal look with glossy split-shine buttons and tabs after the XP Royale theme.
-- Dark mode: Luna Blue now becomes Royale Energy Blue and Silver becomes Royale Noir, so each light accent has an XP-era dark companion.
-- Style Settings: two bonus pre-release accents from Windows XP build 2419 (Whistler, Mallard style): Chartreuse Mongoose (green with golden highlights) and Blue Lagoon (teal with purple highlights).
+- Dark mode: Luna Blue now becomes Royale Energy Blue and Silver becomes Royale Noir, so each light accent now has an XP-era dark companion.
+- Style Settings: two bonus pre-release accents from Windows XP build 2419 (Whistler) "Mallard" style: Chartreuse Mongoose (green with golden highlights) and Blue Lagoon (teal with purple highlights).
 
 ### Changed
 
-- Windows XP Nostalgia Mode is now called Windows XP Mode, with a shorter description. Saved settings keep working.
+- Windows XP Nostalgia Mode is now called Windows XP Mode. Saved settings keep working.
 - Windows XP Mode now also turns the status bar into a taskbar strip in the chosen accent's colour, with flat items that press in only on click and sync status icons tinted to stay readable.
 - The Orange accent is now called Zune and uses the orange sampled from the XP Zune theme. Saved settings keep working.
 - The Silver accent is lighter and lavender-tinted, with light Metallic title bars and dark title text in light mode, closer to the XP Metallic theme.
