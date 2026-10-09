@@ -4,7 +4,6 @@
 
 ### Added
 
-- Style Settings: new Window shadows option (Auto, Flat, Classic, Lifted) for dialogs, menus, popups and notices. Auto keeps each style's own look.
 - Small controls: pale-yellow balloon notices and tooltips, segmented green progress bars, glossy task checkboxes with struck-through done items, blue list bullets and fold arrows, ring hover and pressed state on ribbon buttons, sticky-note highlights and pill footnote markers.
 - Style Settings: new accent colour Embedded, sampled from the Windows XP Embedded theme.
 - Style Settings: new Dark style option Auto (follows accent), now the default. Zune pairs with XP Royale Dark and Embedded with Midnight; every other accent keeps Slate. Picking a dark style yourself always overrides it.
