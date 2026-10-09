@@ -3634,3 +3634,23 @@ body.bp-xp-nostalgia:not(#bp-x) .status-bar .status-bar-item.mod-clickable:activ
   background: rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 0 2px var(--bp-ring-active), inset 1px 1px 3px rgba(0, 0, 0, 0.45);
 }
+/* Sync status icons keep their meaning but get pale tints that read on the coloured bar */
+body.bp-xp-nostalgia {
+  --bp-sb-error: #ffc2c2;
+  --bp-sb-warning: #ffe08a;
+  --bp-sb-success: #c8f5c8;
+}
+body.theme-light.bp-accent-silver.bp-xp-nostalgia {
+  --bp-sb-error: #b3122a;
+  --bp-sb-warning: #8a5a00;
+  --bp-sb-success: #1f6b2a;
+}
+body.bp-xp-nostalgia:not(#bp-x) .status-bar .status-bar-item-icon.mod-error {
+  color: var(--bp-sb-error);
+}
+body.bp-xp-nostalgia:not(#bp-x) .status-bar .status-bar-item-icon.mod-warning {
+  color: var(--bp-sb-warning);
+}
+body.bp-xp-nostalgia:not(#bp-x) .status-bar .status-bar-item-icon.mod-success {
+  color: var(--bp-sb-success);
+}
