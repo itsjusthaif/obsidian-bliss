@@ -14,7 +14,7 @@
 
 ### Changed
 
-- Windows XP Nostalgia Mode now also turns the status bar into a taskbar-style strip with inset tray items.
+- Windows XP Nostalgia Mode now also turns the status bar into a taskbar-style strip with raised glossy buttons.
 - The Orange accent is now called Zune and uses the orange sampled from the XP Zune theme. Saved settings keep working.
 - The Silver accent is lighter and lavender-tinted, with light Metallic title bars and dark title text in light mode, closer to the XP Metallic theme.
 - Notes list background and Note background fade are now light mode only, because they made almost no visible difference in dark. Dark mode always uses its fixed list gradient and a flat note, and the option descriptions say so.
