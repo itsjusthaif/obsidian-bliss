@@ -19,6 +19,7 @@ const MARKERS = {
   "dark style": ["id: bp-dark-style", "body.theme-dark.bp-dark-midnight {", "body.theme-dark.bp-dark-contrast {", "--bp-lift:"],
   "small controls": ["Small controls: balloon notices", ".progress-bar-indicator", "--bp-balloon-bg:", "--checkbox-color: #3a9a3a;", "section.footnotes"],
   "dark style": ["id: bp-dark-style", "body.theme-dark.bp-dark-midnight,", "body.theme-dark.bp-dark-contrast {", "body.theme-dark.bp-dark-royale,", "body.theme-dark.bp-dark-auto.bp-accent-orange {", "body.theme-dark.bp-dark-auto.bp-accent-embedded {", "value: bp-dark-auto", "--bp-lift:"],
+  "nostalgia status bar": ["Nostalgia taskbar: the status bar wears", "body.bp-xp-nostalgia:not(#bp-x) .status-bar .status-bar-item.mod-clickable:hover"],
   "auto-hide status bar": ["id: bp-hide-status-bar", "body.bp-hide-status-bar .status-bar {", "body.bp-hide-status-bar .status-bar:hover {", "--bp-reveal-speed: 450ms;"],
 };
 
