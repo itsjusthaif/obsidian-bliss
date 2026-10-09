@@ -80,6 +80,7 @@ All options live in Style Settings under **Bliss**.
 | Interface text size | 10 to 14 px for labels, buttons, sidebars and menus |
 | Classic square corners | Square boxes, pills and buttons for the original intranet look |
 | Disable desk texture | Removes the fine dot pattern from the window chrome and ribbon |
+| Window shadows | Shadow under dialogs, menus, popups and notices: Auto (each style's own look), Flat, Classic (hard offset) or Lifted (soft layered) |
 | Auto-hide status bar | Slides the bottom-right status bar out of view; hover the corner to reveal it |
 | Toggle switches follow the accent | Off keeps the classic XP green for switched-on toggles |
 | Windows XP Nostalgia Mode | Curved taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles, plus sunset-orange strips on list date groups and Git sections, and a taskbar-style status bar. Off keeps the original look |
