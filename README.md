@@ -17,10 +17,6 @@ Inspired by: [Fernando Borretti on X](https://x.com/zetalyrae/status/20468053361
 - [Customizing](#customizing)
 - [Development](#development)
 - [Changelog](#changelog)
-- [\[1.3.0\]](#130)
-  - [Added](#added)
-  - [Changed](#changed)
-  - [Fixed](#fixed)
 - [License](#license)
 - [Disclaimer](#disclaimer)
 
