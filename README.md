@@ -36,6 +36,10 @@ XP accent presets: Luna Blue, Olive Green, Silver, Zune, Embedded, plus two bonu
 
 ![Accent presets, dark](docs/Images/bliss-accents-dark.png)
 
+Dark styles: Slate, Midnight and Contrast
+
+![Dark styles](docs/Images/releases/v1.2.0/dark-styles.png)
+
 Windows XP Mode, on and off
 
 ![Windows XP Mode off and on](docs/Images/bliss-xp-nostalgia.png)
