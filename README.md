@@ -82,7 +82,7 @@ All options live in Style Settings under **Bliss**.
 | Disable desk texture | Removes the fine dot pattern from the window chrome and ribbon |
 | Auto-hide status bar | Slides the bottom-right status bar out of view; hover the corner to reveal it |
 | Toggle switches follow the accent | Off keeps the classic XP green for switched-on toggles |
-| Windows XP Nostalgia Mode | Curved taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles, plus sunset-orange strips on list date groups and Git sections, and a status bar in the XP Start-button colours of the chosen accent. Off keeps the original look |
+| Windows XP Nostalgia Mode | Curved taskbar shading on pane headers, dialog title bars, primary buttons, sliders and accent toggles, plus sunset-orange strips on list date groups and Git sections, a vault switcher in the XP Start-button colours of the chosen accent, and a taskbar-style status bar. Off keeps the original look |
 
 ## Plugin support
 
