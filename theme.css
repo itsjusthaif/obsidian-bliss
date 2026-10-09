@@ -3449,3 +3449,165 @@ body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale, .bp-da
   border-color: var(--bp-accent-link);
   box-shadow: var(--bp-glow);
 }
+
+/* ================= Small controls: balloon notices, progress bars, tasks, ribbon, bullets, fold arrows, footnotes ================= */
+body {
+  --bp-balloon-bg: #ffffe1;
+  --bp-balloon-text: #000;
+  --bp-balloon-border: #404040;
+  --bp-balloon-radius: calc(var(--bp-btn-radius) * 2);
+  --checkbox-color: #3a9a3a;
+  --checkbox-color-hover: #4aaa4a;
+  --checkbox-marker-color: #fff;
+  --checklist-done-decoration: line-through;
+  --checklist-done-color: var(--bp-text-muted);
+  --list-marker-color: var(--bp-accent-mid);
+  --list-marker-color-hover: var(--bp-accent-top);
+  --list-marker-color-collapsed: var(--bp-accent-mid);
+  --list-bullet-radius: 50%;
+  --collapse-icon-color: var(--bp-accent-text);
+  --collapse-icon-color-collapsed: var(--bp-accent-mid);
+}
+body.theme-dark {
+  --bp-balloon-bg: var(--bp-card);
+  --bp-balloon-text: var(--bp-text);
+  --bp-balloon-border: var(--bp-border);
+  --list-marker-color: var(--bp-accent-top);
+  --list-marker-color-hover: var(--bp-accent-hover-top);
+  --list-marker-color-collapsed: var(--bp-accent-top);
+}
+body.bp-classic-square {
+  --list-bullet-radius: 0;
+}
+
+/* Balloon: pale-yellow tooltip look for toasts and hover tips */
+body:not(#bp-x) :is(.notice, .tooltip) {
+  background: var(--bp-balloon-bg);
+  border: 1px solid var(--bp-balloon-border);
+  border-radius: var(--bp-balloon-radius);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+  color: var(--bp-balloon-text);
+}
+body:not(#bp-x) .notice .notice-message {
+  color: var(--bp-balloon-text);
+}
+
+/* Progress bar: sunken track, segmented green blocks like the XP startup bar */
+body:not(#bp-x) .progress-bar-indicator {
+  background: var(--bp-field);
+  border: 1px solid var(--bp-border);
+  border-radius: var(--bp-btn-radius);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  height: 14px;
+}
+/* Obsidian's line is a faint full-width track and the subline is the animated fill */
+body:not(#bp-x) .progress-bar-line {
+  background: transparent;
+  height: 100%;
+  opacity: 1;
+}
+body:not(#bp-x) .progress-bar-subline {
+  background: var(--bp-xp-green);
+  border-radius: 2px;
+  height: calc(100% - 4px);
+  top: 2px;
+}
+/* Block gaps sit on top, so they stay a fixed width while the fill scales */
+body:not(#bp-x) .progress-bar-indicator::after {
+  background: repeating-linear-gradient(to right, transparent 0 7px, var(--bp-field) 7px 9px);
+  content: "";
+  inset: 2px;
+  pointer-events: none;
+  position: absolute;
+}
+body:not(#bp-x) .setting-progress-bar {
+  background: var(--bp-field);
+  border: 1px solid var(--bp-border);
+  border-radius: var(--bp-btn-radius);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  height: 14px;
+  padding: 2px;
+}
+body:not(#bp-x) .setting-progress-bar-inner {
+  background:
+    repeating-linear-gradient(to right, transparent 0 7px, var(--bp-field) 7px 9px),
+    var(--bp-xp-green);
+  border-radius: 2px;
+}
+body:not(#bp-x) progress {
+  appearance: none;
+  background: var(--bp-field);
+  border: 1px solid var(--bp-border);
+  border-radius: var(--bp-btn-radius);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+  height: 14px;
+  overflow: hidden;
+}
+body:not(#bp-x) progress::-webkit-progress-bar {
+  background: transparent;
+}
+body:not(#bp-x) progress::-webkit-progress-value {
+  background:
+    repeating-linear-gradient(to right, transparent 0 7px, var(--bp-field) 7px 9px),
+    var(--bp-xp-green);
+}
+
+/* Tasks: glossy raised box with a white tick; done items fade and strike */
+body:not(#bp-x) :is(.task-list-item-checkbox, input[type="checkbox"]) {
+  background: var(--bp-xp-cream);
+  border: 1px solid var(--bp-btn-border);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 #fff, inset -1px -1px 1px var(--bp-bevel);
+}
+body:not(#bp-x) :is(.task-list-item-checkbox, input[type="checkbox"]):hover {
+  box-shadow: var(--bp-btn-shadow-hover);
+}
+body:not(#bp-x) :is(.task-list-item-checkbox, input[type="checkbox"]):checked {
+  background: var(--bp-xp-green);
+  border-color: #2b7a2b;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+body:not(#bp-x) :is(.task-list-item-checkbox, input[type="checkbox"]):checked:hover {
+  box-shadow: inset 0 0 0 2px var(--bp-ring-hover);
+}
+body:not(#bp-x) :is(.task-list-item-checkbox, input[type="checkbox"]):focus-visible {
+  outline: 2px solid var(--bp-ring-hover);
+  outline-offset: 1px;
+}
+body.bp-classic-square:not(#bp-x) :is(.task-list-item-checkbox, input[type="checkbox"]) {
+  border-radius: 0;
+}
+
+/* Ribbon buttons share the standard hover ring and pressed state */
+body:not(#bp-x) .workspace-ribbon .clickable-icon:hover {
+  border-color: var(--bp-btn-border);
+  box-shadow: var(--bp-btn-shadow-hover);
+}
+body:not(#bp-x) .workspace-ribbon .clickable-icon:active,
+body:not(#bp-x) .workspace-ribbon .side-dock-ribbon-action.is-active {
+  border-color: var(--bp-btn-border);
+  box-shadow: var(--bp-btn-shadow-active);
+}
+
+/* Footnotes and highlights: sticky-note yellow */
+body:not(#bp-x) :is(.markdown-rendered mark, .cm-s-obsidian span.cm-highlight) {
+  background: var(--text-highlight-bg);
+  border-bottom: 1px solid #d4b84a;
+  border-radius: 2px;
+  color: inherit;
+}
+body:not(#bp-x) .markdown-rendered sup.footnote-ref a {
+  background: var(--bp-accent-soft);
+  border: 1px solid var(--bp-accent-soft-line);
+  border-radius: 999px;
+  padding: 0 4px;
+  text-decoration: none;
+}
+body:not(#bp-x) .markdown-rendered section.footnotes {
+  border-top: 2px solid var(--bp-accent-soft-2);
+}
+body.bp-classic-square:not(#bp-x) .markdown-rendered sup.footnote-ref a {
+  border-radius: 0;
+}

@@ -16,6 +16,8 @@ const MARKERS = {
   "xp accents": ["body.bp-accent-embedded {", "body.bp-accent-whistler-chartreuse {", "body.bp-accent-whistler-lagoon {", "body.bp-accent-orange {", "label: Zune", "body[class*=\"bp-accent-\"]:not(.bp-accent-luna)", "body.theme-dark.bp-accent-silver {", "body.theme-light.bp-accent-silver {", "--bp-header-text:"],
   "dark elevation": ["--bp-paper: #3e444e;", "--bp-panel: #2f343b;", "--bp-list-top: #434953;", "--bp-text-muted: #bec5d0;"],
   "light-only list and note options": ["description: Light mode only. Background of the middle", "description: Light mode only. Soft top-to-bottom tint"],
+  "dark style": ["id: bp-dark-style", "body.theme-dark.bp-dark-midnight {", "body.theme-dark.bp-dark-contrast {", "--bp-lift:"],
+  "small controls": ["Small controls: balloon notices", ".progress-bar-indicator", "--bp-balloon-bg:", "--checkbox-color: #3a9a3a;", "section.footnotes"],
   "dark style": ["id: bp-dark-style", "body.theme-dark.bp-dark-midnight,", "body.theme-dark.bp-dark-contrast {", "body.theme-dark.bp-dark-royale,", "body.theme-dark.bp-dark-auto.bp-accent-orange {", "body.theme-dark.bp-dark-auto.bp-accent-embedded {", "value: bp-dark-auto", "--bp-lift:"],
   "auto-hide status bar": ["id: bp-hide-status-bar", "body.bp-hide-status-bar .status-bar {", "body.bp-hide-status-bar .status-bar:hover {", "--bp-reveal-speed: 450ms;"],
 };
