@@ -103,7 +103,7 @@ function audit() {
 
 // ---- Driver ----
 const MODES = ["theme-dark", "theme-light"];
-const ACCENTS = ["bp-accent-luna", "bp-accent-olive", "bp-accent-silver", "bp-accent-orange", "bp-accent-native"];
+const ACCENTS = ["bp-accent-luna", "bp-accent-olive", "bp-accent-silver", "bp-accent-royale", "bp-accent-noir", "bp-accent-orange", "bp-accent-embedded", "bp-accent-whistler-chartreuse", "bp-accent-whistler-lagoon", "bp-accent-native"];
 const SCENES = {
   none: null,
   "command-palette": "command-palette:open",

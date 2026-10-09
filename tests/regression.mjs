@@ -13,6 +13,7 @@ const MARKERS = {
   "dialog width": [":where(.modal:not(.mod-settings):not(.mod-sidebar-layout))", ".vertical-tab-content .setting-item-info"],
   "primary button pressed state": ["button.mod-cta:active"],
   tasknotes: [".mod-tasknotes", ".tn-task-modal__open-note-button", ".pomodoro-view__start-button", ".tasknotes-plugin .metadata-container", "--interactive-accent: var(--bp-accent-top)"],
+  "xp accents": ["body.bp-accent-royale {", "body.bp-accent-noir {", "body.bp-accent-embedded {", "body.bp-accent-whistler-chartreuse {", "body.bp-accent-whistler-lagoon {", "body.bp-accent-orange {", "label: Zune", "body[class*=\"bp-accent-\"]:not(.bp-accent-luna)"],
   "dark elevation": ["--bp-paper: #3e444e;", "--bp-panel: #2f343b;", "--bp-list-top: #434953;", "--bp-text-muted: #bec5d0;"],
   "light-only list and note options": ["description: Light mode only. Background of the middle", "description: Light mode only. Soft top-to-bottom tint"],
   "dark style": ["id: bp-dark-style", "body.theme-dark.bp-dark-midnight {", "body.theme-dark.bp-dark-contrast {", "--bp-lift:"],

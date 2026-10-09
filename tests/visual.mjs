@@ -45,7 +45,7 @@ const diffInPage = async (a, b) => {
 };
 
 const MODES = ["theme-dark", "theme-light"];
-const ACCENTS = ["luna", "olive", "silver", "orange", "native"];
+const ACCENTS = ["luna", "olive", "silver", "royale", "noir", "orange", "embedded", "whistler-chartreuse", "whistler-lagoon", "native"];
 const setBody = (mode, accent) => run(`(() => {
   const b = document.body;
   ${JSON.stringify(MODES)}.forEach(c => b.classList.remove(c));

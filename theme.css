@@ -11,8 +11,8 @@ desk and the tidy intranet-portal layout of the early web. It is nostalgia you
 can take notes in.
 
 Rounded Luna chrome, orange hover glow, dithered scrollbars and a slate dark
-mode for late nights. Pick an XP accent (Luna, Olive, Silver, Orange) or use
-your own, then make it yours in Style Settings. 
+mode for late nights. Pick an XP accent (Luna, Olive, Silver, Royale, Zune,
+Embedded and more) or use your own, then make it yours in Style Settings. 
 
 Readme: https://github.com/itsjusthaif/obsidian-bliss
 
@@ -29,7 +29,7 @@ settings:
     -
         id: bp-accent-preset
         title: Accent colour
-        description: XP-era colour schemes. Applies to title bars, primary buttons, sliders, dropdown arrows, links and selection. Obsidian accent uses the colour from Appearance settings.
+        description: XP-era colour schemes. Applies to title bars, primary buttons, sliders, dropdown arrows, links and selection. Whistler entries are pre-release XP builds. Obsidian accent uses the colour from Appearance settings.
         type: class-select
         allowEmpty: false
         default: bp-accent-luna
@@ -44,8 +44,23 @@ settings:
                 label: Silver
                 value: bp-accent-silver
             -
-                label: Orange
+                label: Royale Energy Blue
+                value: bp-accent-royale
+            -
+                label: Royale Noir
+                value: bp-accent-noir
+            -
+                label: Zune
                 value: bp-accent-orange
+            -
+                label: Embedded
+                value: bp-accent-embedded
+            -
+                label: Whistler Chartreuse Mongoose
+                value: bp-accent-whistler-chartreuse
+            -
+                label: Whistler Blue Lagoon
+                value: bp-accent-whistler-lagoon
             -
                 label: Obsidian accent
                 value: bp-accent-native
@@ -1883,37 +1898,132 @@ body.bp-accent-olive {
   --bp-accent-line: #9aae6e;
   --bp-select: #d9e5b8;
 }
+/* Silver (Luna Metallic): lavender-tinted, sampled from the XP reference */
 body.bp-accent-silver {
-  --bp-accent-top: #8d94ab;
-  --bp-accent-mid: #727a94;
-  --bp-accent-bottom: #5a627c;
-  --bp-accent-dark: #3d4560;
-  --bp-accent-hover-top: #a4abc0;
-  --bp-accent-link: #3d4a73;
-  --bp-accent-text: #3d4560;
-  --bp-accent-soft-0: #f5f6f9;
-  --bp-accent-soft: #eef0f5;
-  --bp-accent-soft-2: #d6dae6;
-  --bp-accent-soft-3: #e4e7ef;
-  --bp-accent-soft-line: #c1c6d4;
-  --bp-accent-line: #9aa1b5;
-  --bp-select: #dde1ec;
+  --bp-accent-top: #8588ad;
+  --bp-accent-mid: #7a7ea3;
+  --bp-accent-bottom: #62668c;
+  --bp-accent-dark: #444868;
+  --bp-accent-hover-top: #a9acc9;
+  --bp-accent-link: #3f4380;
+  --bp-accent-text: #444868;
+  --bp-accent-soft-0: #f6f6fa;
+  --bp-accent-soft: #f0f1f5;
+  --bp-accent-soft-2: #cbccda;
+  --bp-accent-soft-3: #dcdce6;
+  --bp-accent-soft-line: #bec1d0;
+  --bp-accent-line: #a1a4bc;
+  --bp-select: #d5d6e6;
 }
+/* Zune: orange sampled from the XP Zune theme; the id stays bp-accent-orange so saved settings keep working */
 body.bp-accent-orange {
-  --bp-accent-top: #e07a1f;
-  --bp-accent-mid: #d26c12;
-  --bp-accent-bottom: #b85a0a;
-  --bp-accent-dark: #8a4306;
-  --bp-accent-hover-top: #f19a4b;
-  --bp-accent-link: #b25208;
-  --bp-accent-text: #8a4306;
-  --bp-accent-soft-0: #fff8ef;
-  --bp-accent-soft: #fff1de;
-  --bp-accent-soft-2: #fbdcb6;
-  --bp-accent-soft-3: #fde8cc;
-  --bp-accent-soft-line: #ecc79b;
-  --bp-accent-line: #d9a46a;
-  --bp-select: #fde3c4;
+  --bp-accent-top: #ee6a24;
+  --bp-accent-mid: #e0561a;
+  --bp-accent-bottom: #c45714;
+  --bp-accent-dark: #8f3a05;
+  --bp-accent-hover-top: #ff9b58;
+  --bp-accent-link: #a84304;
+  --bp-accent-text: #8f3a05;
+  --bp-accent-soft-0: #fff8f2;
+  --bp-accent-soft: #fdeee4;
+  --bp-accent-soft-2: #ffd2b4;
+  --bp-accent-soft-3: #fee1cd;
+  --bp-accent-soft-line: #f0b896;
+  --bp-accent-line: #d8a07c;
+  --bp-select: #ffdcc3;
+}
+/* Royale Energy Blue: brighter, glossier blue sampled from the Royale theme */
+body.bp-accent-royale {
+  --bp-accent-top: #4f8ee0;
+  --bp-accent-mid: #3668c0;
+  --bp-accent-bottom: #2c5aae;
+  --bp-accent-dark: #0e3270;
+  --bp-accent-hover-top: #7bb3e6;
+  --bp-accent-link: #1f4fa8;
+  --bp-accent-text: #0e3270;
+  --bp-accent-soft-0: #f0f6fe;
+  --bp-accent-soft: #e4eefc;
+  --bp-accent-soft-2: #bdd2f2;
+  --bp-accent-soft-3: #d6e4f8;
+  --bp-accent-soft-line: #a8c4ec;
+  --bp-accent-line: #6c85bf;
+  --bp-select: #c4d8f6;
+}
+/* Royale Noir: slate with a blue tint; the dark-mode override keeps it readable on slate */
+body.bp-accent-noir {
+  --bp-accent-top: #75838e;
+  --bp-accent-mid: #5e6a7a;
+  --bp-accent-bottom: #485163;
+  --bp-accent-dark: #121a29;
+  --bp-accent-hover-top: #8a97a6;
+  --bp-accent-link: #3d4a63;
+  --bp-accent-text: #232d3e;
+  --bp-accent-soft-0: #f7f8fa;
+  --bp-accent-soft: #eceef1;
+  --bp-accent-soft-2: #cdd2d9;
+  --bp-accent-soft-3: #dde1e6;
+  --bp-accent-soft-line: #b3bac4;
+  --bp-accent-line: #7e8896;
+  --bp-select: #d3d8df;
+}
+/* Embedded: deep navy from the Windows Embedded theme */
+body.bp-accent-embedded {
+  --bp-accent-top: #337ab2;
+  --bp-accent-mid: #1f669e;
+  --bp-accent-bottom: #0a4a82;
+  --bp-accent-dark: #013259;
+  --bp-accent-hover-top: #4a90c6;
+  --bp-accent-link: #0a4a82;
+  --bp-accent-text: #013259;
+  --bp-accent-soft-0: #f2f6fa;
+  --bp-accent-soft: #ebeff2;
+  --bp-accent-soft-2: #c4d8e8;
+  --bp-accent-soft-3: #d9e6f1;
+  --bp-accent-soft-line: #a9c4da;
+  --bp-accent-line: #6c92b2;
+  --bp-select: #cfe0ee;
+}
+/* Whistler Chartreuse Mongoose (Mallard, build 2419): green primary; the orange slots carry the scheme's golden taskbar colour */
+body.bp-accent-whistler-chartreuse {
+  --bp-accent-top: #5c9a82;
+  --bp-accent-mid: #42846c;
+  --bp-accent-bottom: #35705a;
+  --bp-accent-dark: #1c4538;
+  --bp-accent-hover-top: #6aa88f;
+  --bp-accent-link: #2f6b57;
+  --bp-accent-text: #1c4538;
+  --bp-accent-soft-0: #f7fbe8;
+  --bp-accent-soft: #eef8d0;
+  --bp-accent-soft-2: #d8f690;
+  --bp-accent-soft-3: #e5f8b6;
+  --bp-accent-soft-line: #b4d664;
+  --bp-accent-line: #7ea85a;
+  --bp-select: #d8f690;
+  --bp-orange: #c8a428;
+  --bp-grad-orange: linear-gradient(to bottom, #f6efb8 0%, #e9d97f 55%, #d9c35a 100%);
+  --bp-sunset-border: #b8a24a;
+  --bp-sunset-text: #4a3f0a;
+}
+/* Whistler Blue Lagoon (Mallard, build 2419): teal primary; the orange slots carry the scheme's purple title bar */
+body.bp-accent-whistler-lagoon {
+  --bp-accent-top: #6396a8;
+  --bp-accent-mid: #5a90a4;
+  --bp-accent-bottom: #4a7f94;
+  --bp-accent-dark: #2f5f70;
+  --bp-accent-hover-top: #8cc0cc;
+  --bp-accent-link: #2d6a7e;
+  --bp-accent-text: #2f5f70;
+  --bp-accent-soft-0: #f2f8f6;
+  --bp-accent-soft: #e4f0ed;
+  --bp-accent-soft-2: #bce2d9;
+  --bp-accent-soft-3: #d0eae3;
+  --bp-accent-soft-line: #97d1c3;
+  --bp-accent-line: #6fa3a0;
+  --bp-select: #cfe9e2;
+  --bp-orange: #7a64a0;
+  --bp-grad-orange: linear-gradient(to bottom, #f4effa 0%, #dccfee 55%, #c4b3dc 100%);
+  --bp-sunset-border: #8a74a6;
+  --bp-sunset-text: #2e2342;
 }
 body.bp-accent-native {
   --bp-accent-top: color-mix(in srgb, var(--bp-src) 82%, #fff);
@@ -2470,7 +2580,7 @@ body .nn-list-group-header .nn-list-group-header-collapse-button svg {
 
 /* ---- Style Settings: let the label column keep its width next to long dropdown values ---- */
 .vertical-tab-content .setting-item-control > select.dropdown {
-  max-width: 200px;
+  max-width: 240px;
   text-overflow: ellipsis;
 }
 .vertical-tab-content .setting-item-info {
@@ -2865,7 +2975,8 @@ body:not(#bp-x) .nn-navigation-calendar button.nn-navigation-calendar-nav-button
 body {
   --bp-taskbar-luna: linear-gradient(to bottom, #3168d5 0%, #3888e9 3%, #4993e6 8%, #307be5 11%, #286add 14%, #245dd7 18%, #2257d5 26%, #245edc 50%, #2663e0 75%, #2561de 87%, #235bd9 91%, #1e50c4 95%, #1941a5 100%);
 }
-body:is(.bp-accent-olive, .bp-accent-silver, .bp-accent-orange, .bp-accent-native) {
+/* Every preset except Luna derives its taskbar from the accent; the attribute test keeps the sampled Luna gradient when no preset class is set */
+body[class*="bp-accent-"]:not(.bp-accent-luna) {
   --bp-taskbar-base: color-mix(in srgb, var(--bp-accent-mid) 80%, #000);
   --bp-taskbar-luna: linear-gradient(to bottom,
     color-mix(in srgb, var(--bp-taskbar-base) 88%, #fff) 0%,
@@ -3114,6 +3225,32 @@ body.theme-dark.bp-accent-orange {
 }
 body.theme-dark.bp-accent-olive {
   --graph-node-tag: #e8c27a;
+}
+body.theme-dark.bp-accent-whistler-chartreuse {
+  --graph-node-tag: #e8c27a;
+}
+
+/* Dark-leaning accents: lift the light stops so title bars and selection stay distinct from the slate chrome */
+body.theme-dark.bp-accent-noir {
+  --bp-accent-top: #7f8c9b;
+  --bp-accent-mid: #6a7686;
+  --bp-accent-hover-top: #a0acba;
+}
+body.theme-dark.bp-accent-embedded {
+  --bp-accent-top: #4a90c6;
+  --bp-accent-mid: #2b73ac;
+  --bp-accent-hover-top: #62a5d8;
+}
+/* Whistler schemes recolour the secondary (orange) slots, which dark mode redefines later in the file */
+body.theme-dark.bp-accent-whistler-chartreuse {
+  --bp-grad-orange: linear-gradient(to bottom, #6b6330 0%, #4f4a22 100%);
+  --bp-sunset-border: #8a8240;
+  --bp-sunset-text: #f0e6a0;
+}
+body.theme-dark.bp-accent-whistler-lagoon {
+  --bp-grad-orange: linear-gradient(to bottom, #5a4a78 0%, #433557 100%);
+  --bp-sunset-border: #7a64a0;
+  --bp-sunset-text: #dccdf0;
 }
 
 /* ================= Plugin dialogs: shared button states and TaskNotes ================= */
