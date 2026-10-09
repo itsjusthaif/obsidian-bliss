@@ -95,7 +95,7 @@ settings:
     -
         id: bp-dark-style
         title: Dark style
-        description: Only applies in dark mode. Midnight is a deep blue-black with soft glow; Contrast is near-black with brighter borders, higher text contrast and clear focus rings. Both add layered shadows to menus, dialogs and the active tab.
+        description: Only applies in dark mode. Midnight is a deep blue-black with soft glow; Contrast is near-black with brighter borders, higher text contrast and clear focus rings; Royale Dark is neutral charcoal with glossy split-shine buttons, after the XP Royale dark theme. All but Slate add layered shadows to menus, dialogs and the active tab.
         type: class-select
         allowEmpty: false
         default: bp-dark-slate
@@ -109,6 +109,9 @@ settings:
             -
                 label: Contrast
                 value: bp-dark-contrast
+            -
+                label: Royale Dark
+                value: bp-dark-royale
     -
         id: bp-ui-font
         title: Interface text size
@@ -2393,6 +2396,9 @@ body.theme-dark.bp-dark-midnight {
 body.theme-dark.bp-dark-contrast {
   --bp-dot: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='white' fill-opacity='0.025'/></svg>");
 }
+body.theme-dark.bp-dark-royale {
+  --bp-dot: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='white' fill-opacity='0.03'/></svg>");
+}
 body:not(.bp-no-texture) .app-container,
 body:not(.bp-no-texture) .workspace-ribbon,
 body:not(.bp-no-texture) .titlebar,
@@ -2550,7 +2556,7 @@ body .nn-list-group-header .nn-list-group-header-collapse-button svg {
 
 /* ---- Style Settings: let the label column keep its width next to long dropdown values ---- */
 .vertical-tab-content .setting-item-control > select.dropdown {
-  max-width: 240px;
+  max-width: 200px;
   text-overflow: ellipsis;
 }
 .vertical-tab-content .setting-item-info {
@@ -3372,24 +3378,59 @@ body.theme-dark.bp-dark-contrast {
   --bp-field: #0e0e10;
   --bp-glow: 0 0 0 1px var(--bp-accent-link), 0 0 10px color-mix(in srgb, var(--bp-accent-top) 55%, transparent);
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast) {
+/* Royale Dark: neutral charcoal with the Royale split-shine gloss (bright upper half, darker lower half) */
+body.theme-dark.bp-dark-royale {
+  --bp-dark-base: #232323;
+  --bp-chrome: #121212;
+  --bp-panel: #1a1a1a;
+  --bp-paper: #222;
+  --bp-list-top: #2b2b2b;
+  --bp-list-bottom: #212121;
+  --bp-nav-top: #262626;
+  --bp-nav-bottom: #121212;
+  --nn-theme-nav-bg: #191919;
+  --bp-border: #4a4a4a;
+  --bp-border-soft: #363636;
+  --bp-card: #2a2a2a;
+  --bp-card-alt: #202020;
+  --bp-zebra: #262626;
+  --bp-status-top: #1e1e1e;
+  --bp-line-soft: #343434;
+  --bp-line-dotted: #404040;
+  --bp-text: #e8e8e8;
+  --bp-text-muted: #c0c0c0;
+  --bp-text-faint: #b2b2b2;
+  --bp-text-dim: #a2a2a2;
+  --bp-hilite: color-mix(in srgb, var(--bp-accent-mid) 24%, #222);
+  --bp-hilite-2: color-mix(in srgb, var(--bp-accent-mid) 30%, #222);
+  --bp-current: color-mix(in srgb, var(--bp-accent-mid) 36%, #222);
+  --bp-pressed: linear-gradient(to bottom, #0e0e0e 0%, #1e1e1e 100%);
+  --bp-field: #141414;
+  --bp-bevel: rgba(0, 0, 0, 0.55);
+  --bp-grad-btn: linear-gradient(to bottom, #525252 0%, #3e3e3e 48%, #2a2a2a 52%, #1f1f1f 100%);
+  --bp-grad-btn-hover: linear-gradient(to bottom, #626262 0%, #4a4a4a 48%, #343434 52%, #272727 100%);
+  --bp-grad-tab: linear-gradient(to bottom, #4a4a4a 0%, #363636 48%, #262626 52%, #1c1c1c 100%);
+  --bp-xp-cream: linear-gradient(to bottom, #525252 0%, #3e3e3e 48%, #2a2a2a 52%, #1f1f1f 100%);
+  --bp-glow: 0 0 0 1px color-mix(in srgb, var(--bp-accent-top) 60%, transparent), 0 0 10px color-mix(in srgb, var(--bp-accent-top) 40%, transparent);
+}
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale) {
   --bp-lift: 0 10px 28px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast) :is(.modal, .menu, .popover, .suggestion-container, .prompt) {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale) :is(.modal, .menu, .popover, .suggestion-container, .prompt) {
   box-shadow: var(--bp-lift);
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header-container {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header-container {
   background: linear-gradient(to bottom, var(--bp-nav-top) 0%, var(--bp-panel) 100%);
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast):not(#bp-x) .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale):not(#bp-x) .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner {
   background: linear-gradient(to bottom, var(--bp-card) 0%, var(--bp-paper) 100%);
   box-shadow: inset 0 3px 0 var(--bp-orange), inset 0 4px 0 rgba(255, 255, 255, 0.1), 0 -4px 14px -6px color-mix(in srgb, var(--bp-accent-top) 70%, transparent);
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast):not(#bp-x) :is(button, select, .dropdown, .checkbox-container, .clickable-icon, .vertical-tab-nav-item):focus-visible {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale):not(#bp-x) :is(button, select, .dropdown, .checkbox-container, .clickable-icon, .vertical-tab-nav-item):focus-visible {
   outline: 2px solid var(--bp-accent-link);
   outline-offset: 1px;
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast):not(#bp-x) :is(input[type="text"], input[type="search"], input[type="number"], textarea, .prompt-input):focus {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale):not(#bp-x) :is(input[type="text"], input[type="search"], input[type="number"], textarea, .prompt-input):focus {
   border-color: var(--bp-accent-link);
   box-shadow: var(--bp-glow);
 }
