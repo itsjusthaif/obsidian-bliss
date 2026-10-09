@@ -121,8 +121,8 @@ const findings = new Map();
 for (const p of dedup) {
   await run(`(() => {
     const b = document.body;
-    ${JSON.stringify(MODES)}.forEach(c => b.classList.remove(c)); ${JSON.stringify(ACCENTS)}.forEach(c => b.classList.remove(c));
-    b.classList.add(${JSON.stringify(p.mode)}, ${JSON.stringify(p.accent)});
+    ${JSON.stringify(MODES)}.forEach(c => b.classList.remove(c)); ${JSON.stringify(ACCENTS)}.forEach(c => b.classList.remove(c)); [...b.classList].filter(c => c.startsWith("bp-dark-")).forEach(c => b.classList.remove(c));
+    b.classList.add(${JSON.stringify(p.mode)}, ${JSON.stringify(p.accent)}, "bp-dark-auto");
   })()`);
   const cmd = SCENES[p.scene];
   if (cmd) await run(`app.commands.executeCommandById(${JSON.stringify(cmd)})`);
@@ -139,7 +139,7 @@ for (const p of dedup) {
 }
 
 await run(`(() => {
-  const b = document.body; ${JSON.stringify(MODES)}.forEach(c => b.classList.remove(c)); ${JSON.stringify(ACCENTS)}.forEach(c => b.classList.remove(c));
+  const b = document.body; ${JSON.stringify(MODES)}.forEach(c => b.classList.remove(c)); ${JSON.stringify(ACCENTS)}.forEach(c => b.classList.remove(c)); [...b.classList].filter(c => c.startsWith("bp-dark-")).forEach(c => b.classList.remove(c));
   ${JSON.stringify(initial.cls)}.split(" ").filter(Boolean).forEach(c => b.classList.add(c));
   if (!b.classList.contains("theme-dark") && !b.classList.contains("theme-light")) b.classList.add(app.vault.getConfig("theme") === "obsidian" ? "theme-dark" : "theme-light");
   if (!${initial.left}) app.workspace.leftSplit.collapse(); if (!${initial.right}) app.workspace.rightSplit.collapse();

@@ -95,11 +95,14 @@ settings:
     -
         id: bp-dark-style
         title: Dark style
-        description: Only applies in dark mode. Midnight is a deep blue-black with soft glow; Contrast is near-black with brighter borders, higher text contrast and clear focus rings; Royale Dark is neutral charcoal with glossy split-shine buttons, after the XP Royale dark theme. All but Slate add layered shadows to menus, dialogs and the active tab.
+        description: Only applies in dark mode. Auto follows the accent: Zune gets Royale Dark, Embedded gets Midnight, everything else gets Slate. Midnight is a deep blue-black with soft glow; Contrast is near-black with brighter borders, higher text contrast and clear focus rings; Royale Dark is neutral charcoal with glossy split-shine buttons, after the XP Royale dark theme. All but Slate add layered shadows to menus, dialogs and the active tab.
         type: class-select
         allowEmpty: false
-        default: bp-dark-slate
+        default: bp-dark-auto
         options:
+            -
+                label: Auto (follows accent)
+                value: bp-dark-auto
             -
                 label: Slate
                 value: bp-dark-slate
@@ -2389,14 +2392,20 @@ body {
 body.theme-dark {
   --bp-dot: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='white' fill-opacity='0.065'/></svg>");
 }
+/* Slate is the base dark look; the class exists so it can be picked explicitly instead of Auto */
+body.theme-dark.bp-dark-slate {
+  --bp-dot: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='white' fill-opacity='0.065'/></svg>");
+}
 /* Midnight dots take the blue of its surfaces; Contrast keeps them faint so small labels stay clean */
-body.theme-dark.bp-dark-midnight {
+body.theme-dark.bp-dark-midnight,
+body.theme-dark.bp-dark-auto.bp-accent-embedded {
   --bp-dot: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='%23b8c4e8' fill-opacity='0.05'/></svg>");
 }
 body.theme-dark.bp-dark-contrast {
   --bp-dot: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='white' fill-opacity='0.025'/></svg>");
 }
-body.theme-dark.bp-dark-royale {
+body.theme-dark.bp-dark-royale,
+body.theme-dark.bp-dark-auto.bp-accent-orange {
   --bp-dot: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='1' height='1' fill='white' fill-opacity='0.03'/></svg>");
 }
 body:not(.bp-no-texture) .app-container,
@@ -3320,7 +3329,8 @@ body:not(#bp-x) .tasknotes-plugin .metadata-container {
 }
 
 /* ================= Dark style: Midnight and Contrast (Slate is the default above) ================= */
-body.theme-dark.bp-dark-midnight {
+body.theme-dark.bp-dark-midnight,
+body.theme-dark.bp-dark-auto.bp-accent-embedded {
   --bp-dark-base: #1d2436;
   --bp-chrome: #0e1320;
   --bp-panel: #141a2a;
@@ -3379,7 +3389,8 @@ body.theme-dark.bp-dark-contrast {
   --bp-glow: 0 0 0 1px var(--bp-accent-link), 0 0 10px color-mix(in srgb, var(--bp-accent-top) 55%, transparent);
 }
 /* Royale Dark: neutral charcoal with the Royale split-shine gloss (bright upper half, darker lower half) */
-body.theme-dark.bp-dark-royale {
+body.theme-dark.bp-dark-royale,
+body.theme-dark.bp-dark-auto.bp-accent-orange {
   --bp-dark-base: #232323;
   --bp-chrome: #121212;
   --bp-panel: #1a1a1a;
@@ -3413,24 +3424,24 @@ body.theme-dark.bp-dark-royale {
   --bp-xp-cream: linear-gradient(to bottom, #525252 0%, #3e3e3e 48%, #2a2a2a 52%, #1f1f1f 100%);
   --bp-glow: 0 0 0 1px color-mix(in srgb, var(--bp-accent-top) 60%, transparent), 0 0 10px color-mix(in srgb, var(--bp-accent-top) 40%, transparent);
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale) {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale, .bp-dark-auto.bp-accent-orange, .bp-dark-auto.bp-accent-embedded) {
   --bp-lift: 0 10px 28px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale) :is(.modal, .menu, .popover, .suggestion-container, .prompt) {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale, .bp-dark-auto.bp-accent-orange, .bp-dark-auto.bp-accent-embedded) :is(.modal, .menu, .popover, .suggestion-container, .prompt) {
   box-shadow: var(--bp-lift);
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header-container {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale, .bp-dark-auto.bp-accent-orange, .bp-dark-auto.bp-accent-embedded) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header-container {
   background: linear-gradient(to bottom, var(--bp-nav-top) 0%, var(--bp-panel) 100%);
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale):not(#bp-x) .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale, .bp-dark-auto.bp-accent-orange, .bp-dark-auto.bp-accent-embedded):not(#bp-x) .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner {
   background: linear-gradient(to bottom, var(--bp-card) 0%, var(--bp-paper) 100%);
   box-shadow: inset 0 3px 0 var(--bp-orange), inset 0 4px 0 rgba(255, 255, 255, 0.1), 0 -4px 14px -6px color-mix(in srgb, var(--bp-accent-top) 70%, transparent);
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale):not(#bp-x) :is(button, select, .dropdown, .checkbox-container, .clickable-icon, .vertical-tab-nav-item):focus-visible {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale, .bp-dark-auto.bp-accent-orange, .bp-dark-auto.bp-accent-embedded):not(#bp-x) :is(button, select, .dropdown, .checkbox-container, .clickable-icon, .vertical-tab-nav-item):focus-visible {
   outline: 2px solid var(--bp-accent-link);
   outline-offset: 1px;
 }
-body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale):not(#bp-x) :is(input[type="text"], input[type="search"], input[type="number"], textarea, .prompt-input):focus {
+body.theme-dark:is(.bp-dark-midnight, .bp-dark-contrast, .bp-dark-royale, .bp-dark-auto.bp-accent-orange, .bp-dark-auto.bp-accent-embedded):not(#bp-x) :is(input[type="text"], input[type="search"], input[type="number"], textarea, .prompt-input):focus {
   border-color: var(--bp-accent-link);
   box-shadow: var(--bp-glow);
 }
