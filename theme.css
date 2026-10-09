@@ -3500,15 +3500,41 @@ body:not(#bp-x) .progress-bar-indicator {
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
   height: 14px;
+}
+/* Obsidian's line is a faint full-width track and the subline is the animated fill */
+body:not(#bp-x) .progress-bar-line {
+  background: transparent;
+  height: 100%;
+  opacity: 1;
+}
+body:not(#bp-x) .progress-bar-subline {
+  background: var(--bp-xp-green);
+  border-radius: 2px;
+  height: calc(100% - 4px);
+  top: 2px;
+}
+/* Block gaps sit on top, so they stay a fixed width while the fill scales */
+body:not(#bp-x) .progress-bar-indicator::after {
+  background: repeating-linear-gradient(to right, transparent 0 7px, var(--bp-field) 7px 9px);
+  content: "";
+  inset: 2px;
+  pointer-events: none;
+  position: absolute;
+}
+body:not(#bp-x) .setting-progress-bar {
+  background: var(--bp-field);
+  border: 1px solid var(--bp-border);
+  border-radius: var(--bp-btn-radius);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  height: 14px;
   padding: 2px;
 }
-body:not(#bp-x) .progress-bar-line {
+body:not(#bp-x) .setting-progress-bar-inner {
   background:
     repeating-linear-gradient(to right, transparent 0 7px, var(--bp-field) 7px 9px),
     var(--bp-xp-green);
   border-radius: 2px;
-  height: 8px;
-  opacity: 1;
 }
 body:not(#bp-x) progress {
   appearance: none;
