@@ -13,7 +13,7 @@
 
 ### Changed
 
-- Windows XP Nostalgia Mode now also turns the vault switcher into an XP Start button in the chosen accent's colours (green on Luna Blue, orange on Zune and so on) and the status bar into a taskbar strip, with flat items that press in only on click.
+- Windows XP Nostalgia Mode now also turns the status bar into a taskbar strip in the chosen accent's colour, with flat items that press in only on click.
 - The Orange accent is now called Zune and uses the orange sampled from the XP Zune theme. Saved settings keep working.
 - The Silver accent is lighter and lavender-tinted, with light Metallic title bars and dark title text in light mode, closer to the XP Metallic theme.
 - Notes list background and Note background fade are now light mode only, because they made almost no visible difference in dark. Dark mode always uses its fixed list gradient and a flat note, and the option descriptions say so.
