@@ -5,8 +5,8 @@
 ### Added
 
 - Style Settings: new accent colour Embedded, sampled from the Windows XP Embedded theme.
-- Style Settings: new Dark style option Auto (follows accent), now the default. Zune pairs with Royale Dark and Embedded with Midnight; every other accent keeps Slate. Picking a dark style yourself always overrides it.
-- Style Settings: new Dark style option Royale Dark, a neutral charcoal look with glossy split-shine buttons and tabs after the XP Royale dark theme.
+- Style Settings: new Dark style option Auto (follows accent), now the default. Zune pairs with XP Royale Dark and Embedded with Midnight; every other accent keeps Slate. Picking a dark style yourself always overrides it.
+- Style Settings: new Dark style option XP Royale Dark, a neutral charcoal look with glossy split-shine buttons and tabs after the XP Royale theme.
 - Dark mode: Luna Blue now becomes Royale Energy Blue and Silver becomes Royale Noir, so each light accent has an XP-era dark companion.
 - Style Settings: two bonus pre-release accents from Windows XP build 2419 (Whistler, Mallard style): Chartreuse Mongoose (green with golden highlights) and Blue Lagoon (teal with purple highlights).
 

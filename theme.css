@@ -95,7 +95,7 @@ settings:
     -
         id: bp-dark-style
         title: Dark style
-        description: Dark mode only. Auto pairs Zune with Royale Dark and Embedded with Midnight, and uses Slate for the rest.
+        description: Dark mode only. Auto pairs Zune with XP Royale Dark and Embedded with Midnight, and uses Slate for the rest.
         type: class-select
         allowEmpty: false
         default: bp-dark-auto
@@ -113,7 +113,7 @@ settings:
                 label: Contrast
                 value: bp-dark-contrast
             -
-                label: Royale Dark
+                label: XP Royale Dark
                 value: bp-dark-royale
     -
         id: bp-ui-font
